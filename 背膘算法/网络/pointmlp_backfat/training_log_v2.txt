@@ -1,0 +1,1936 @@
+============================================================
+PointMLP-Elite Backfat Regression Training
+Time: 20260322_213954
+Device: cuda
+============================================================
+
+[1/5] Building dataset registry...
+  Found 189 pigs with matched labels and point clouds
+
+[2/5] Splitting dataset by pig ID...
+  Train: 151 pigs, 27213 samples
+  Val:   18 pigs, 3249 samples
+  Test:  20 pigs, 3609 samples
+  Train label range: 7.1 - 25.0 mm (mean=15.3)
+  Val   label range: 8.7 - 19.8 mm (mean=15.1)
+  Test  label range: 9.3 - 21.0 mm (mean=14.3)
+
+[3/5] Creating data loaders...
+
+[4/5] Initializing PointMLP-Elite regressor...
+  Total parameters:     483,105
+  Trainable parameters: 483,105
+
+[5/5] Training for 200 epochs...
+============================================================
+
+Epoch 1/200 (lr=0.001000)
+  Epoch [1/200] Batch [50/1700] Loss: 232.6956
+  Epoch [1/200] Batch [100/1700] Loss: 133.0088
+  Epoch [1/200] Batch [150/1700] Loss: 103.1334
+  Epoch [1/200] Batch [200/1700] Loss: 49.9606
+  Epoch [1/200] Batch [250/1700] Loss: 27.5390
+  Epoch [1/200] Batch [300/1700] Loss: 14.4948
+  Epoch [1/200] Batch [350/1700] Loss: 16.1621
+  Epoch [1/200] Batch [400/1700] Loss: 15.9199
+  Epoch [1/200] Batch [450/1700] Loss: 17.2883
+  Epoch [1/200] Batch [500/1700] Loss: 18.5274
+  Epoch [1/200] Batch [550/1700] Loss: 11.7144
+  Epoch [1/200] Batch [600/1700] Loss: 20.0814
+  Epoch [1/200] Batch [650/1700] Loss: 23.1144
+  Epoch [1/200] Batch [700/1700] Loss: 37.1927
+  Epoch [1/200] Batch [750/1700] Loss: 13.5489
+  Epoch [1/200] Batch [800/1700] Loss: 14.1441
+  Epoch [1/200] Batch [850/1700] Loss: 18.1539
+  Epoch [1/200] Batch [900/1700] Loss: 10.2447
+  Epoch [1/200] Batch [950/1700] Loss: 19.5349
+  Epoch [1/200] Batch [1000/1700] Loss: 13.9691
+  Epoch [1/200] Batch [1050/1700] Loss: 10.1795
+  Epoch [1/200] Batch [1100/1700] Loss: 10.7569
+  Epoch [1/200] Batch [1150/1700] Loss: 14.5242
+  Epoch [1/200] Batch [1200/1700] Loss: 8.5989
+  Epoch [1/200] Batch [1250/1700] Loss: 28.7257
+  Epoch [1/200] Batch [1300/1700] Loss: 13.2744
+  Epoch [1/200] Batch [1350/1700] Loss: 16.4310
+  Epoch [1/200] Batch [1400/1700] Loss: 14.3997
+  Epoch [1/200] Batch [1450/1700] Loss: 20.1096
+  Epoch [1/200] Batch [1500/1700] Loss: 8.7255
+  Epoch [1/200] Batch [1550/1700] Loss: 22.2181
+  Epoch [1/200] Batch [1600/1700] Loss: 24.1675
+  Epoch [1/200] Batch [1650/1700] Loss: 21.3271
+  Epoch [1/200] Batch [1700/1700] Loss: 20.1838
+  Train - Loss: 34.3695 | MAE: 4.40mm | RMSE: 5.86mm | R2: -1.7188
+  Val   - Loss: 8.4977 | MAE: 2.31mm | RMSE: 2.92mm | R2: -0.0891
+  * Best model saved! (Val Loss: 8.4977, R2: -0.0891)
+
+Epoch 2/200 (lr=0.001000)
+  Epoch [2/200] Batch [50/1700] Loss: 17.1287
+  Epoch [2/200] Batch [100/1700] Loss: 26.9456
+  Epoch [2/200] Batch [150/1700] Loss: 23.2389
+  Epoch [2/200] Batch [200/1700] Loss: 12.2040
+  Epoch [2/200] Batch [250/1700] Loss: 25.0012
+  Epoch [2/200] Batch [300/1700] Loss: 12.2410
+  Epoch [2/200] Batch [350/1700] Loss: 23.9871
+  Epoch [2/200] Batch [400/1700] Loss: 9.8698
+  Epoch [2/200] Batch [450/1700] Loss: 17.4128
+  Epoch [2/200] Batch [500/1700] Loss: 14.8560
+  Epoch [2/200] Batch [550/1700] Loss: 17.5095
+  Epoch [2/200] Batch [600/1700] Loss: 10.3469
+  Epoch [2/200] Batch [650/1700] Loss: 16.4861
+  Epoch [2/200] Batch [700/1700] Loss: 13.6957
+  Epoch [2/200] Batch [750/1700] Loss: 14.9158
+  Epoch [2/200] Batch [800/1700] Loss: 11.1111
+  Epoch [2/200] Batch [850/1700] Loss: 20.4114
+  Epoch [2/200] Batch [900/1700] Loss: 19.6987
+  Epoch [2/200] Batch [950/1700] Loss: 16.9385
+  Epoch [2/200] Batch [1000/1700] Loss: 11.5631
+  Epoch [2/200] Batch [1050/1700] Loss: 17.3203
+  Epoch [2/200] Batch [1100/1700] Loss: 14.8661
+  Epoch [2/200] Batch [1150/1700] Loss: 15.5256
+  Epoch [2/200] Batch [1200/1700] Loss: 15.0659
+  Epoch [2/200] Batch [1250/1700] Loss: 15.6028
+  Epoch [2/200] Batch [1300/1700] Loss: 17.7902
+  Epoch [2/200] Batch [1350/1700] Loss: 9.5704
+  Epoch [2/200] Batch [1400/1700] Loss: 22.8219
+  Epoch [2/200] Batch [1450/1700] Loss: 8.2353
+  Epoch [2/200] Batch [1500/1700] Loss: 14.1455
+  Epoch [2/200] Batch [1550/1700] Loss: 14.6129
+  Epoch [2/200] Batch [1600/1700] Loss: 12.9751
+  Epoch [2/200] Batch [1650/1700] Loss: 10.8160
+  Epoch [2/200] Batch [1700/1700] Loss: 11.2341
+  Train - Loss: 16.6142 | MAE: 3.28mm | RMSE: 4.08mm | R2: -0.3146
+  Val   - Loss: 9.6200 | MAE: 2.42mm | RMSE: 3.11mm | R2: -0.2348
+
+Epoch 3/200 (lr=0.001000)
+  Epoch [3/200] Batch [50/1700] Loss: 27.1976
+  Epoch [3/200] Batch [100/1700] Loss: 21.5732
+  Epoch [3/200] Batch [150/1700] Loss: 10.8533
+  Epoch [3/200] Batch [200/1700] Loss: 16.2859
+  Epoch [3/200] Batch [250/1700] Loss: 14.9658
+  Epoch [3/200] Batch [300/1700] Loss: 16.3512
+  Epoch [3/200] Batch [350/1700] Loss: 11.6909
+  Epoch [3/200] Batch [400/1700] Loss: 15.0313
+  Epoch [3/200] Batch [450/1700] Loss: 21.4429
+  Epoch [3/200] Batch [500/1700] Loss: 14.8681
+  Epoch [3/200] Batch [550/1700] Loss: 21.0901
+  Epoch [3/200] Batch [600/1700] Loss: 20.0227
+  Epoch [3/200] Batch [650/1700] Loss: 19.1338
+  Epoch [3/200] Batch [700/1700] Loss: 14.3620
+  Epoch [3/200] Batch [750/1700] Loss: 21.8482
+  Epoch [3/200] Batch [800/1700] Loss: 8.2104
+  Epoch [3/200] Batch [850/1700] Loss: 17.3489
+  Epoch [3/200] Batch [900/1700] Loss: 24.7478
+  Epoch [3/200] Batch [950/1700] Loss: 12.0693
+  Epoch [3/200] Batch [1000/1700] Loss: 20.6514
+  Epoch [3/200] Batch [1050/1700] Loss: 32.8589
+  Epoch [3/200] Batch [1100/1700] Loss: 18.2902
+  Epoch [3/200] Batch [1150/1700] Loss: 20.8840
+  Epoch [3/200] Batch [1200/1700] Loss: 14.6360
+  Epoch [3/200] Batch [1250/1700] Loss: 13.4585
+  Epoch [3/200] Batch [1300/1700] Loss: 15.9843
+  Epoch [3/200] Batch [1350/1700] Loss: 12.0231
+  Epoch [3/200] Batch [1400/1700] Loss: 18.8459
+  Epoch [3/200] Batch [1450/1700] Loss: 12.9419
+  Epoch [3/200] Batch [1500/1700] Loss: 9.3265
+  Epoch [3/200] Batch [1550/1700] Loss: 15.5211
+  Epoch [3/200] Batch [1600/1700] Loss: 27.1999
+  Epoch [3/200] Batch [1650/1700] Loss: 9.5212
+  Epoch [3/200] Batch [1700/1700] Loss: 22.2545
+  Train - Loss: 16.1237 | MAE: 3.23mm | RMSE: 4.02mm | R2: -0.2754
+  Val   - Loss: 7.4990 | MAE: 2.05mm | RMSE: 2.74mm | R2: 0.0386
+  * Best model saved! (Val Loss: 7.4990, R2: 0.0386)
+
+Epoch 4/200 (lr=0.000999)
+  Epoch [4/200] Batch [50/1700] Loss: 18.0431
+  Epoch [4/200] Batch [100/1700] Loss: 16.5192
+  Epoch [4/200] Batch [150/1700] Loss: 12.1703
+  Epoch [4/200] Batch [200/1700] Loss: 13.3249
+  Epoch [4/200] Batch [250/1700] Loss: 19.0088
+  Epoch [4/200] Batch [300/1700] Loss: 9.3278
+  Epoch [4/200] Batch [350/1700] Loss: 12.0114
+  Epoch [4/200] Batch [400/1700] Loss: 23.8465
+  Epoch [4/200] Batch [450/1700] Loss: 20.9852
+  Epoch [4/200] Batch [500/1700] Loss: 15.2872
+  Epoch [4/200] Batch [550/1700] Loss: 21.1141
+  Epoch [4/200] Batch [600/1700] Loss: 18.9764
+  Epoch [4/200] Batch [650/1700] Loss: 15.1119
+  Epoch [4/200] Batch [700/1700] Loss: 10.3903
+  Epoch [4/200] Batch [750/1700] Loss: 14.3206
+  Epoch [4/200] Batch [800/1700] Loss: 11.9939
+  Epoch [4/200] Batch [850/1700] Loss: 17.7318
+  Epoch [4/200] Batch [900/1700] Loss: 20.9593
+  Epoch [4/200] Batch [950/1700] Loss: 21.1553
+  Epoch [4/200] Batch [1000/1700] Loss: 12.6954
+  Epoch [4/200] Batch [1050/1700] Loss: 21.2464
+  Epoch [4/200] Batch [1100/1700] Loss: 16.4652
+  Epoch [4/200] Batch [1150/1700] Loss: 17.9721
+  Epoch [4/200] Batch [1200/1700] Loss: 10.6896
+  Epoch [4/200] Batch [1250/1700] Loss: 13.1739
+  Epoch [4/200] Batch [1300/1700] Loss: 13.6930
+  Epoch [4/200] Batch [1350/1700] Loss: 20.0974
+  Epoch [4/200] Batch [1400/1700] Loss: 27.5126
+  Epoch [4/200] Batch [1450/1700] Loss: 8.9905
+  Epoch [4/200] Batch [1500/1700] Loss: 9.4498
+  Epoch [4/200] Batch [1550/1700] Loss: 9.8874
+  Epoch [4/200] Batch [1600/1700] Loss: 13.0974
+  Epoch [4/200] Batch [1650/1700] Loss: 9.7408
+  Epoch [4/200] Batch [1700/1700] Loss: 20.0452
+  Train - Loss: 15.6403 | MAE: 3.19mm | RMSE: 3.95mm | R2: -0.2373
+  Val   - Loss: 8.0174 | MAE: 2.21mm | RMSE: 2.84mm | R2: -0.0286
+
+Epoch 5/200 (lr=0.000999)
+  Epoch [5/200] Batch [50/1700] Loss: 21.4682
+  Epoch [5/200] Batch [100/1700] Loss: 24.2354
+  Epoch [5/200] Batch [150/1700] Loss: 12.1832
+  Epoch [5/200] Batch [200/1700] Loss: 17.8564
+  Epoch [5/200] Batch [250/1700] Loss: 17.8537
+  Epoch [5/200] Batch [300/1700] Loss: 15.2613
+  Epoch [5/200] Batch [350/1700] Loss: 17.3344
+  Epoch [5/200] Batch [400/1700] Loss: 12.1298
+  Epoch [5/200] Batch [450/1700] Loss: 18.3895
+  Epoch [5/200] Batch [500/1700] Loss: 13.8130
+  Epoch [5/200] Batch [550/1700] Loss: 8.1582
+  Epoch [5/200] Batch [600/1700] Loss: 14.1904
+  Epoch [5/200] Batch [650/1700] Loss: 21.8848
+  Epoch [5/200] Batch [700/1700] Loss: 17.2061
+  Epoch [5/200] Batch [750/1700] Loss: 17.6048
+  Epoch [5/200] Batch [800/1700] Loss: 11.3314
+  Epoch [5/200] Batch [850/1700] Loss: 7.3184
+  Epoch [5/200] Batch [900/1700] Loss: 10.1015
+  Epoch [5/200] Batch [950/1700] Loss: 14.3037
+  Epoch [5/200] Batch [1000/1700] Loss: 9.6014
+  Epoch [5/200] Batch [1050/1700] Loss: 11.3721
+  Epoch [5/200] Batch [1100/1700] Loss: 27.1600
+  Epoch [5/200] Batch [1150/1700] Loss: 16.8979
+  Epoch [5/200] Batch [1200/1700] Loss: 19.2721
+  Epoch [5/200] Batch [1250/1700] Loss: 10.2086
+  Epoch [5/200] Batch [1300/1700] Loss: 11.2218
+  Epoch [5/200] Batch [1350/1700] Loss: 13.6488
+  Epoch [5/200] Batch [1400/1700] Loss: 4.8689
+  Epoch [5/200] Batch [1450/1700] Loss: 13.1240
+  Epoch [5/200] Batch [1500/1700] Loss: 10.6781
+  Epoch [5/200] Batch [1550/1700] Loss: 9.1335
+  Epoch [5/200] Batch [1600/1700] Loss: 15.2624
+  Epoch [5/200] Batch [1650/1700] Loss: 19.5341
+  Epoch [5/200] Batch [1700/1700] Loss: 26.3232
+  Train - Loss: 15.4529 | MAE: 3.17mm | RMSE: 3.93mm | R2: -0.2228
+  Val   - Loss: 8.2970 | MAE: 2.18mm | RMSE: 2.89mm | R2: -0.0649
+
+Epoch 6/200 (lr=0.000998)
+  Epoch [6/200] Batch [50/1700] Loss: 13.8247
+  Epoch [6/200] Batch [100/1700] Loss: 12.7163
+  Epoch [6/200] Batch [150/1700] Loss: 20.0541
+  Epoch [6/200] Batch [200/1700] Loss: 13.3144
+  Epoch [6/200] Batch [250/1700] Loss: 14.2610
+  Epoch [6/200] Batch [300/1700] Loss: 12.2862
+  Epoch [6/200] Batch [350/1700] Loss: 12.1631
+  Epoch [6/200] Batch [400/1700] Loss: 12.4603
+  Epoch [6/200] Batch [450/1700] Loss: 15.9180
+  Epoch [6/200] Batch [500/1700] Loss: 14.5790
+  Epoch [6/200] Batch [550/1700] Loss: 12.1067
+  Epoch [6/200] Batch [600/1700] Loss: 11.2417
+  Epoch [6/200] Batch [650/1700] Loss: 17.5401
+  Epoch [6/200] Batch [700/1700] Loss: 10.2772
+  Epoch [6/200] Batch [750/1700] Loss: 11.6219
+  Epoch [6/200] Batch [800/1700] Loss: 7.6694
+  Epoch [6/200] Batch [850/1700] Loss: 15.4644
+  Epoch [6/200] Batch [900/1700] Loss: 14.1532
+  Epoch [6/200] Batch [950/1700] Loss: 11.5936
+  Epoch [6/200] Batch [1000/1700] Loss: 14.0926
+  Epoch [6/200] Batch [1050/1700] Loss: 22.0921
+  Epoch [6/200] Batch [1100/1700] Loss: 12.4601
+  Epoch [6/200] Batch [1150/1700] Loss: 8.9554
+  Epoch [6/200] Batch [1200/1700] Loss: 14.6308
+  Epoch [6/200] Batch [1250/1700] Loss: 8.3628
+  Epoch [6/200] Batch [1300/1700] Loss: 17.3698
+  Epoch [6/200] Batch [1350/1700] Loss: 12.1362
+  Epoch [6/200] Batch [1400/1700] Loss: 9.4460
+  Epoch [6/200] Batch [1450/1700] Loss: 9.8808
+  Epoch [6/200] Batch [1500/1700] Loss: 13.6977
+  Epoch [6/200] Batch [1550/1700] Loss: 19.2195
+  Epoch [6/200] Batch [1600/1700] Loss: 8.5867
+  Epoch [6/200] Batch [1650/1700] Loss: 25.1350
+  Epoch [6/200] Batch [1700/1700] Loss: 23.1535
+  Train - Loss: 14.9085 | MAE: 3.11mm | RMSE: 3.86mm | R2: -0.1796
+  Val   - Loss: 8.6792 | MAE: 2.32mm | RMSE: 2.95mm | R2: -0.1136
+
+Epoch 7/200 (lr=0.000998)
+  Epoch [7/200] Batch [50/1700] Loss: 12.0431
+  Epoch [7/200] Batch [100/1700] Loss: 20.0420
+  Epoch [7/200] Batch [150/1700] Loss: 18.6067
+  Epoch [7/200] Batch [200/1700] Loss: 14.6594
+  Epoch [7/200] Batch [250/1700] Loss: 8.0971
+  Epoch [7/200] Batch [300/1700] Loss: 18.5001
+  Epoch [7/200] Batch [350/1700] Loss: 12.9430
+  Epoch [7/200] Batch [400/1700] Loss: 8.3092
+  Epoch [7/200] Batch [450/1700] Loss: 13.7910
+  Epoch [7/200] Batch [500/1700] Loss: 17.7869
+  Epoch [7/200] Batch [550/1700] Loss: 8.8065
+  Epoch [7/200] Batch [600/1700] Loss: 16.1413
+  Epoch [7/200] Batch [650/1700] Loss: 17.6451
+  Epoch [7/200] Batch [700/1700] Loss: 16.1297
+  Epoch [7/200] Batch [750/1700] Loss: 17.2968
+  Epoch [7/200] Batch [800/1700] Loss: 14.3851
+  Epoch [7/200] Batch [850/1700] Loss: 16.7275
+  Epoch [7/200] Batch [900/1700] Loss: 10.1499
+  Epoch [7/200] Batch [950/1700] Loss: 12.8595
+  Epoch [7/200] Batch [1000/1700] Loss: 13.2153
+  Epoch [7/200] Batch [1050/1700] Loss: 11.8725
+  Epoch [7/200] Batch [1100/1700] Loss: 16.0931
+  Epoch [7/200] Batch [1150/1700] Loss: 12.3083
+  Epoch [7/200] Batch [1200/1700] Loss: 12.7340
+  Epoch [7/200] Batch [1250/1700] Loss: 9.0964
+  Epoch [7/200] Batch [1300/1700] Loss: 15.7247
+  Epoch [7/200] Batch [1350/1700] Loss: 16.2050
+  Epoch [7/200] Batch [1400/1700] Loss: 11.0723
+  Epoch [7/200] Batch [1450/1700] Loss: 29.1974
+  Epoch [7/200] Batch [1500/1700] Loss: 13.5219
+  Epoch [7/200] Batch [1550/1700] Loss: 13.3542
+  Epoch [7/200] Batch [1600/1700] Loss: 19.2765
+  Epoch [7/200] Batch [1650/1700] Loss: 9.7931
+  Epoch [7/200] Batch [1700/1700] Loss: 14.1952
+  Train - Loss: 14.7204 | MAE: 3.11mm | RMSE: 3.84mm | R2: -0.1649
+  Val   - Loss: 8.0779 | MAE: 2.16mm | RMSE: 2.85mm | R2: -0.0361
+
+Epoch 8/200 (lr=0.000997)
+  Epoch [8/200] Batch [50/1700] Loss: 13.9345
+  Epoch [8/200] Batch [100/1700] Loss: 20.5458
+  Epoch [8/200] Batch [150/1700] Loss: 13.7439
+  Epoch [8/200] Batch [200/1700] Loss: 14.9743
+  Epoch [8/200] Batch [250/1700] Loss: 14.7866
+  Epoch [8/200] Batch [300/1700] Loss: 18.9297
+  Epoch [8/200] Batch [350/1700] Loss: 18.1544
+  Epoch [8/200] Batch [400/1700] Loss: 16.2415
+  Epoch [8/200] Batch [450/1700] Loss: 15.9175
+  Epoch [8/200] Batch [500/1700] Loss: 12.3322
+  Epoch [8/200] Batch [550/1700] Loss: 6.9160
+  Epoch [8/200] Batch [600/1700] Loss: 12.7949
+  Epoch [8/200] Batch [650/1700] Loss: 12.9684
+  Epoch [8/200] Batch [700/1700] Loss: 14.5243
+  Epoch [8/200] Batch [750/1700] Loss: 26.9330
+  Epoch [8/200] Batch [800/1700] Loss: 6.3759
+  Epoch [8/200] Batch [850/1700] Loss: 12.4933
+  Epoch [8/200] Batch [900/1700] Loss: 8.2867
+  Epoch [8/200] Batch [950/1700] Loss: 18.0657
+  Epoch [8/200] Batch [1000/1700] Loss: 11.2208
+  Epoch [8/200] Batch [1050/1700] Loss: 16.4323
+  Epoch [8/200] Batch [1100/1700] Loss: 11.7983
+  Epoch [8/200] Batch [1150/1700] Loss: 18.1823
+  Epoch [8/200] Batch [1200/1700] Loss: 17.6103
+  Epoch [8/200] Batch [1250/1700] Loss: 18.9293
+  Epoch [8/200] Batch [1300/1700] Loss: 17.1000
+  Epoch [8/200] Batch [1350/1700] Loss: 13.6777
+  Epoch [8/200] Batch [1400/1700] Loss: 12.7410
+  Epoch [8/200] Batch [1450/1700] Loss: 15.8750
+  Epoch [8/200] Batch [1500/1700] Loss: 21.9048
+  Epoch [8/200] Batch [1550/1700] Loss: 12.4911
+  Epoch [8/200] Batch [1600/1700] Loss: 13.1039
+  Epoch [8/200] Batch [1650/1700] Loss: 22.3458
+  Epoch [8/200] Batch [1700/1700] Loss: 14.4026
+  Train - Loss: 14.5715 | MAE: 3.08mm | RMSE: 3.82mm | R2: -0.1527
+  Val   - Loss: 11.3219 | MAE: 2.51mm | RMSE: 3.37mm | R2: -0.4534
+
+Epoch 9/200 (lr=0.000996)
+  Epoch [9/200] Batch [50/1700] Loss: 10.7894
+  Epoch [9/200] Batch [100/1700] Loss: 16.6421
+  Epoch [9/200] Batch [150/1700] Loss: 7.7892
+  Epoch [9/200] Batch [200/1700] Loss: 16.5635
+  Epoch [9/200] Batch [250/1700] Loss: 9.0619
+  Epoch [9/200] Batch [300/1700] Loss: 14.2631
+  Epoch [9/200] Batch [350/1700] Loss: 6.5099
+  Epoch [9/200] Batch [400/1700] Loss: 20.7454
+  Epoch [9/200] Batch [450/1700] Loss: 9.3322
+  Epoch [9/200] Batch [500/1700] Loss: 11.5355
+  Epoch [9/200] Batch [550/1700] Loss: 14.3283
+  Epoch [9/200] Batch [600/1700] Loss: 24.2566
+  Epoch [9/200] Batch [650/1700] Loss: 11.2758
+  Epoch [9/200] Batch [700/1700] Loss: 7.4651
+  Epoch [9/200] Batch [750/1700] Loss: 14.9872
+  Epoch [9/200] Batch [800/1700] Loss: 13.2066
+  Epoch [9/200] Batch [850/1700] Loss: 10.1367
+  Epoch [9/200] Batch [900/1700] Loss: 17.9232
+  Epoch [9/200] Batch [950/1700] Loss: 18.4501
+  Epoch [9/200] Batch [1000/1700] Loss: 19.7300
+  Epoch [9/200] Batch [1050/1700] Loss: 15.5160
+  Epoch [9/200] Batch [1100/1700] Loss: 15.8761
+  Epoch [9/200] Batch [1150/1700] Loss: 11.1705
+  Epoch [9/200] Batch [1200/1700] Loss: 15.0836
+  Epoch [9/200] Batch [1250/1700] Loss: 23.9646
+  Epoch [9/200] Batch [1300/1700] Loss: 11.5632
+  Epoch [9/200] Batch [1350/1700] Loss: 18.2399
+  Epoch [9/200] Batch [1400/1700] Loss: 7.6777
+  Epoch [9/200] Batch [1450/1700] Loss: 25.0148
+  Epoch [9/200] Batch [1500/1700] Loss: 20.0662
+  Epoch [9/200] Batch [1550/1700] Loss: 20.0979
+  Epoch [9/200] Batch [1600/1700] Loss: 13.5025
+  Epoch [9/200] Batch [1650/1700] Loss: 7.9065
+  Epoch [9/200] Batch [1700/1700] Loss: 16.0897
+  Train - Loss: 14.4139 | MAE: 3.07mm | RMSE: 3.80mm | R2: -0.1404
+  Val   - Loss: 7.9464 | MAE: 2.17mm | RMSE: 2.83mm | R2: -0.0198
+
+Epoch 10/200 (lr=0.000995)
+  Epoch [10/200] Batch [50/1700] Loss: 19.3488
+  Epoch [10/200] Batch [100/1700] Loss: 7.5773
+  Epoch [10/200] Batch [150/1700] Loss: 20.6211
+  Epoch [10/200] Batch [200/1700] Loss: 23.0435
+  Epoch [10/200] Batch [250/1700] Loss: 10.2523
+  Epoch [10/200] Batch [300/1700] Loss: 12.3005
+  Epoch [10/200] Batch [350/1700] Loss: 10.2122
+  Epoch [10/200] Batch [400/1700] Loss: 9.2053
+  Epoch [10/200] Batch [450/1700] Loss: 15.5575
+  Epoch [10/200] Batch [500/1700] Loss: 9.4312
+  Epoch [10/200] Batch [550/1700] Loss: 8.8848
+  Epoch [10/200] Batch [600/1700] Loss: 12.0520
+  Epoch [10/200] Batch [650/1700] Loss: 17.3459
+  Epoch [10/200] Batch [700/1700] Loss: 14.8219
+  Epoch [10/200] Batch [750/1700] Loss: 10.6306
+  Epoch [10/200] Batch [800/1700] Loss: 15.8018
+  Epoch [10/200] Batch [850/1700] Loss: 14.9553
+  Epoch [10/200] Batch [900/1700] Loss: 24.2463
+  Epoch [10/200] Batch [950/1700] Loss: 11.9110
+  Epoch [10/200] Batch [1000/1700] Loss: 20.1558
+  Epoch [10/200] Batch [1050/1700] Loss: 10.6939
+  Epoch [10/200] Batch [1100/1700] Loss: 12.0348
+  Epoch [10/200] Batch [1150/1700] Loss: 15.8786
+  Epoch [10/200] Batch [1200/1700] Loss: 18.9816
+  Epoch [10/200] Batch [1250/1700] Loss: 20.0816
+  Epoch [10/200] Batch [1300/1700] Loss: 10.2776
+  Epoch [10/200] Batch [1350/1700] Loss: 18.4706
+  Epoch [10/200] Batch [1400/1700] Loss: 19.5220
+  Epoch [10/200] Batch [1450/1700] Loss: 12.0540
+  Epoch [10/200] Batch [1500/1700] Loss: 11.0480
+  Epoch [10/200] Batch [1550/1700] Loss: 16.5441
+  Epoch [10/200] Batch [1600/1700] Loss: 7.3157
+  Epoch [10/200] Batch [1650/1700] Loss: 14.2970
+  Epoch [10/200] Batch [1700/1700] Loss: 11.5231
+  Train - Loss: 14.2411 | MAE: 3.05mm | RMSE: 3.77mm | R2: -0.1266
+  Val   - Loss: 7.9276 | MAE: 2.16mm | RMSE: 2.82mm | R2: -0.0175
+
+Epoch 11/200 (lr=0.000994)
+  Epoch [11/200] Batch [50/1700] Loss: 7.4911
+  Epoch [11/200] Batch [100/1700] Loss: 15.2553
+  Epoch [11/200] Batch [150/1700] Loss: 14.4496
+  Epoch [11/200] Batch [200/1700] Loss: 17.9983
+  Epoch [11/200] Batch [250/1700] Loss: 16.9890
+  Epoch [11/200] Batch [300/1700] Loss: 15.5922
+  Epoch [11/200] Batch [350/1700] Loss: 11.5930
+  Epoch [11/200] Batch [400/1700] Loss: 6.6436
+  Epoch [11/200] Batch [450/1700] Loss: 8.8512
+  Epoch [11/200] Batch [500/1700] Loss: 12.0610
+  Epoch [11/200] Batch [550/1700] Loss: 8.3269
+  Epoch [11/200] Batch [600/1700] Loss: 12.4080
+  Epoch [11/200] Batch [650/1700] Loss: 9.2664
+  Epoch [11/200] Batch [700/1700] Loss: 17.6337
+  Epoch [11/200] Batch [750/1700] Loss: 10.7537
+  Epoch [11/200] Batch [800/1700] Loss: 23.0463
+  Epoch [11/200] Batch [850/1700] Loss: 12.3682
+  Epoch [11/200] Batch [900/1700] Loss: 20.5139
+  Epoch [11/200] Batch [950/1700] Loss: 11.6463
+  Epoch [11/200] Batch [1000/1700] Loss: 11.0464
+  Epoch [11/200] Batch [1050/1700] Loss: 8.4940
+  Epoch [11/200] Batch [1100/1700] Loss: 6.6983
+  Epoch [11/200] Batch [1150/1700] Loss: 23.6180
+  Epoch [11/200] Batch [1200/1700] Loss: 10.2788
+  Epoch [11/200] Batch [1250/1700] Loss: 17.5130
+  Epoch [11/200] Batch [1300/1700] Loss: 14.8291
+  Epoch [11/200] Batch [1350/1700] Loss: 18.2784
+  Epoch [11/200] Batch [1400/1700] Loss: 10.1332
+  Epoch [11/200] Batch [1450/1700] Loss: 17.0633
+  Epoch [11/200] Batch [1500/1700] Loss: 18.2298
+  Epoch [11/200] Batch [1550/1700] Loss: 22.2509
+  Epoch [11/200] Batch [1600/1700] Loss: 18.9488
+  Epoch [11/200] Batch [1650/1700] Loss: 20.6597
+  Epoch [11/200] Batch [1700/1700] Loss: 16.6416
+  Train - Loss: 14.1234 | MAE: 3.04mm | RMSE: 3.76mm | R2: -0.1172
+  Val   - Loss: 8.0266 | MAE: 2.16mm | RMSE: 2.84mm | R2: -0.0300
+
+Epoch 12/200 (lr=0.000993)
+  Epoch [12/200] Batch [50/1700] Loss: 17.7298
+  Epoch [12/200] Batch [100/1700] Loss: 23.7202
+  Epoch [12/200] Batch [150/1700] Loss: 21.1105
+  Epoch [12/200] Batch [200/1700] Loss: 9.4149
+  Epoch [12/200] Batch [250/1700] Loss: 6.5280
+  Epoch [12/200] Batch [300/1700] Loss: 13.3187
+  Epoch [12/200] Batch [350/1700] Loss: 9.8146
+  Epoch [12/200] Batch [400/1700] Loss: 9.8541
+  Epoch [12/200] Batch [450/1700] Loss: 10.0855
+  Epoch [12/200] Batch [500/1700] Loss: 9.1515
+  Epoch [12/200] Batch [550/1700] Loss: 10.0506
+  Epoch [12/200] Batch [600/1700] Loss: 14.9379
+  Epoch [12/200] Batch [650/1700] Loss: 13.9218
+  Epoch [12/200] Batch [700/1700] Loss: 15.6973
+  Epoch [12/200] Batch [750/1700] Loss: 10.2878
+  Epoch [12/200] Batch [800/1700] Loss: 11.6072
+  Epoch [12/200] Batch [850/1700] Loss: 4.3437
+  Epoch [12/200] Batch [900/1700] Loss: 16.9065
+  Epoch [12/200] Batch [950/1700] Loss: 11.9657
+  Epoch [12/200] Batch [1000/1700] Loss: 19.0495
+  Epoch [12/200] Batch [1050/1700] Loss: 17.9446
+  Epoch [12/200] Batch [1100/1700] Loss: 16.6517
+  Epoch [12/200] Batch [1150/1700] Loss: 19.6581
+  Epoch [12/200] Batch [1200/1700] Loss: 9.4758
+  Epoch [12/200] Batch [1250/1700] Loss: 11.0666
+  Epoch [12/200] Batch [1300/1700] Loss: 16.3032
+  Epoch [12/200] Batch [1350/1700] Loss: 11.7739
+  Epoch [12/200] Batch [1400/1700] Loss: 14.6044
+  Epoch [12/200] Batch [1450/1700] Loss: 42.7320
+  Epoch [12/200] Batch [1500/1700] Loss: 9.7192
+  Epoch [12/200] Batch [1550/1700] Loss: 13.5421
+  Epoch [12/200] Batch [1600/1700] Loss: 12.5146
+  Epoch [12/200] Batch [1650/1700] Loss: 17.3691
+  Epoch [12/200] Batch [1700/1700] Loss: 20.6771
+  Train - Loss: 13.8819 | MAE: 3.02mm | RMSE: 3.73mm | R2: -0.0983
+  Val   - Loss: 7.8427 | MAE: 2.16mm | RMSE: 2.81mm | R2: -0.0061
+
+Epoch 13/200 (lr=0.000991)
+  Epoch [13/200] Batch [50/1700] Loss: 13.2487
+  Epoch [13/200] Batch [100/1700] Loss: 13.4871
+  Epoch [13/200] Batch [150/1700] Loss: 18.2554
+  Epoch [13/200] Batch [200/1700] Loss: 6.1210
+  Epoch [13/200] Batch [250/1700] Loss: 13.9611
+  Epoch [13/200] Batch [300/1700] Loss: 12.9497
+  Epoch [13/200] Batch [350/1700] Loss: 14.8409
+  Epoch [13/200] Batch [400/1700] Loss: 8.7377
+  Epoch [13/200] Batch [450/1700] Loss: 17.5605
+  Epoch [13/200] Batch [500/1700] Loss: 14.0207
+  Epoch [13/200] Batch [550/1700] Loss: 14.3516
+  Epoch [13/200] Batch [600/1700] Loss: 9.5554
+  Epoch [13/200] Batch [650/1700] Loss: 13.8795
+  Epoch [13/200] Batch [700/1700] Loss: 8.7954
+  Epoch [13/200] Batch [750/1700] Loss: 10.0095
+  Epoch [13/200] Batch [800/1700] Loss: 16.6965
+  Epoch [13/200] Batch [850/1700] Loss: 6.1184
+  Epoch [13/200] Batch [900/1700] Loss: 11.5754
+  Epoch [13/200] Batch [950/1700] Loss: 9.7550
+  Epoch [13/200] Batch [1000/1700] Loss: 8.2909
+  Epoch [13/200] Batch [1050/1700] Loss: 7.8904
+  Epoch [13/200] Batch [1100/1700] Loss: 13.9687
+  Epoch [13/200] Batch [1150/1700] Loss: 12.3879
+  Epoch [13/200] Batch [1200/1700] Loss: 14.5783
+  Epoch [13/200] Batch [1250/1700] Loss: 19.6262
+  Epoch [13/200] Batch [1300/1700] Loss: 8.5240
+  Epoch [13/200] Batch [1350/1700] Loss: 13.6848
+  Epoch [13/200] Batch [1400/1700] Loss: 14.4521
+  Epoch [13/200] Batch [1450/1700] Loss: 17.0626
+  Epoch [13/200] Batch [1500/1700] Loss: 15.2403
+  Epoch [13/200] Batch [1550/1700] Loss: 15.3000
+  Epoch [13/200] Batch [1600/1700] Loss: 19.0900
+  Epoch [13/200] Batch [1650/1700] Loss: 10.6886
+  Epoch [13/200] Batch [1700/1700] Loss: 8.3520
+  Train - Loss: 13.8472 | MAE: 3.01mm | RMSE: 3.72mm | R2: -0.0955
+  Val   - Loss: 8.0703 | MAE: 2.16mm | RMSE: 2.85mm | R2: -0.0359
+
+Epoch 14/200 (lr=0.000990)
+  Epoch [14/200] Batch [50/1700] Loss: 10.0398
+  Epoch [14/200] Batch [100/1700] Loss: 15.8929
+  Epoch [14/200] Batch [150/1700] Loss: 14.0415
+  Epoch [14/200] Batch [200/1700] Loss: 9.3928
+  Epoch [14/200] Batch [250/1700] Loss: 8.6618
+  Epoch [14/200] Batch [300/1700] Loss: 16.7645
+  Epoch [14/200] Batch [350/1700] Loss: 11.5342
+  Epoch [14/200] Batch [400/1700] Loss: 13.6967
+  Epoch [14/200] Batch [450/1700] Loss: 15.9798
+  Epoch [14/200] Batch [500/1700] Loss: 11.3189
+  Epoch [14/200] Batch [550/1700] Loss: 9.9029
+  Epoch [14/200] Batch [600/1700] Loss: 14.3730
+  Epoch [14/200] Batch [650/1700] Loss: 14.8070
+  Epoch [14/200] Batch [700/1700] Loss: 12.9876
+  Epoch [14/200] Batch [750/1700] Loss: 10.8962
+  Epoch [14/200] Batch [800/1700] Loss: 6.9921
+  Epoch [14/200] Batch [850/1700] Loss: 6.8105
+  Epoch [14/200] Batch [900/1700] Loss: 16.2821
+  Epoch [14/200] Batch [950/1700] Loss: 12.7852
+  Epoch [14/200] Batch [1000/1700] Loss: 15.6634
+  Epoch [14/200] Batch [1050/1700] Loss: 19.0480
+  Epoch [14/200] Batch [1100/1700] Loss: 10.4776
+  Epoch [14/200] Batch [1150/1700] Loss: 13.8272
+  Epoch [14/200] Batch [1200/1700] Loss: 16.6158
+  Epoch [14/200] Batch [1250/1700] Loss: 13.9606
+  Epoch [14/200] Batch [1300/1700] Loss: 17.8339
+  Epoch [14/200] Batch [1350/1700] Loss: 7.6866
+  Epoch [14/200] Batch [1400/1700] Loss: 8.5918
+  Epoch [14/200] Batch [1450/1700] Loss: 6.3822
+  Epoch [14/200] Batch [1500/1700] Loss: 7.3600
+  Epoch [14/200] Batch [1550/1700] Loss: 13.9012
+  Epoch [14/200] Batch [1600/1700] Loss: 10.4927
+  Epoch [14/200] Batch [1650/1700] Loss: 25.5998
+  Epoch [14/200] Batch [1700/1700] Loss: 20.4705
+  Train - Loss: 13.7091 | MAE: 3.00mm | RMSE: 3.70mm | R2: -0.0844
+  Val   - Loss: 7.8240 | MAE: 2.16mm | RMSE: 2.80mm | R2: -0.0033
+
+Epoch 15/200 (lr=0.000988)
+  Epoch [15/200] Batch [50/1700] Loss: 14.4424
+  Epoch [15/200] Batch [100/1700] Loss: 5.8904
+  Epoch [15/200] Batch [150/1700] Loss: 19.1606
+  Epoch [15/200] Batch [200/1700] Loss: 15.6008
+  Epoch [15/200] Batch [250/1700] Loss: 17.2472
+  Epoch [15/200] Batch [300/1700] Loss: 27.0932
+  Epoch [15/200] Batch [350/1700] Loss: 23.0887
+  Epoch [15/200] Batch [400/1700] Loss: 18.1072
+  Epoch [15/200] Batch [450/1700] Loss: 9.5289
+  Epoch [15/200] Batch [500/1700] Loss: 11.9506
+  Epoch [15/200] Batch [550/1700] Loss: 18.7259
+  Epoch [15/200] Batch [600/1700] Loss: 18.1804
+  Epoch [15/200] Batch [650/1700] Loss: 24.0281
+  Epoch [15/200] Batch [700/1700] Loss: 18.9387
+  Epoch [15/200] Batch [750/1700] Loss: 7.7422
+  Epoch [15/200] Batch [800/1700] Loss: 15.3558
+  Epoch [15/200] Batch [850/1700] Loss: 11.1128
+  Epoch [15/200] Batch [900/1700] Loss: 10.9639
+  Epoch [15/200] Batch [950/1700] Loss: 11.1011
+  Epoch [15/200] Batch [1000/1700] Loss: 18.3710
+  Epoch [15/200] Batch [1050/1700] Loss: 18.3261
+  Epoch [15/200] Batch [1100/1700] Loss: 9.5120
+  Epoch [15/200] Batch [1150/1700] Loss: 9.1248
+  Epoch [15/200] Batch [1200/1700] Loss: 8.9567
+  Epoch [15/200] Batch [1250/1700] Loss: 10.2593
+  Epoch [15/200] Batch [1300/1700] Loss: 5.0012
+  Epoch [15/200] Batch [1350/1700] Loss: 17.9952
+  Epoch [15/200] Batch [1400/1700] Loss: 11.6623
+  Epoch [15/200] Batch [1450/1700] Loss: 21.9586
+  Epoch [15/200] Batch [1500/1700] Loss: 10.7788
+  Epoch [15/200] Batch [1550/1700] Loss: 16.2940
+  Epoch [15/200] Batch [1600/1700] Loss: 14.0423
+  Epoch [15/200] Batch [1650/1700] Loss: 16.4974
+  Epoch [15/200] Batch [1700/1700] Loss: 12.9276
+  Train - Loss: 13.5725 | MAE: 2.99mm | RMSE: 3.68mm | R2: -0.0738
+  Val   - Loss: 7.9617 | MAE: 2.20mm | RMSE: 2.83mm | R2: -0.0210
+
+Epoch 16/200 (lr=0.000986)
+  Epoch [16/200] Batch [50/1700] Loss: 5.5292
+  Epoch [16/200] Batch [100/1700] Loss: 13.9219
+  Epoch [16/200] Batch [150/1700] Loss: 11.8750
+  Epoch [16/200] Batch [200/1700] Loss: 16.9220
+  Epoch [16/200] Batch [250/1700] Loss: 6.8995
+  Epoch [16/200] Batch [300/1700] Loss: 11.2418
+  Epoch [16/200] Batch [350/1700] Loss: 11.1214
+  Epoch [16/200] Batch [400/1700] Loss: 16.3396
+  Epoch [16/200] Batch [450/1700] Loss: 8.9461
+  Epoch [16/200] Batch [500/1700] Loss: 11.5858
+  Epoch [16/200] Batch [550/1700] Loss: 19.7667
+  Epoch [16/200] Batch [600/1700] Loss: 16.7060
+  Epoch [16/200] Batch [650/1700] Loss: 10.7818
+  Epoch [16/200] Batch [700/1700] Loss: 13.9171
+  Epoch [16/200] Batch [750/1700] Loss: 17.5212
+  Epoch [16/200] Batch [800/1700] Loss: 18.6788
+  Epoch [16/200] Batch [850/1700] Loss: 19.6645
+  Epoch [16/200] Batch [900/1700] Loss: 13.1067
+  Epoch [16/200] Batch [950/1700] Loss: 10.8711
+  Epoch [16/200] Batch [1000/1700] Loss: 10.5014
+  Epoch [16/200] Batch [1050/1700] Loss: 17.0035
+  Epoch [16/200] Batch [1100/1700] Loss: 16.9787
+  Epoch [16/200] Batch [1150/1700] Loss: 8.5161
+  Epoch [16/200] Batch [1200/1700] Loss: 21.2557
+  Epoch [16/200] Batch [1250/1700] Loss: 7.0799
+  Epoch [16/200] Batch [1300/1700] Loss: 9.2642
+  Epoch [16/200] Batch [1350/1700] Loss: 5.2383
+  Epoch [16/200] Batch [1400/1700] Loss: 16.5154
+  Epoch [16/200] Batch [1450/1700] Loss: 17.7370
+  Epoch [16/200] Batch [1500/1700] Loss: 5.4484
+  Epoch [16/200] Batch [1550/1700] Loss: 14.8856
+  Epoch [16/200] Batch [1600/1700] Loss: 12.3289
+  Epoch [16/200] Batch [1650/1700] Loss: 11.4955
+  Epoch [16/200] Batch [1700/1700] Loss: 16.4597
+  Train - Loss: 13.2305 | MAE: 2.95mm | RMSE: 3.64mm | R2: -0.0469
+  Val   - Loss: 8.6383 | MAE: 2.45mm | RMSE: 2.94mm | R2: -0.1073
+
+Epoch 17/200 (lr=0.000984)
+  Epoch [17/200] Batch [50/1700] Loss: 16.0158
+  Epoch [17/200] Batch [100/1700] Loss: 9.9756
+  Epoch [17/200] Batch [150/1700] Loss: 11.3941
+  Epoch [17/200] Batch [200/1700] Loss: 7.8217
+  Epoch [17/200] Batch [250/1700] Loss: 17.0034
+  Epoch [17/200] Batch [300/1700] Loss: 22.6881
+  Epoch [17/200] Batch [350/1700] Loss: 14.3662
+  Epoch [17/200] Batch [400/1700] Loss: 14.1930
+  Epoch [17/200] Batch [450/1700] Loss: 13.1293
+  Epoch [17/200] Batch [500/1700] Loss: 7.2104
+  Epoch [17/200] Batch [550/1700] Loss: 10.8322
+  Epoch [17/200] Batch [600/1700] Loss: 6.4031
+  Epoch [17/200] Batch [650/1700] Loss: 5.2743
+  Epoch [17/200] Batch [700/1700] Loss: 19.1337
+  Epoch [17/200] Batch [750/1700] Loss: 12.7254
+  Epoch [17/200] Batch [800/1700] Loss: 7.1138
+  Epoch [17/200] Batch [850/1700] Loss: 19.4854
+  Epoch [17/200] Batch [900/1700] Loss: 14.2961
+  Epoch [17/200] Batch [950/1700] Loss: 8.6615
+  Epoch [17/200] Batch [1000/1700] Loss: 14.4939
+  Epoch [17/200] Batch [1050/1700] Loss: 24.9185
+  Epoch [17/200] Batch [1100/1700] Loss: 12.4167
+  Epoch [17/200] Batch [1150/1700] Loss: 12.0766
+  Epoch [17/200] Batch [1200/1700] Loss: 10.7219
+  Epoch [17/200] Batch [1250/1700] Loss: 15.7095
+  Epoch [17/200] Batch [1300/1700] Loss: 7.1437
+  Epoch [17/200] Batch [1350/1700] Loss: 6.9129
+  Epoch [17/200] Batch [1400/1700] Loss: 16.4952
+  Epoch [17/200] Batch [1450/1700] Loss: 9.1436
+  Epoch [17/200] Batch [1500/1700] Loss: 14.2410
+  Epoch [17/200] Batch [1550/1700] Loss: 20.1155
+  Epoch [17/200] Batch [1600/1700] Loss: 17.0673
+  Epoch [17/200] Batch [1650/1700] Loss: 12.4677
+  Epoch [17/200] Batch [1700/1700] Loss: 15.4852
+  Train - Loss: 12.4057 | MAE: 2.86mm | RMSE: 3.52mm | R2: 0.0180
+  Val   - Loss: 10.0383 | MAE: 2.52mm | RMSE: 3.18mm | R2: -0.2885
+
+Epoch 18/200 (lr=0.000982)
+  Epoch [18/200] Batch [50/1700] Loss: 7.6612
+  Epoch [18/200] Batch [100/1700] Loss: 14.3542
+  Epoch [18/200] Batch [150/1700] Loss: 8.7031
+  Epoch [18/200] Batch [200/1700] Loss: 14.9763
+  Epoch [18/200] Batch [250/1700] Loss: 10.1344
+  Epoch [18/200] Batch [300/1700] Loss: 16.3759
+  Epoch [18/200] Batch [350/1700] Loss: 10.1398
+  Epoch [18/200] Batch [400/1700] Loss: 9.8239
+  Epoch [18/200] Batch [450/1700] Loss: 7.5724
+  Epoch [18/200] Batch [500/1700] Loss: 10.9164
+  Epoch [18/200] Batch [550/1700] Loss: 13.7366
+  Epoch [18/200] Batch [600/1700] Loss: 10.5981
+  Epoch [18/200] Batch [650/1700] Loss: 7.8916
+  Epoch [18/200] Batch [700/1700] Loss: 9.7730
+  Epoch [18/200] Batch [750/1700] Loss: 9.0730
+  Epoch [18/200] Batch [800/1700] Loss: 3.7354
+  Epoch [18/200] Batch [850/1700] Loss: 11.3643
+  Epoch [18/200] Batch [900/1700] Loss: 11.3944
+  Epoch [18/200] Batch [950/1700] Loss: 20.1291
+  Epoch [18/200] Batch [1000/1700] Loss: 23.5209
+  Epoch [18/200] Batch [1050/1700] Loss: 11.8647
+  Epoch [18/200] Batch [1100/1700] Loss: 15.2252
+  Epoch [18/200] Batch [1150/1700] Loss: 11.9304
+  Epoch [18/200] Batch [1200/1700] Loss: 12.0946
+  Epoch [18/200] Batch [1250/1700] Loss: 14.6429
+  Epoch [18/200] Batch [1300/1700] Loss: 12.3050
+  Epoch [18/200] Batch [1350/1700] Loss: 15.7542
+  Epoch [18/200] Batch [1400/1700] Loss: 6.5080
+  Epoch [18/200] Batch [1450/1700] Loss: 14.7357
+  Epoch [18/200] Batch [1500/1700] Loss: 12.7615
+  Epoch [18/200] Batch [1550/1700] Loss: 14.0615
+  Epoch [18/200] Batch [1600/1700] Loss: 6.9321
+  Epoch [18/200] Batch [1650/1700] Loss: 8.4241
+  Epoch [18/200] Batch [1700/1700] Loss: 13.5177
+  Train - Loss: 11.7868 | MAE: 2.77mm | RMSE: 3.43mm | R2: 0.0674
+  Val   - Loss: 8.2897 | MAE: 2.30mm | RMSE: 2.88mm | R2: -0.0630
+
+Epoch 19/200 (lr=0.000980)
+  Epoch [19/200] Batch [50/1700] Loss: 10.2128
+  Epoch [19/200] Batch [100/1700] Loss: 13.7450
+  Epoch [19/200] Batch [150/1700] Loss: 6.1296
+  Epoch [19/200] Batch [200/1700] Loss: 5.4314
+  Epoch [19/200] Batch [250/1700] Loss: 12.5559
+  Epoch [19/200] Batch [300/1700] Loss: 11.8377
+  Epoch [19/200] Batch [350/1700] Loss: 18.3916
+  Epoch [19/200] Batch [400/1700] Loss: 8.9403
+  Epoch [19/200] Batch [450/1700] Loss: 10.0450
+  Epoch [19/200] Batch [500/1700] Loss: 9.6759
+  Epoch [19/200] Batch [550/1700] Loss: 7.4243
+  Epoch [19/200] Batch [600/1700] Loss: 18.9000
+  Epoch [19/200] Batch [650/1700] Loss: 8.8826
+  Epoch [19/200] Batch [700/1700] Loss: 11.2372
+  Epoch [19/200] Batch [750/1700] Loss: 6.1487
+  Epoch [19/200] Batch [800/1700] Loss: 14.6425
+  Epoch [19/200] Batch [850/1700] Loss: 7.9099
+  Epoch [19/200] Batch [900/1700] Loss: 7.8104
+  Epoch [19/200] Batch [950/1700] Loss: 10.4734
+  Epoch [19/200] Batch [1000/1700] Loss: 6.9529
+  Epoch [19/200] Batch [1050/1700] Loss: 8.9350
+  Epoch [19/200] Batch [1100/1700] Loss: 8.7956
+  Epoch [19/200] Batch [1150/1700] Loss: 7.6338
+  Epoch [19/200] Batch [1200/1700] Loss: 11.6872
+  Epoch [19/200] Batch [1250/1700] Loss: 9.5642
+  Epoch [19/200] Batch [1300/1700] Loss: 19.2265
+  Epoch [19/200] Batch [1350/1700] Loss: 8.9282
+  Epoch [19/200] Batch [1400/1700] Loss: 4.6175
+  Epoch [19/200] Batch [1450/1700] Loss: 6.2322
+  Epoch [19/200] Batch [1500/1700] Loss: 15.5251
+  Epoch [19/200] Batch [1550/1700] Loss: 11.4841
+  Epoch [19/200] Batch [1600/1700] Loss: 10.2805
+  Epoch [19/200] Batch [1650/1700] Loss: 7.2248
+  Epoch [19/200] Batch [1700/1700] Loss: 17.2385
+  Train - Loss: 11.2698 | MAE: 2.70mm | RMSE: 3.36mm | R2: 0.1082
+  Val   - Loss: 7.4825 | MAE: 2.18mm | RMSE: 2.74mm | R2: 0.0399
+  * Best model saved! (Val Loss: 7.4825, R2: 0.0399)
+
+Epoch 20/200 (lr=0.000978)
+  Epoch [20/200] Batch [50/1700] Loss: 7.3995
+  Epoch [20/200] Batch [100/1700] Loss: 20.0517
+  Epoch [20/200] Batch [150/1700] Loss: 6.3828
+  Epoch [20/200] Batch [200/1700] Loss: 6.4120
+  Epoch [20/200] Batch [250/1700] Loss: 6.7015
+  Epoch [20/200] Batch [300/1700] Loss: 10.1150
+  Epoch [20/200] Batch [350/1700] Loss: 6.9823
+  Epoch [20/200] Batch [400/1700] Loss: 14.2253
+  Epoch [20/200] Batch [450/1700] Loss: 7.2978
+  Epoch [20/200] Batch [500/1700] Loss: 7.8655
+  Epoch [20/200] Batch [550/1700] Loss: 10.3593
+  Epoch [20/200] Batch [600/1700] Loss: 11.6925
+  Epoch [20/200] Batch [650/1700] Loss: 15.4741
+  Epoch [20/200] Batch [700/1700] Loss: 7.6209
+  Epoch [20/200] Batch [750/1700] Loss: 12.3852
+  Epoch [20/200] Batch [800/1700] Loss: 6.5735
+  Epoch [20/200] Batch [850/1700] Loss: 12.8918
+  Epoch [20/200] Batch [900/1700] Loss: 9.9733
+  Epoch [20/200] Batch [950/1700] Loss: 14.0382
+  Epoch [20/200] Batch [1000/1700] Loss: 7.2435
+  Epoch [20/200] Batch [1050/1700] Loss: 15.8811
+  Epoch [20/200] Batch [1100/1700] Loss: 14.2577
+  Epoch [20/200] Batch [1150/1700] Loss: 3.6238
+  Epoch [20/200] Batch [1200/1700] Loss: 11.5319
+  Epoch [20/200] Batch [1250/1700] Loss: 9.8560
+  Epoch [20/200] Batch [1300/1700] Loss: 11.0821
+  Epoch [20/200] Batch [1350/1700] Loss: 10.9777
+  Epoch [20/200] Batch [1400/1700] Loss: 7.7942
+  Epoch [20/200] Batch [1450/1700] Loss: 6.2334
+  Epoch [20/200] Batch [1500/1700] Loss: 7.8740
+  Epoch [20/200] Batch [1550/1700] Loss: 11.3872
+  Epoch [20/200] Batch [1600/1700] Loss: 13.4295
+  Epoch [20/200] Batch [1650/1700] Loss: 9.9071
+  Epoch [20/200] Batch [1700/1700] Loss: 7.0739
+  Train - Loss: 10.9092 | MAE: 2.64mm | RMSE: 3.30mm | R2: 0.1370
+  Val   - Loss: 9.3443 | MAE: 2.45mm | RMSE: 3.06mm | R2: -0.1995
+
+Epoch 21/200 (lr=0.000976)
+  Epoch [21/200] Batch [50/1700] Loss: 11.5183
+  Epoch [21/200] Batch [100/1700] Loss: 9.3218
+  Epoch [21/200] Batch [150/1700] Loss: 12.5310
+  Epoch [21/200] Batch [200/1700] Loss: 11.2687
+  Epoch [21/200] Batch [250/1700] Loss: 8.2478
+  Epoch [21/200] Batch [300/1700] Loss: 4.8382
+  Epoch [21/200] Batch [350/1700] Loss: 8.8367
+  Epoch [21/200] Batch [400/1700] Loss: 5.5548
+  Epoch [21/200] Batch [450/1700] Loss: 7.8071
+  Epoch [21/200] Batch [500/1700] Loss: 9.7188
+  Epoch [21/200] Batch [550/1700] Loss: 15.2147
+  Epoch [21/200] Batch [600/1700] Loss: 6.5396
+  Epoch [21/200] Batch [650/1700] Loss: 3.7813
+  Epoch [21/200] Batch [700/1700] Loss: 7.6132
+  Epoch [21/200] Batch [750/1700] Loss: 13.9972
+  Epoch [21/200] Batch [800/1700] Loss: 14.1549
+  Epoch [21/200] Batch [850/1700] Loss: 23.4402
+  Epoch [21/200] Batch [900/1700] Loss: 15.9290
+  Epoch [21/200] Batch [950/1700] Loss: 19.7437
+  Epoch [21/200] Batch [1000/1700] Loss: 13.2445
+  Epoch [21/200] Batch [1050/1700] Loss: 3.4119
+  Epoch [21/200] Batch [1100/1700] Loss: 7.8594
+  Epoch [21/200] Batch [1150/1700] Loss: 7.5811
+  Epoch [21/200] Batch [1200/1700] Loss: 7.4298
+  Epoch [21/200] Batch [1250/1700] Loss: 9.1265
+  Epoch [21/200] Batch [1300/1700] Loss: 17.7837
+  Epoch [21/200] Batch [1350/1700] Loss: 5.9128
+  Epoch [21/200] Batch [1400/1700] Loss: 17.4375
+  Epoch [21/200] Batch [1450/1700] Loss: 6.7693
+  Epoch [21/200] Batch [1500/1700] Loss: 17.1074
+  Epoch [21/200] Batch [1550/1700] Loss: 21.5433
+  Epoch [21/200] Batch [1600/1700] Loss: 7.0025
+  Epoch [21/200] Batch [1650/1700] Loss: 11.5694
+  Epoch [21/200] Batch [1700/1700] Loss: 8.4418
+  Train - Loss: 10.4830 | MAE: 2.58mm | RMSE: 3.24mm | R2: 0.1707
+  Val   - Loss: 11.2099 | MAE: 2.67mm | RMSE: 3.35mm | R2: -0.4376
+
+Epoch 22/200 (lr=0.000973)
+  Epoch [22/200] Batch [50/1700] Loss: 12.2290
+  Epoch [22/200] Batch [100/1700] Loss: 5.3071
+  Epoch [22/200] Batch [150/1700] Loss: 8.5588
+  Epoch [22/200] Batch [200/1700] Loss: 15.0887
+  Epoch [22/200] Batch [250/1700] Loss: 8.4717
+  Epoch [22/200] Batch [300/1700] Loss: 10.2082
+  Epoch [22/200] Batch [350/1700] Loss: 4.3663
+  Epoch [22/200] Batch [400/1700] Loss: 4.9798
+  Epoch [22/200] Batch [450/1700] Loss: 8.6719
+  Epoch [22/200] Batch [500/1700] Loss: 14.9021
+  Epoch [22/200] Batch [550/1700] Loss: 5.9790
+  Epoch [22/200] Batch [600/1700] Loss: 8.8612
+  Epoch [22/200] Batch [650/1700] Loss: 9.0906
+  Epoch [22/200] Batch [700/1700] Loss: 9.8411
+  Epoch [22/200] Batch [750/1700] Loss: 4.4283
+  Epoch [22/200] Batch [800/1700] Loss: 7.7996
+  Epoch [22/200] Batch [850/1700] Loss: 6.3882
+  Epoch [22/200] Batch [900/1700] Loss: 2.0047
+  Epoch [22/200] Batch [950/1700] Loss: 11.4313
+  Epoch [22/200] Batch [1000/1700] Loss: 11.3308
+  Epoch [22/200] Batch [1050/1700] Loss: 7.3654
+  Epoch [22/200] Batch [1100/1700] Loss: 10.2334
+  Epoch [22/200] Batch [1150/1700] Loss: 10.2494
+  Epoch [22/200] Batch [1200/1700] Loss: 19.5935
+  Epoch [22/200] Batch [1250/1700] Loss: 9.9748
+  Epoch [22/200] Batch [1300/1700] Loss: 10.0747
+  Epoch [22/200] Batch [1350/1700] Loss: 6.0722
+  Epoch [22/200] Batch [1400/1700] Loss: 15.6704
+  Epoch [22/200] Batch [1450/1700] Loss: 6.4273
+  Epoch [22/200] Batch [1500/1700] Loss: 7.2977
+  Epoch [22/200] Batch [1550/1700] Loss: 11.2997
+  Epoch [22/200] Batch [1600/1700] Loss: 10.3740
+  Epoch [22/200] Batch [1650/1700] Loss: 5.9163
+  Epoch [22/200] Batch [1700/1700] Loss: 4.0361
+  Train - Loss: 10.1126 | MAE: 2.53mm | RMSE: 3.18mm | R2: 0.2000
+  Val   - Loss: 8.7745 | MAE: 2.41mm | RMSE: 2.97mm | R2: -0.1262
+
+Epoch 23/200 (lr=0.000971)
+  Epoch [23/200] Batch [50/1700] Loss: 15.9881
+  Epoch [23/200] Batch [100/1700] Loss: 15.0163
+  Epoch [23/200] Batch [150/1700] Loss: 8.7270
+  Epoch [23/200] Batch [200/1700] Loss: 6.2472
+  Epoch [23/200] Batch [250/1700] Loss: 4.5896
+  Epoch [23/200] Batch [300/1700] Loss: 6.5747
+  Epoch [23/200] Batch [350/1700] Loss: 3.7923
+  Epoch [23/200] Batch [400/1700] Loss: 7.0917
+  Epoch [23/200] Batch [450/1700] Loss: 14.0837
+  Epoch [23/200] Batch [500/1700] Loss: 10.5223
+  Epoch [23/200] Batch [550/1700] Loss: 5.2456
+  Epoch [23/200] Batch [600/1700] Loss: 12.1378
+  Epoch [23/200] Batch [650/1700] Loss: 4.5727
+  Epoch [23/200] Batch [700/1700] Loss: 7.5231
+  Epoch [23/200] Batch [750/1700] Loss: 9.2343
+  Epoch [23/200] Batch [800/1700] Loss: 5.1463
+  Epoch [23/200] Batch [850/1700] Loss: 16.8747
+  Epoch [23/200] Batch [900/1700] Loss: 15.8115
+  Epoch [23/200] Batch [950/1700] Loss: 6.3542
+  Epoch [23/200] Batch [1000/1700] Loss: 16.3548
+  Epoch [23/200] Batch [1050/1700] Loss: 10.7424
+  Epoch [23/200] Batch [1100/1700] Loss: 6.9609
+  Epoch [23/200] Batch [1150/1700] Loss: 5.6749
+  Epoch [23/200] Batch [1200/1700] Loss: 10.3165
+  Epoch [23/200] Batch [1250/1700] Loss: 26.5580
+  Epoch [23/200] Batch [1300/1700] Loss: 3.9778
+  Epoch [23/200] Batch [1350/1700] Loss: 8.1649
+  Epoch [23/200] Batch [1400/1700] Loss: 9.9204
+  Epoch [23/200] Batch [1450/1700] Loss: 7.7183
+  Epoch [23/200] Batch [1500/1700] Loss: 8.3740
+  Epoch [23/200] Batch [1550/1700] Loss: 8.5910
+  Epoch [23/200] Batch [1600/1700] Loss: 10.0983
+  Epoch [23/200] Batch [1650/1700] Loss: 12.4325
+  Epoch [23/200] Batch [1700/1700] Loss: 15.4831
+  Train - Loss: 9.5521 | MAE: 2.45mm | RMSE: 3.09mm | R2: 0.2443
+  Val   - Loss: 8.1982 | MAE: 2.30mm | RMSE: 2.87mm | R2: -0.0523
+
+Epoch 24/200 (lr=0.000968)
+  Epoch [24/200] Batch [50/1700] Loss: 5.3020
+  Epoch [24/200] Batch [100/1700] Loss: 14.9524
+  Epoch [24/200] Batch [150/1700] Loss: 12.4692
+  Epoch [24/200] Batch [200/1700] Loss: 6.7495
+  Epoch [24/200] Batch [250/1700] Loss: 5.9455
+  Epoch [24/200] Batch [300/1700] Loss: 10.2159
+  Epoch [24/200] Batch [350/1700] Loss: 7.5293
+  Epoch [24/200] Batch [400/1700] Loss: 10.6667
+  Epoch [24/200] Batch [450/1700] Loss: 6.4386
+  Epoch [24/200] Batch [500/1700] Loss: 8.9611
+  Epoch [24/200] Batch [550/1700] Loss: 7.2469
+  Epoch [24/200] Batch [600/1700] Loss: 5.2523
+  Epoch [24/200] Batch [650/1700] Loss: 11.5832
+  Epoch [24/200] Batch [700/1700] Loss: 8.0981
+  Epoch [24/200] Batch [750/1700] Loss: 10.9131
+  Epoch [24/200] Batch [800/1700] Loss: 18.0740
+  Epoch [24/200] Batch [850/1700] Loss: 8.8448
+  Epoch [24/200] Batch [900/1700] Loss: 6.2292
+  Epoch [24/200] Batch [950/1700] Loss: 6.6420
+  Epoch [24/200] Batch [1000/1700] Loss: 12.3123
+  Epoch [24/200] Batch [1050/1700] Loss: 10.7002
+  Epoch [24/200] Batch [1100/1700] Loss: 11.3337
+  Epoch [24/200] Batch [1150/1700] Loss: 7.8342
+  Epoch [24/200] Batch [1200/1700] Loss: 8.1458
+  Epoch [24/200] Batch [1250/1700] Loss: 8.8681
+  Epoch [24/200] Batch [1300/1700] Loss: 2.1602
+  Epoch [24/200] Batch [1350/1700] Loss: 10.7840
+  Epoch [24/200] Batch [1400/1700] Loss: 6.7698
+  Epoch [24/200] Batch [1450/1700] Loss: 11.9659
+  Epoch [24/200] Batch [1500/1700] Loss: 9.5306
+  Epoch [24/200] Batch [1550/1700] Loss: 9.2933
+  Epoch [24/200] Batch [1600/1700] Loss: 8.2367
+  Epoch [24/200] Batch [1650/1700] Loss: 13.6515
+  Epoch [24/200] Batch [1700/1700] Loss: 6.2254
+  Train - Loss: 9.2325 | MAE: 2.40mm | RMSE: 3.04mm | R2: 0.2697
+  Val   - Loss: 10.0103 | MAE: 2.62mm | RMSE: 3.17mm | R2: -0.2841
+
+Epoch 25/200 (lr=0.000965)
+  Epoch [25/200] Batch [50/1700] Loss: 13.5592
+  Epoch [25/200] Batch [100/1700] Loss: 8.6022
+  Epoch [25/200] Batch [150/1700] Loss: 7.0037
+  Epoch [25/200] Batch [200/1700] Loss: 20.8957
+  Epoch [25/200] Batch [250/1700] Loss: 6.1155
+  Epoch [25/200] Batch [300/1700] Loss: 6.5293
+  Epoch [25/200] Batch [350/1700] Loss: 9.9074
+  Epoch [25/200] Batch [400/1700] Loss: 13.2198
+  Epoch [25/200] Batch [450/1700] Loss: 6.7511
+  Epoch [25/200] Batch [500/1700] Loss: 7.5712
+  Epoch [25/200] Batch [550/1700] Loss: 6.9495
+  Epoch [25/200] Batch [600/1700] Loss: 9.9625
+  Epoch [25/200] Batch [650/1700] Loss: 13.6609
+  Epoch [25/200] Batch [700/1700] Loss: 5.7279
+  Epoch [25/200] Batch [750/1700] Loss: 12.4655
+  Epoch [25/200] Batch [800/1700] Loss: 9.4880
+  Epoch [25/200] Batch [850/1700] Loss: 13.3863
+  Epoch [25/200] Batch [900/1700] Loss: 8.2172
+  Epoch [25/200] Batch [950/1700] Loss: 9.5987
+  Epoch [25/200] Batch [1000/1700] Loss: 10.1763
+  Epoch [25/200] Batch [1050/1700] Loss: 13.1602
+  Epoch [25/200] Batch [1100/1700] Loss: 5.3686
+  Epoch [25/200] Batch [1150/1700] Loss: 14.9268
+  Epoch [25/200] Batch [1200/1700] Loss: 8.7170
+  Epoch [25/200] Batch [1250/1700] Loss: 10.7034
+  Epoch [25/200] Batch [1300/1700] Loss: 9.1924
+  Epoch [25/200] Batch [1350/1700] Loss: 8.6858
+  Epoch [25/200] Batch [1400/1700] Loss: 6.1667
+  Epoch [25/200] Batch [1450/1700] Loss: 4.5267
+  Epoch [25/200] Batch [1500/1700] Loss: 5.3580
+  Epoch [25/200] Batch [1550/1700] Loss: 17.8443
+  Epoch [25/200] Batch [1600/1700] Loss: 3.6816
+  Epoch [25/200] Batch [1650/1700] Loss: 14.5424
+  Epoch [25/200] Batch [1700/1700] Loss: 9.0005
+  Train - Loss: 8.8140 | MAE: 2.34mm | RMSE: 2.97mm | R2: 0.3027
+  Val   - Loss: 10.2277 | MAE: 2.59mm | RMSE: 3.21mm | R2: -0.3126
+
+Epoch 26/200 (lr=0.000962)
+  Epoch [26/200] Batch [50/1700] Loss: 11.4421
+  Epoch [26/200] Batch [100/1700] Loss: 5.7912
+  Epoch [26/200] Batch [150/1700] Loss: 7.6361
+  Epoch [26/200] Batch [200/1700] Loss: 8.8053
+  Epoch [26/200] Batch [250/1700] Loss: 9.6942
+  Epoch [26/200] Batch [300/1700] Loss: 8.2098
+  Epoch [26/200] Batch [350/1700] Loss: 7.0952
+  Epoch [26/200] Batch [400/1700] Loss: 7.7667
+  Epoch [26/200] Batch [450/1700] Loss: 3.7186
+  Epoch [26/200] Batch [500/1700] Loss: 8.7130
+  Epoch [26/200] Batch [550/1700] Loss: 7.9679
+  Epoch [26/200] Batch [600/1700] Loss: 7.5248
+  Epoch [26/200] Batch [650/1700] Loss: 8.2039
+  Epoch [26/200] Batch [700/1700] Loss: 9.0271
+  Epoch [26/200] Batch [750/1700] Loss: 6.4958
+  Epoch [26/200] Batch [800/1700] Loss: 5.3672
+  Epoch [26/200] Batch [850/1700] Loss: 4.8890
+  Epoch [26/200] Batch [900/1700] Loss: 11.8248
+  Epoch [26/200] Batch [950/1700] Loss: 14.9943
+  Epoch [26/200] Batch [1000/1700] Loss: 9.0303
+  Epoch [26/200] Batch [1050/1700] Loss: 10.4870
+  Epoch [26/200] Batch [1100/1700] Loss: 6.6369
+  Epoch [26/200] Batch [1150/1700] Loss: 8.5121
+  Epoch [26/200] Batch [1200/1700] Loss: 8.7110
+  Epoch [26/200] Batch [1250/1700] Loss: 5.2429
+  Epoch [26/200] Batch [1300/1700] Loss: 5.8394
+  Epoch [26/200] Batch [1350/1700] Loss: 6.6255
+  Epoch [26/200] Batch [1400/1700] Loss: 5.4033
+  Epoch [26/200] Batch [1450/1700] Loss: 15.1076
+  Epoch [26/200] Batch [1500/1700] Loss: 6.1361
+  Epoch [26/200] Batch [1550/1700] Loss: 3.3783
+  Epoch [26/200] Batch [1600/1700] Loss: 6.9857
+  Epoch [26/200] Batch [1650/1700] Loss: 5.1461
+  Epoch [26/200] Batch [1700/1700] Loss: 4.5648
+  Train - Loss: 8.5403 | MAE: 2.30mm | RMSE: 2.92mm | R2: 0.3243
+  Val   - Loss: 8.0143 | MAE: 2.34mm | RMSE: 2.84mm | R2: -0.0287
+
+Epoch 27/200 (lr=0.000959)
+  Epoch [27/200] Batch [50/1700] Loss: 9.8970
+  Epoch [27/200] Batch [100/1700] Loss: 3.9292
+  Epoch [27/200] Batch [150/1700] Loss: 8.4351
+  Epoch [27/200] Batch [200/1700] Loss: 9.9428
+  Epoch [27/200] Batch [250/1700] Loss: 10.8544
+  Epoch [27/200] Batch [300/1700] Loss: 9.9888
+  Epoch [27/200] Batch [350/1700] Loss: 22.6499
+  Epoch [27/200] Batch [400/1700] Loss: 7.2466
+  Epoch [27/200] Batch [450/1700] Loss: 6.8418
+  Epoch [27/200] Batch [500/1700] Loss: 13.5231
+  Epoch [27/200] Batch [550/1700] Loss: 12.8879
+  Epoch [27/200] Batch [600/1700] Loss: 11.1074
+  Epoch [27/200] Batch [650/1700] Loss: 9.6563
+  Epoch [27/200] Batch [700/1700] Loss: 5.1960
+  Epoch [27/200] Batch [750/1700] Loss: 9.2980
+  Epoch [27/200] Batch [800/1700] Loss: 6.0516
+  Epoch [27/200] Batch [850/1700] Loss: 6.2223
+  Epoch [27/200] Batch [900/1700] Loss: 7.2065
+  Epoch [27/200] Batch [950/1700] Loss: 12.2734
+  Epoch [27/200] Batch [1000/1700] Loss: 14.8994
+  Epoch [27/200] Batch [1050/1700] Loss: 7.8022
+  Epoch [27/200] Batch [1100/1700] Loss: 10.9458
+  Epoch [27/200] Batch [1150/1700] Loss: 9.0397
+  Epoch [27/200] Batch [1200/1700] Loss: 3.7783
+  Epoch [27/200] Batch [1250/1700] Loss: 10.1144
+  Epoch [27/200] Batch [1300/1700] Loss: 8.7124
+  Epoch [27/200] Batch [1350/1700] Loss: 5.8370
+  Epoch [27/200] Batch [1400/1700] Loss: 3.0166
+  Epoch [27/200] Batch [1450/1700] Loss: 5.9257
+  Epoch [27/200] Batch [1500/1700] Loss: 8.0959
+  Epoch [27/200] Batch [1550/1700] Loss: 8.3742
+  Epoch [27/200] Batch [1600/1700] Loss: 4.1106
+  Epoch [27/200] Batch [1650/1700] Loss: 13.4310
+  Epoch [27/200] Batch [1700/1700] Loss: 5.6865
+  Train - Loss: 8.1120 | MAE: 2.24mm | RMSE: 2.85mm | R2: 0.3582
+  Val   - Loss: 11.3276 | MAE: 2.79mm | RMSE: 3.37mm | R2: -0.4541
+
+Epoch 28/200 (lr=0.000956)
+  Epoch [28/200] Batch [50/1700] Loss: 7.8984
+  Epoch [28/200] Batch [100/1700] Loss: 16.4980
+  Epoch [28/200] Batch [150/1700] Loss: 4.4985
+  Epoch [28/200] Batch [200/1700] Loss: 4.6374
+  Epoch [28/200] Batch [250/1700] Loss: 11.2857
+  Epoch [28/200] Batch [300/1700] Loss: 9.0701
+  Epoch [28/200] Batch [350/1700] Loss: 10.5598
+  Epoch [28/200] Batch [400/1700] Loss: 3.2266
+  Epoch [28/200] Batch [450/1700] Loss: 5.0342
+  Epoch [28/200] Batch [500/1700] Loss: 4.8266
+  Epoch [28/200] Batch [550/1700] Loss: 5.5956
+  Epoch [28/200] Batch [600/1700] Loss: 4.2921
+  Epoch [28/200] Batch [650/1700] Loss: 5.9989
+  Epoch [28/200] Batch [700/1700] Loss: 10.2894
+  Epoch [28/200] Batch [750/1700] Loss: 6.1828
+  Epoch [28/200] Batch [800/1700] Loss: 4.2615
+  Epoch [28/200] Batch [850/1700] Loss: 7.6265
+  Epoch [28/200] Batch [900/1700] Loss: 18.6633
+  Epoch [28/200] Batch [950/1700] Loss: 7.3350
+  Epoch [28/200] Batch [1000/1700] Loss: 7.1251
+  Epoch [28/200] Batch [1050/1700] Loss: 10.2260
+  Epoch [28/200] Batch [1100/1700] Loss: 7.8838
+  Epoch [28/200] Batch [1150/1700] Loss: 5.3762
+  Epoch [28/200] Batch [1200/1700] Loss: 12.5368
+  Epoch [28/200] Batch [1250/1700] Loss: 3.5765
+  Epoch [28/200] Batch [1300/1700] Loss: 6.7886
+  Epoch [28/200] Batch [1350/1700] Loss: 5.4657
+  Epoch [28/200] Batch [1400/1700] Loss: 8.4079
+  Epoch [28/200] Batch [1450/1700] Loss: 12.6280
+  Epoch [28/200] Batch [1500/1700] Loss: 5.4105
+  Epoch [28/200] Batch [1550/1700] Loss: 12.0963
+  Epoch [28/200] Batch [1600/1700] Loss: 9.3479
+  Epoch [28/200] Batch [1650/1700] Loss: 4.4046
+  Epoch [28/200] Batch [1700/1700] Loss: 8.1287
+  Train - Loss: 7.7764 | MAE: 2.18mm | RMSE: 2.79mm | R2: 0.3847
+  Val   - Loss: 9.0896 | MAE: 2.47mm | RMSE: 3.02mm | R2: -0.1668
+
+Epoch 29/200 (lr=0.000953)
+  Epoch [29/200] Batch [50/1700] Loss: 3.8383
+  Epoch [29/200] Batch [100/1700] Loss: 9.0173
+  Epoch [29/200] Batch [150/1700] Loss: 6.7192
+  Epoch [29/200] Batch [200/1700] Loss: 11.6448
+  Epoch [29/200] Batch [250/1700] Loss: 8.9558
+  Epoch [29/200] Batch [300/1700] Loss: 11.7660
+  Epoch [29/200] Batch [350/1700] Loss: 7.3597
+  Epoch [29/200] Batch [400/1700] Loss: 9.9595
+  Epoch [29/200] Batch [450/1700] Loss: 12.9242
+  Epoch [29/200] Batch [500/1700] Loss: 5.3164
+  Epoch [29/200] Batch [550/1700] Loss: 5.5290
+  Epoch [29/200] Batch [600/1700] Loss: 5.5375
+  Epoch [29/200] Batch [650/1700] Loss: 7.4935
+  Epoch [29/200] Batch [700/1700] Loss: 4.4109
+  Epoch [29/200] Batch [750/1700] Loss: 5.1528
+  Epoch [29/200] Batch [800/1700] Loss: 4.9547
+  Epoch [29/200] Batch [850/1700] Loss: 3.3939
+  Epoch [29/200] Batch [900/1700] Loss: 6.9443
+  Epoch [29/200] Batch [950/1700] Loss: 6.1963
+  Epoch [29/200] Batch [1000/1700] Loss: 9.6809
+  Epoch [29/200] Batch [1050/1700] Loss: 10.9840
+  Epoch [29/200] Batch [1100/1700] Loss: 8.2951
+  Epoch [29/200] Batch [1150/1700] Loss: 9.4275
+  Epoch [29/200] Batch [1200/1700] Loss: 13.5919
+  Epoch [29/200] Batch [1250/1700] Loss: 5.6770
+  Epoch [29/200] Batch [1300/1700] Loss: 7.3801
+  Epoch [29/200] Batch [1350/1700] Loss: 5.0617
+  Epoch [29/200] Batch [1400/1700] Loss: 7.1363
+  Epoch [29/200] Batch [1450/1700] Loss: 8.0268
+  Epoch [29/200] Batch [1500/1700] Loss: 11.3438
+  Epoch [29/200] Batch [1550/1700] Loss: 8.4428
+  Epoch [29/200] Batch [1600/1700] Loss: 3.5811
+  Epoch [29/200] Batch [1650/1700] Loss: 1.9650
+  Epoch [29/200] Batch [1700/1700] Loss: 11.3970
+  Train - Loss: 7.4652 | MAE: 2.13mm | RMSE: 2.73mm | R2: 0.4094
+  Val   - Loss: 7.9789 | MAE: 2.33mm | RMSE: 2.83mm | R2: -0.0242
+
+Epoch 30/200 (lr=0.000950)
+  Epoch [30/200] Batch [50/1700] Loss: 6.4149
+  Epoch [30/200] Batch [100/1700] Loss: 9.4650
+  Epoch [30/200] Batch [150/1700] Loss: 4.9946
+  Epoch [30/200] Batch [200/1700] Loss: 2.8743
+  Epoch [30/200] Batch [250/1700] Loss: 2.3170
+  Epoch [30/200] Batch [300/1700] Loss: 3.2457
+  Epoch [30/200] Batch [350/1700] Loss: 5.3587
+  Epoch [30/200] Batch [400/1700] Loss: 8.2801
+  Epoch [30/200] Batch [450/1700] Loss: 5.6496
+  Epoch [30/200] Batch [500/1700] Loss: 5.7571
+  Epoch [30/200] Batch [550/1700] Loss: 10.8523
+  Epoch [30/200] Batch [600/1700] Loss: 6.9640
+  Epoch [30/200] Batch [650/1700] Loss: 8.1820
+  Epoch [30/200] Batch [700/1700] Loss: 5.1694
+  Epoch [30/200] Batch [750/1700] Loss: 4.1824
+  Epoch [30/200] Batch [800/1700] Loss: 10.8942
+  Epoch [30/200] Batch [850/1700] Loss: 2.8656
+  Epoch [30/200] Batch [900/1700] Loss: 8.7422
+  Epoch [30/200] Batch [950/1700] Loss: 3.9591
+  Epoch [30/200] Batch [1000/1700] Loss: 5.9220
+  Epoch [30/200] Batch [1050/1700] Loss: 8.2705
+  Epoch [30/200] Batch [1100/1700] Loss: 10.9454
+  Epoch [30/200] Batch [1150/1700] Loss: 9.1002
+  Epoch [30/200] Batch [1200/1700] Loss: 4.1302
+  Epoch [30/200] Batch [1250/1700] Loss: 11.4136
+  Epoch [30/200] Batch [1300/1700] Loss: 8.9965
+  Epoch [30/200] Batch [1350/1700] Loss: 7.0233
+  Epoch [30/200] Batch [1400/1700] Loss: 6.7071
+  Epoch [30/200] Batch [1450/1700] Loss: 10.3433
+  Epoch [30/200] Batch [1500/1700] Loss: 7.7855
+  Epoch [30/200] Batch [1550/1700] Loss: 8.0439
+  Epoch [30/200] Batch [1600/1700] Loss: 6.5773
+  Epoch [30/200] Batch [1650/1700] Loss: 5.6326
+  Epoch [30/200] Batch [1700/1700] Loss: 5.6986
+  Train - Loss: 7.1926 | MAE: 2.09mm | RMSE: 2.68mm | R2: 0.4310
+  Val   - Loss: 12.0640 | MAE: 2.87mm | RMSE: 3.48mm | R2: -0.5482
+
+Epoch 31/200 (lr=0.000946)
+  Epoch [31/200] Batch [50/1700] Loss: 5.3045
+  Epoch [31/200] Batch [100/1700] Loss: 5.6531
+  Epoch [31/200] Batch [150/1700] Loss: 9.7298
+  Epoch [31/200] Batch [200/1700] Loss: 8.3347
+  Epoch [31/200] Batch [250/1700] Loss: 6.3343
+  Epoch [31/200] Batch [300/1700] Loss: 3.5348
+  Epoch [31/200] Batch [350/1700] Loss: 9.8239
+  Epoch [31/200] Batch [400/1700] Loss: 8.9231
+  Epoch [31/200] Batch [450/1700] Loss: 15.3525
+  Epoch [31/200] Batch [500/1700] Loss: 6.7177
+  Epoch [31/200] Batch [550/1700] Loss: 6.5221
+  Epoch [31/200] Batch [600/1700] Loss: 6.8391
+  Epoch [31/200] Batch [650/1700] Loss: 7.3510
+  Epoch [31/200] Batch [700/1700] Loss: 7.6554
+  Epoch [31/200] Batch [750/1700] Loss: 3.2212
+  Epoch [31/200] Batch [800/1700] Loss: 7.9160
+  Epoch [31/200] Batch [850/1700] Loss: 7.9789
+  Epoch [31/200] Batch [900/1700] Loss: 9.9778
+  Epoch [31/200] Batch [950/1700] Loss: 9.5297
+  Epoch [31/200] Batch [1000/1700] Loss: 7.2678
+  Epoch [31/200] Batch [1050/1700] Loss: 3.0885
+  Epoch [31/200] Batch [1100/1700] Loss: 14.2117
+  Epoch [31/200] Batch [1150/1700] Loss: 4.1924
+  Epoch [31/200] Batch [1200/1700] Loss: 11.0142
+  Epoch [31/200] Batch [1250/1700] Loss: 5.8235
+  Epoch [31/200] Batch [1300/1700] Loss: 5.0988
+  Epoch [31/200] Batch [1350/1700] Loss: 7.2519
+  Epoch [31/200] Batch [1400/1700] Loss: 4.5752
+  Epoch [31/200] Batch [1450/1700] Loss: 6.9948
+  Epoch [31/200] Batch [1500/1700] Loss: 3.4254
+  Epoch [31/200] Batch [1550/1700] Loss: 6.2735
+  Epoch [31/200] Batch [1600/1700] Loss: 8.3265
+  Epoch [31/200] Batch [1650/1700] Loss: 4.7765
+  Epoch [31/200] Batch [1700/1700] Loss: 4.5783
+  Train - Loss: 6.8676 | MAE: 2.04mm | RMSE: 2.62mm | R2: 0.4567
+  Val   - Loss: 9.3796 | MAE: 2.46mm | RMSE: 3.07mm | R2: -0.2015
+
+Epoch 32/200 (lr=0.000942)
+  Epoch [32/200] Batch [50/1700] Loss: 4.3292
+  Epoch [32/200] Batch [100/1700] Loss: 2.3343
+  Epoch [32/200] Batch [150/1700] Loss: 4.7042
+  Epoch [32/200] Batch [200/1700] Loss: 3.3602
+  Epoch [32/200] Batch [250/1700] Loss: 9.9278
+  Epoch [32/200] Batch [300/1700] Loss: 4.4063
+  Epoch [32/200] Batch [350/1700] Loss: 5.8584
+  Epoch [32/200] Batch [400/1700] Loss: 6.5369
+  Epoch [32/200] Batch [450/1700] Loss: 10.2163
+  Epoch [32/200] Batch [500/1700] Loss: 4.1601
+  Epoch [32/200] Batch [550/1700] Loss: 4.0059
+  Epoch [32/200] Batch [600/1700] Loss: 2.9145
+  Epoch [32/200] Batch [650/1700] Loss: 4.5877
+  Epoch [32/200] Batch [700/1700] Loss: 5.3463
+  Epoch [32/200] Batch [750/1700] Loss: 7.3550
+  Epoch [32/200] Batch [800/1700] Loss: 8.8438
+  Epoch [32/200] Batch [850/1700] Loss: 8.5682
+  Epoch [32/200] Batch [900/1700] Loss: 6.0049
+  Epoch [32/200] Batch [950/1700] Loss: 6.1603
+  Epoch [32/200] Batch [1000/1700] Loss: 6.6381
+  Epoch [32/200] Batch [1050/1700] Loss: 7.3918
+  Epoch [32/200] Batch [1100/1700] Loss: 9.8393
+  Epoch [32/200] Batch [1150/1700] Loss: 3.9592
+  Epoch [32/200] Batch [1200/1700] Loss: 8.3186
+  Epoch [32/200] Batch [1250/1700] Loss: 3.1373
+  Epoch [32/200] Batch [1300/1700] Loss: 8.1597
+  Epoch [32/200] Batch [1350/1700] Loss: 6.8058
+  Epoch [32/200] Batch [1400/1700] Loss: 8.0317
+  Epoch [32/200] Batch [1450/1700] Loss: 4.9558
+  Epoch [32/200] Batch [1500/1700] Loss: 8.3179
+  Epoch [32/200] Batch [1550/1700] Loss: 13.9899
+  Epoch [32/200] Batch [1600/1700] Loss: 7.4625
+  Epoch [32/200] Batch [1650/1700] Loss: 5.9299
+  Epoch [32/200] Batch [1700/1700] Loss: 7.4113
+  Train - Loss: 6.6493 | MAE: 2.00mm | RMSE: 2.58mm | R2: 0.4739
+  Val   - Loss: 9.3979 | MAE: 2.53mm | RMSE: 3.07mm | R2: -0.2062
+
+Epoch 33/200 (lr=0.000939)
+  Epoch [33/200] Batch [50/1700] Loss: 5.1457
+  Epoch [33/200] Batch [100/1700] Loss: 6.9704
+  Epoch [33/200] Batch [150/1700] Loss: 4.4070
+  Epoch [33/200] Batch [200/1700] Loss: 5.9617
+  Epoch [33/200] Batch [250/1700] Loss: 4.8238
+  Epoch [33/200] Batch [300/1700] Loss: 6.1362
+  Epoch [33/200] Batch [350/1700] Loss: 5.8579
+  Epoch [33/200] Batch [400/1700] Loss: 4.5602
+  Epoch [33/200] Batch [450/1700] Loss: 8.2393
+  Epoch [33/200] Batch [500/1700] Loss: 4.4745
+  Epoch [33/200] Batch [550/1700] Loss: 5.3072
+  Epoch [33/200] Batch [600/1700] Loss: 5.5422
+  Epoch [33/200] Batch [650/1700] Loss: 3.6940
+  Epoch [33/200] Batch [700/1700] Loss: 6.7271
+  Epoch [33/200] Batch [750/1700] Loss: 12.6478
+  Epoch [33/200] Batch [800/1700] Loss: 4.5458
+  Epoch [33/200] Batch [850/1700] Loss: 3.3716
+  Epoch [33/200] Batch [900/1700] Loss: 5.9364
+  Epoch [33/200] Batch [950/1700] Loss: 8.3284
+  Epoch [33/200] Batch [1000/1700] Loss: 9.2617
+  Epoch [33/200] Batch [1050/1700] Loss: 5.2285
+  Epoch [33/200] Batch [1100/1700] Loss: 6.5490
+  Epoch [33/200] Batch [1150/1700] Loss: 3.9284
+  Epoch [33/200] Batch [1200/1700] Loss: 6.9616
+  Epoch [33/200] Batch [1250/1700] Loss: 7.4769
+  Epoch [33/200] Batch [1300/1700] Loss: 8.3033
+  Epoch [33/200] Batch [1350/1700] Loss: 2.9965
+  Epoch [33/200] Batch [1400/1700] Loss: 5.2084
+  Epoch [33/200] Batch [1450/1700] Loss: 7.7140
+  Epoch [33/200] Batch [1500/1700] Loss: 3.3475
+  Epoch [33/200] Batch [1550/1700] Loss: 4.3816
+  Epoch [33/200] Batch [1600/1700] Loss: 8.0106
+  Epoch [33/200] Batch [1650/1700] Loss: 9.3193
+  Epoch [33/200] Batch [1700/1700] Loss: 7.2385
+  Train - Loss: 6.2452 | MAE: 1.94mm | RMSE: 2.50mm | R2: 0.5060
+  Val   - Loss: 9.9448 | MAE: 2.54mm | RMSE: 3.16mm | R2: -0.2766
+
+Epoch 34/200 (lr=0.000935)
+  Epoch [34/200] Batch [50/1700] Loss: 2.6861
+  Epoch [34/200] Batch [100/1700] Loss: 6.5226
+  Epoch [34/200] Batch [150/1700] Loss: 4.3691
+  Epoch [34/200] Batch [200/1700] Loss: 7.1822
+  Epoch [34/200] Batch [250/1700] Loss: 3.8626
+  Epoch [34/200] Batch [300/1700] Loss: 5.7416
+  Epoch [34/200] Batch [350/1700] Loss: 1.8428
+  Epoch [34/200] Batch [400/1700] Loss: 4.7098
+  Epoch [34/200] Batch [450/1700] Loss: 7.0558
+  Epoch [34/200] Batch [500/1700] Loss: 4.7280
+  Epoch [34/200] Batch [550/1700] Loss: 8.0426
+  Epoch [34/200] Batch [600/1700] Loss: 5.0051
+  Epoch [34/200] Batch [650/1700] Loss: 7.5432
+  Epoch [34/200] Batch [700/1700] Loss: 4.6270
+  Epoch [34/200] Batch [750/1700] Loss: 4.1193
+  Epoch [34/200] Batch [800/1700] Loss: 5.5853
+  Epoch [34/200] Batch [850/1700] Loss: 4.1070
+  Epoch [34/200] Batch [900/1700] Loss: 8.4086
+  Epoch [34/200] Batch [950/1700] Loss: 13.6794
+  Epoch [34/200] Batch [1000/1700] Loss: 7.4615
+  Epoch [34/200] Batch [1050/1700] Loss: 8.2952
+  Epoch [34/200] Batch [1100/1700] Loss: 3.4968
+  Epoch [34/200] Batch [1150/1700] Loss: 9.6966
+  Epoch [34/200] Batch [1200/1700] Loss: 6.9469
+  Epoch [34/200] Batch [1250/1700] Loss: 3.0986
+  Epoch [34/200] Batch [1300/1700] Loss: 3.5025
+  Epoch [34/200] Batch [1350/1700] Loss: 6.8624
+  Epoch [34/200] Batch [1400/1700] Loss: 8.4217
+  Epoch [34/200] Batch [1450/1700] Loss: 5.4917
+  Epoch [34/200] Batch [1500/1700] Loss: 5.4789
+  Epoch [34/200] Batch [1550/1700] Loss: 4.2040
+  Epoch [34/200] Batch [1600/1700] Loss: 4.2719
+  Epoch [34/200] Batch [1650/1700] Loss: 3.8833
+  Epoch [34/200] Batch [1700/1700] Loss: 11.8679
+  Train - Loss: 6.1112 | MAE: 1.91mm | RMSE: 2.47mm | R2: 0.5165
+  Val   - Loss: 14.0632 | MAE: 3.14mm | RMSE: 3.76mm | R2: -0.8053
+
+Epoch 35/200 (lr=0.000931)
+  Epoch [35/200] Batch [50/1700] Loss: 5.5085
+  Epoch [35/200] Batch [100/1700] Loss: 4.7099
+  Epoch [35/200] Batch [150/1700] Loss: 3.8057
+  Epoch [35/200] Batch [200/1700] Loss: 4.3970
+  Epoch [35/200] Batch [250/1700] Loss: 9.1728
+  Epoch [35/200] Batch [300/1700] Loss: 4.8779
+  Epoch [35/200] Batch [350/1700] Loss: 3.9455
+  Epoch [35/200] Batch [400/1700] Loss: 8.6750
+  Epoch [35/200] Batch [450/1700] Loss: 6.6840
+  Epoch [35/200] Batch [500/1700] Loss: 3.4119
+  Epoch [35/200] Batch [550/1700] Loss: 4.9474
+  Epoch [35/200] Batch [600/1700] Loss: 5.4097
+  Epoch [35/200] Batch [650/1700] Loss: 10.1720
+  Epoch [35/200] Batch [700/1700] Loss: 6.6427
+  Epoch [35/200] Batch [750/1700] Loss: 4.1795
+  Epoch [35/200] Batch [800/1700] Loss: 5.5376
+  Epoch [35/200] Batch [850/1700] Loss: 5.5892
+  Epoch [35/200] Batch [900/1700] Loss: 4.2544
+  Epoch [35/200] Batch [950/1700] Loss: 5.1356
+  Epoch [35/200] Batch [1000/1700] Loss: 6.0053
+  Epoch [35/200] Batch [1050/1700] Loss: 9.3290
+  Epoch [35/200] Batch [1100/1700] Loss: 3.6715
+  Epoch [35/200] Batch [1150/1700] Loss: 4.3255
+  Epoch [35/200] Batch [1200/1700] Loss: 9.3885
+  Epoch [35/200] Batch [1250/1700] Loss: 5.6767
+  Epoch [35/200] Batch [1300/1700] Loss: 6.2372
+  Epoch [35/200] Batch [1350/1700] Loss: 4.6707
+  Epoch [35/200] Batch [1400/1700] Loss: 4.7903
+  Epoch [35/200] Batch [1450/1700] Loss: 14.7407
+  Epoch [35/200] Batch [1500/1700] Loss: 3.7161
+  Epoch [35/200] Batch [1550/1700] Loss: 5.0138
+  Epoch [35/200] Batch [1600/1700] Loss: 8.0315
+  Epoch [35/200] Batch [1650/1700] Loss: 2.7283
+  Epoch [35/200] Batch [1700/1700] Loss: 3.7904
+  Train - Loss: 5.8214 | MAE: 1.86mm | RMSE: 2.41mm | R2: 0.5392
+  Val   - Loss: 10.7290 | MAE: 2.65mm | RMSE: 3.28mm | R2: -0.3749
+
+Epoch 36/200 (lr=0.000927)
+  Epoch [36/200] Batch [50/1700] Loss: 5.4259
+  Epoch [36/200] Batch [100/1700] Loss: 4.8034
+  Epoch [36/200] Batch [150/1700] Loss: 4.0358
+  Epoch [36/200] Batch [200/1700] Loss: 6.9254
+  Epoch [36/200] Batch [250/1700] Loss: 3.4729
+  Epoch [36/200] Batch [300/1700] Loss: 3.8768
+  Epoch [36/200] Batch [350/1700] Loss: 2.5776
+  Epoch [36/200] Batch [400/1700] Loss: 7.7359
+  Epoch [36/200] Batch [450/1700] Loss: 4.6997
+  Epoch [36/200] Batch [500/1700] Loss: 3.8164
+  Epoch [36/200] Batch [550/1700] Loss: 3.5924
+  Epoch [36/200] Batch [600/1700] Loss: 5.3532
+  Epoch [36/200] Batch [650/1700] Loss: 5.3871
+  Epoch [36/200] Batch [700/1700] Loss: 3.1463
+  Epoch [36/200] Batch [750/1700] Loss: 8.7593
+  Epoch [36/200] Batch [800/1700] Loss: 7.6998
+  Epoch [36/200] Batch [850/1700] Loss: 3.0213
+  Epoch [36/200] Batch [900/1700] Loss: 9.6529
+  Epoch [36/200] Batch [950/1700] Loss: 5.7969
+  Epoch [36/200] Batch [1000/1700] Loss: 3.3494
+  Epoch [36/200] Batch [1050/1700] Loss: 3.9962
+  Epoch [36/200] Batch [1100/1700] Loss: 8.2872
+  Epoch [36/200] Batch [1150/1700] Loss: 5.2635
+  Epoch [36/200] Batch [1200/1700] Loss: 2.8496
+  Epoch [36/200] Batch [1250/1700] Loss: 10.6331
+  Epoch [36/200] Batch [1300/1700] Loss: 3.0336
+  Epoch [36/200] Batch [1350/1700] Loss: 4.0913
+  Epoch [36/200] Batch [1400/1700] Loss: 3.2152
+  Epoch [36/200] Batch [1450/1700] Loss: 3.9951
+  Epoch [36/200] Batch [1500/1700] Loss: 14.1319
+  Epoch [36/200] Batch [1550/1700] Loss: 7.3835
+  Epoch [36/200] Batch [1600/1700] Loss: 7.5545
+  Epoch [36/200] Batch [1650/1700] Loss: 4.2401
+  Epoch [36/200] Batch [1700/1700] Loss: 14.0816
+  Train - Loss: 5.6419 | MAE: 1.82mm | RMSE: 2.38mm | R2: 0.5537
+  Val   - Loss: 10.0559 | MAE: 2.62mm | RMSE: 3.18mm | R2: -0.2900
+
+Epoch 37/200 (lr=0.000923)
+  Epoch [37/200] Batch [50/1700] Loss: 2.6163
+  Epoch [37/200] Batch [100/1700] Loss: 4.5705
+  Epoch [37/200] Batch [150/1700] Loss: 12.2185
+  Epoch [37/200] Batch [200/1700] Loss: 7.1585
+  Epoch [37/200] Batch [250/1700] Loss: 3.1558
+  Epoch [37/200] Batch [300/1700] Loss: 9.9167
+  Epoch [37/200] Batch [350/1700] Loss: 5.8185
+  Epoch [37/200] Batch [400/1700] Loss: 5.7237
+  Epoch [37/200] Batch [450/1700] Loss: 6.1249
+  Epoch [37/200] Batch [500/1700] Loss: 4.8709
+  Epoch [37/200] Batch [550/1700] Loss: 3.5805
+  Epoch [37/200] Batch [600/1700] Loss: 3.8963
+  Epoch [37/200] Batch [650/1700] Loss: 4.1907
+  Epoch [37/200] Batch [700/1700] Loss: 2.6502
+  Epoch [37/200] Batch [750/1700] Loss: 4.2731
+  Epoch [37/200] Batch [800/1700] Loss: 4.9198
+  Epoch [37/200] Batch [850/1700] Loss: 5.6226
+  Epoch [37/200] Batch [900/1700] Loss: 9.9580
+  Epoch [37/200] Batch [950/1700] Loss: 5.5429
+  Epoch [37/200] Batch [1000/1700] Loss: 5.7651
+  Epoch [37/200] Batch [1050/1700] Loss: 3.7681
+  Epoch [37/200] Batch [1100/1700] Loss: 5.0184
+  Epoch [37/200] Batch [1150/1700] Loss: 4.3112
+  Epoch [37/200] Batch [1200/1700] Loss: 4.0423
+  Epoch [37/200] Batch [1250/1700] Loss: 5.4914
+  Epoch [37/200] Batch [1300/1700] Loss: 6.6086
+  Epoch [37/200] Batch [1350/1700] Loss: 2.7108
+  Epoch [37/200] Batch [1400/1700] Loss: 3.5146
+  Epoch [37/200] Batch [1450/1700] Loss: 7.8025
+  Epoch [37/200] Batch [1500/1700] Loss: 3.0538
+  Epoch [37/200] Batch [1550/1700] Loss: 6.2672
+  Epoch [37/200] Batch [1600/1700] Loss: 5.9151
+  Epoch [37/200] Batch [1650/1700] Loss: 6.3932
+  Epoch [37/200] Batch [1700/1700] Loss: 4.1660
+  Train - Loss: 5.4818 | MAE: 1.79mm | RMSE: 2.34mm | R2: 0.5663
+  Val   - Loss: 9.6327 | MAE: 2.54mm | RMSE: 3.11mm | R2: -0.2349
+
+Epoch 38/200 (lr=0.000919)
+  Epoch [38/200] Batch [50/1700] Loss: 4.8600
+  Epoch [38/200] Batch [100/1700] Loss: 2.1365
+  Epoch [38/200] Batch [150/1700] Loss: 5.5977
+  Epoch [38/200] Batch [200/1700] Loss: 2.3589
+  Epoch [38/200] Batch [250/1700] Loss: 5.7869
+  Epoch [38/200] Batch [300/1700] Loss: 3.1706
+  Epoch [38/200] Batch [350/1700] Loss: 3.3323
+  Epoch [38/200] Batch [400/1700] Loss: 5.3347
+  Epoch [38/200] Batch [450/1700] Loss: 1.9981
+  Epoch [38/200] Batch [500/1700] Loss: 5.6607
+  Epoch [38/200] Batch [550/1700] Loss: 4.9236
+  Epoch [38/200] Batch [600/1700] Loss: 11.0810
+  Epoch [38/200] Batch [650/1700] Loss: 6.6986
+  Epoch [38/200] Batch [700/1700] Loss: 4.6322
+  Epoch [38/200] Batch [750/1700] Loss: 2.8574
+  Epoch [38/200] Batch [800/1700] Loss: 4.2388
+  Epoch [38/200] Batch [850/1700] Loss: 3.2763
+  Epoch [38/200] Batch [900/1700] Loss: 5.9255
+  Epoch [38/200] Batch [950/1700] Loss: 6.1278
+  Epoch [38/200] Batch [1000/1700] Loss: 5.4993
+  Epoch [38/200] Batch [1050/1700] Loss: 3.5315
+  Epoch [38/200] Batch [1100/1700] Loss: 4.5968
+  Epoch [38/200] Batch [1150/1700] Loss: 4.2780
+  Epoch [38/200] Batch [1200/1700] Loss: 3.9350
+  Epoch [38/200] Batch [1250/1700] Loss: 2.2786
+  Epoch [38/200] Batch [1300/1700] Loss: 6.1509
+  Epoch [38/200] Batch [1350/1700] Loss: 6.3792
+  Epoch [38/200] Batch [1400/1700] Loss: 1.7123
+  Epoch [38/200] Batch [1450/1700] Loss: 3.5469
+  Epoch [38/200] Batch [1500/1700] Loss: 4.4283
+  Epoch [38/200] Batch [1550/1700] Loss: 11.1324
+  Epoch [38/200] Batch [1600/1700] Loss: 2.4736
+  Epoch [38/200] Batch [1650/1700] Loss: 3.1491
+  Epoch [38/200] Batch [1700/1700] Loss: 2.2240
+  Train - Loss: 5.4227 | MAE: 1.79mm | RMSE: 2.33mm | R2: 0.5709
+  Val   - Loss: 8.8923 | MAE: 2.44mm | RMSE: 2.99mm | R2: -0.1415
+
+Epoch 39/200 (lr=0.000914)
+  Epoch [39/200] Batch [50/1700] Loss: 4.9374
+  Epoch [39/200] Batch [100/1700] Loss: 3.7819
+  Epoch [39/200] Batch [150/1700] Loss: 6.2452
+  Epoch [39/200] Batch [200/1700] Loss: 3.5038
+  Epoch [39/200] Batch [250/1700] Loss: 3.9681
+  Epoch [39/200] Batch [300/1700] Loss: 4.7104
+  Epoch [39/200] Batch [350/1700] Loss: 9.3070
+  Epoch [39/200] Batch [400/1700] Loss: 6.4891
+  Epoch [39/200] Batch [450/1700] Loss: 1.0150
+  Epoch [39/200] Batch [500/1700] Loss: 7.1692
+  Epoch [39/200] Batch [550/1700] Loss: 4.0778
+  Epoch [39/200] Batch [600/1700] Loss: 2.9442
+  Epoch [39/200] Batch [650/1700] Loss: 5.8047
+  Epoch [39/200] Batch [700/1700] Loss: 8.2454
+  Epoch [39/200] Batch [750/1700] Loss: 3.2572
+  Epoch [39/200] Batch [800/1700] Loss: 8.5575
+  Epoch [39/200] Batch [850/1700] Loss: 5.7382
+  Epoch [39/200] Batch [900/1700] Loss: 5.3771
+  Epoch [39/200] Batch [950/1700] Loss: 3.6740
+  Epoch [39/200] Batch [1000/1700] Loss: 4.4344
+  Epoch [39/200] Batch [1050/1700] Loss: 12.1328
+  Epoch [39/200] Batch [1100/1700] Loss: 3.6947
+  Epoch [39/200] Batch [1150/1700] Loss: 5.9531
+  Epoch [39/200] Batch [1200/1700] Loss: 5.5023
+  Epoch [39/200] Batch [1250/1700] Loss: 5.0332
+  Epoch [39/200] Batch [1300/1700] Loss: 4.2469
+  Epoch [39/200] Batch [1350/1700] Loss: 6.2374
+  Epoch [39/200] Batch [1400/1700] Loss: 6.0718
+  Epoch [39/200] Batch [1450/1700] Loss: 4.6671
+  Epoch [39/200] Batch [1500/1700] Loss: 4.9135
+  Epoch [39/200] Batch [1550/1700] Loss: 5.3573
+  Epoch [39/200] Batch [1600/1700] Loss: 1.6005
+  Epoch [39/200] Batch [1650/1700] Loss: 16.5707
+  Epoch [39/200] Batch [1700/1700] Loss: 2.3181
+  Train - Loss: 5.1135 | MAE: 1.73mm | RMSE: 2.26mm | R2: 0.5954
+  Val   - Loss: 9.8903 | MAE: 2.55mm | RMSE: 3.15mm | R2: -0.2695
+
+Epoch 40/200 (lr=0.000910)
+  Epoch [40/200] Batch [50/1700] Loss: 3.5806
+  Epoch [40/200] Batch [100/1700] Loss: 7.2822
+  Epoch [40/200] Batch [150/1700] Loss: 4.0432
+  Epoch [40/200] Batch [200/1700] Loss: 4.7173
+  Epoch [40/200] Batch [250/1700] Loss: 2.3219
+  Epoch [40/200] Batch [300/1700] Loss: 12.7718
+  Epoch [40/200] Batch [350/1700] Loss: 4.4872
+  Epoch [40/200] Batch [400/1700] Loss: 2.1462
+  Epoch [40/200] Batch [450/1700] Loss: 2.5690
+  Epoch [40/200] Batch [500/1700] Loss: 4.9772
+  Epoch [40/200] Batch [550/1700] Loss: 5.2215
+  Epoch [40/200] Batch [600/1700] Loss: 3.1830
+  Epoch [40/200] Batch [650/1700] Loss: 4.6129
+  Epoch [40/200] Batch [700/1700] Loss: 4.2237
+  Epoch [40/200] Batch [750/1700] Loss: 3.2599
+  Epoch [40/200] Batch [800/1700] Loss: 4.4077
+  Epoch [40/200] Batch [850/1700] Loss: 4.2551
+  Epoch [40/200] Batch [900/1700] Loss: 8.1118
+  Epoch [40/200] Batch [950/1700] Loss: 7.3280
+  Epoch [40/200] Batch [1000/1700] Loss: 3.6367
+  Epoch [40/200] Batch [1050/1700] Loss: 6.9829
+  Epoch [40/200] Batch [1100/1700] Loss: 6.9929
+  Epoch [40/200] Batch [1150/1700] Loss: 5.1243
+  Epoch [40/200] Batch [1200/1700] Loss: 5.5205
+  Epoch [40/200] Batch [1250/1700] Loss: 5.9619
+  Epoch [40/200] Batch [1300/1700] Loss: 5.5706
+  Epoch [40/200] Batch [1350/1700] Loss: 4.9161
+  Epoch [40/200] Batch [1400/1700] Loss: 2.7698
+  Epoch [40/200] Batch [1450/1700] Loss: 4.1506
+  Epoch [40/200] Batch [1500/1700] Loss: 2.6340
+  Epoch [40/200] Batch [1550/1700] Loss: 6.0583
+  Epoch [40/200] Batch [1600/1700] Loss: 2.7772
+  Epoch [40/200] Batch [1650/1700] Loss: 3.8131
+  Epoch [40/200] Batch [1700/1700] Loss: 2.4413
+  Train - Loss: 4.9607 | MAE: 1.70mm | RMSE: 2.23mm | R2: 0.6076
+  Val   - Loss: 9.5178 | MAE: 2.51mm | RMSE: 3.09mm | R2: -0.2213
+
+Epoch 41/200 (lr=0.000905)
+  Epoch [41/200] Batch [50/1700] Loss: 4.2289
+  Epoch [41/200] Batch [100/1700] Loss: 8.0571
+  Epoch [41/200] Batch [150/1700] Loss: 2.0760
+  Epoch [41/200] Batch [200/1700] Loss: 7.3012
+  Epoch [41/200] Batch [250/1700] Loss: 2.5346
+  Epoch [41/200] Batch [300/1700] Loss: 3.7201
+  Epoch [41/200] Batch [350/1700] Loss: 3.3357
+  Epoch [41/200] Batch [400/1700] Loss: 9.3298
+  Epoch [41/200] Batch [450/1700] Loss: 4.7260
+  Epoch [41/200] Batch [500/1700] Loss: 8.1479
+  Epoch [41/200] Batch [550/1700] Loss: 6.2741
+  Epoch [41/200] Batch [600/1700] Loss: 4.4677
+  Epoch [41/200] Batch [650/1700] Loss: 7.0185
+  Epoch [41/200] Batch [700/1700] Loss: 6.5726
+  Epoch [41/200] Batch [750/1700] Loss: 3.9350
+  Epoch [41/200] Batch [800/1700] Loss: 3.6990
+  Epoch [41/200] Batch [850/1700] Loss: 2.6481
+  Epoch [41/200] Batch [900/1700] Loss: 4.3972
+  Epoch [41/200] Batch [950/1700] Loss: 7.3025
+  Epoch [41/200] Batch [1000/1700] Loss: 2.2948
+  Epoch [41/200] Batch [1050/1700] Loss: 3.2412
+  Epoch [41/200] Batch [1100/1700] Loss: 2.4999
+  Epoch [41/200] Batch [1150/1700] Loss: 5.8069
+  Epoch [41/200] Batch [1200/1700] Loss: 3.9858
+  Epoch [41/200] Batch [1250/1700] Loss: 11.1544
+  Epoch [41/200] Batch [1300/1700] Loss: 2.0631
+  Epoch [41/200] Batch [1350/1700] Loss: 4.4984
+  Epoch [41/200] Batch [1400/1700] Loss: 1.6120
+  Epoch [41/200] Batch [1450/1700] Loss: 5.3066
+  Epoch [41/200] Batch [1500/1700] Loss: 4.1887
+  Epoch [41/200] Batch [1550/1700] Loss: 5.5572
+  Epoch [41/200] Batch [1600/1700] Loss: 4.4903
+  Epoch [41/200] Batch [1650/1700] Loss: 5.2173
+  Epoch [41/200] Batch [1700/1700] Loss: 7.6671
+  Train - Loss: 4.7687 | MAE: 1.67mm | RMSE: 2.18mm | R2: 0.6227
+  Val   - Loss: 10.1731 | MAE: 2.60mm | RMSE: 3.20mm | R2: -0.3049
+
+Epoch 42/200 (lr=0.000901)
+  Epoch [42/200] Batch [50/1700] Loss: 1.8612
+  Epoch [42/200] Batch [100/1700] Loss: 6.8691
+  Epoch [42/200] Batch [150/1700] Loss: 6.4446
+  Epoch [42/200] Batch [200/1700] Loss: 4.2175
+  Epoch [42/200] Batch [250/1700] Loss: 4.1084
+  Epoch [42/200] Batch [300/1700] Loss: 3.8270
+  Epoch [42/200] Batch [350/1700] Loss: 7.1497
+  Epoch [42/200] Batch [400/1700] Loss: 13.4134
+  Epoch [42/200] Batch [450/1700] Loss: 15.6302
+  Epoch [42/200] Batch [500/1700] Loss: 4.8004
+  Epoch [42/200] Batch [550/1700] Loss: 6.4056
+  Epoch [42/200] Batch [600/1700] Loss: 4.1118
+  Epoch [42/200] Batch [650/1700] Loss: 7.1377
+  Epoch [42/200] Batch [700/1700] Loss: 1.9858
+  Epoch [42/200] Batch [750/1700] Loss: 3.3993
+  Epoch [42/200] Batch [800/1700] Loss: 2.6910
+  Epoch [42/200] Batch [850/1700] Loss: 4.9559
+  Epoch [42/200] Batch [900/1700] Loss: 9.6197
+  Epoch [42/200] Batch [950/1700] Loss: 4.8585
+  Epoch [42/200] Batch [1000/1700] Loss: 4.3728
+  Epoch [42/200] Batch [1050/1700] Loss: 4.4598
+  Epoch [42/200] Batch [1100/1700] Loss: 5.1210
+  Epoch [42/200] Batch [1150/1700] Loss: 3.5958
+  Epoch [42/200] Batch [1200/1700] Loss: 5.3278
+  Epoch [42/200] Batch [1250/1700] Loss: 3.4193
+  Epoch [42/200] Batch [1300/1700] Loss: 4.4814
+  Epoch [42/200] Batch [1350/1700] Loss: 10.9220
+  Epoch [42/200] Batch [1400/1700] Loss: 3.1543
+  Epoch [42/200] Batch [1450/1700] Loss: 4.2175
+  Epoch [42/200] Batch [1500/1700] Loss: 2.6986
+  Epoch [42/200] Batch [1550/1700] Loss: 10.5666
+  Epoch [42/200] Batch [1600/1700] Loss: 3.1414
+  Epoch [42/200] Batch [1650/1700] Loss: 5.1430
+  Epoch [42/200] Batch [1700/1700] Loss: 9.7349
+  Train - Loss: 4.6353 | MAE: 1.64mm | RMSE: 2.15mm | R2: 0.6333
+  Val   - Loss: 8.3248 | MAE: 2.37mm | RMSE: 2.89mm | R2: -0.0656
+
+Epoch 43/200 (lr=0.000896)
+  Epoch [43/200] Batch [50/1700] Loss: 6.5589
+  Epoch [43/200] Batch [100/1700] Loss: 2.2838
+  Epoch [43/200] Batch [150/1700] Loss: 3.1040
+  Epoch [43/200] Batch [200/1700] Loss: 3.1706
+  Epoch [43/200] Batch [250/1700] Loss: 3.7623
+  Epoch [43/200] Batch [300/1700] Loss: 5.6727
+  Epoch [43/200] Batch [350/1700] Loss: 3.1705
+  Epoch [43/200] Batch [400/1700] Loss: 5.8353
+  Epoch [43/200] Batch [450/1700] Loss: 4.6916
+  Epoch [43/200] Batch [500/1700] Loss: 2.1546
+  Epoch [43/200] Batch [550/1700] Loss: 9.8120
+  Epoch [43/200] Batch [600/1700] Loss: 6.1405
+  Epoch [43/200] Batch [650/1700] Loss: 2.3426
+  Epoch [43/200] Batch [700/1700] Loss: 9.1179
+  Epoch [43/200] Batch [750/1700] Loss: 6.9233
+  Epoch [43/200] Batch [800/1700] Loss: 2.6923
+  Epoch [43/200] Batch [850/1700] Loss: 3.3868
+  Epoch [43/200] Batch [900/1700] Loss: 1.7144
+  Epoch [43/200] Batch [950/1700] Loss: 3.0355
+  Epoch [43/200] Batch [1000/1700] Loss: 4.2888
+  Epoch [43/200] Batch [1050/1700] Loss: 6.6328
+  Epoch [43/200] Batch [1100/1700] Loss: 7.9528
+  Epoch [43/200] Batch [1150/1700] Loss: 6.3973
+  Epoch [43/200] Batch [1200/1700] Loss: 3.1614
+  Epoch [43/200] Batch [1250/1700] Loss: 4.7623
+  Epoch [43/200] Batch [1300/1700] Loss: 1.4721
+  Epoch [43/200] Batch [1350/1700] Loss: 3.9302
+  Epoch [43/200] Batch [1400/1700] Loss: 2.2886
+  Epoch [43/200] Batch [1450/1700] Loss: 7.7969
+  Epoch [43/200] Batch [1500/1700] Loss: 3.9293
+  Epoch [43/200] Batch [1550/1700] Loss: 2.4022
+  Epoch [43/200] Batch [1600/1700] Loss: 14.1230
+  Epoch [43/200] Batch [1650/1700] Loss: 4.6522
+  Epoch [43/200] Batch [1700/1700] Loss: 3.2998
+  Train - Loss: 4.5575 | MAE: 1.63mm | RMSE: 2.13mm | R2: 0.6394
+  Val   - Loss: 10.0221 | MAE: 2.60mm | RMSE: 3.17mm | R2: -0.2852
+
+Epoch 44/200 (lr=0.000891)
+  Epoch [44/200] Batch [50/1700] Loss: 3.3558
+  Epoch [44/200] Batch [100/1700] Loss: 3.5242
+  Epoch [44/200] Batch [150/1700] Loss: 4.9941
+  Epoch [44/200] Batch [200/1700] Loss: 1.8246
+  Epoch [44/200] Batch [250/1700] Loss: 6.0928
+  Epoch [44/200] Batch [300/1700] Loss: 2.6162
+  Epoch [44/200] Batch [350/1700] Loss: 4.1277
+  Epoch [44/200] Batch [400/1700] Loss: 7.4861
+  Epoch [44/200] Batch [450/1700] Loss: 2.5528
+  Epoch [44/200] Batch [500/1700] Loss: 2.3227
+  Epoch [44/200] Batch [550/1700] Loss: 4.0399
+  Epoch [44/200] Batch [600/1700] Loss: 7.0974
+  Epoch [44/200] Batch [650/1700] Loss: 5.3722
+  Epoch [44/200] Batch [700/1700] Loss: 2.5090
+  Epoch [44/200] Batch [750/1700] Loss: 2.3195
+  Epoch [44/200] Batch [800/1700] Loss: 4.1147
+  Epoch [44/200] Batch [850/1700] Loss: 0.9312
+  Epoch [44/200] Batch [900/1700] Loss: 5.0993
+  Epoch [44/200] Batch [950/1700] Loss: 4.7273
+  Epoch [44/200] Batch [1000/1700] Loss: 3.2299
+  Epoch [44/200] Batch [1050/1700] Loss: 5.3338
+  Epoch [44/200] Batch [1100/1700] Loss: 8.0632
+  Epoch [44/200] Batch [1150/1700] Loss: 2.1117
+  Epoch [44/200] Batch [1200/1700] Loss: 2.9276
+  Epoch [44/200] Batch [1250/1700] Loss: 2.2780
+  Epoch [44/200] Batch [1300/1700] Loss: 4.8667
+  Epoch [44/200] Batch [1350/1700] Loss: 1.6780
+  Epoch [44/200] Batch [1400/1700] Loss: 11.5287
+  Epoch [44/200] Batch [1450/1700] Loss: 9.1816
+  Epoch [44/200] Batch [1500/1700] Loss: 9.3053
+  Epoch [44/200] Batch [1550/1700] Loss: 2.1546
+  Epoch [44/200] Batch [1600/1700] Loss: 6.0611
+  Epoch [44/200] Batch [1650/1700] Loss: 1.5344
+  Epoch [44/200] Batch [1700/1700] Loss: 1.4987
+  Train - Loss: 4.4239 | MAE: 1.60mm | RMSE: 2.10mm | R2: 0.6500
+  Val   - Loss: 9.2263 | MAE: 2.43mm | RMSE: 3.04mm | R2: -0.1823
+
+Epoch 45/200 (lr=0.000886)
+  Epoch [45/200] Batch [50/1700] Loss: 6.0000
+  Epoch [45/200] Batch [100/1700] Loss: 2.7399
+  Epoch [45/200] Batch [150/1700] Loss: 1.2807
+  Epoch [45/200] Batch [200/1700] Loss: 3.3082
+  Epoch [45/200] Batch [250/1700] Loss: 2.8983
+  Epoch [45/200] Batch [300/1700] Loss: 3.3133
+  Epoch [45/200] Batch [350/1700] Loss: 6.8277
+  Epoch [45/200] Batch [400/1700] Loss: 2.8043
+  Epoch [45/200] Batch [450/1700] Loss: 4.4551
+  Epoch [45/200] Batch [500/1700] Loss: 5.0224
+  Epoch [45/200] Batch [550/1700] Loss: 3.7906
+  Epoch [45/200] Batch [600/1700] Loss: 3.9676
+  Epoch [45/200] Batch [650/1700] Loss: 4.4516
+  Epoch [45/200] Batch [700/1700] Loss: 3.9171
+  Epoch [45/200] Batch [750/1700] Loss: 4.1645
+  Epoch [45/200] Batch [800/1700] Loss: 12.9270
+  Epoch [45/200] Batch [850/1700] Loss: 5.1876
+  Epoch [45/200] Batch [900/1700] Loss: 4.5872
+  Epoch [45/200] Batch [950/1700] Loss: 5.5283
+  Epoch [45/200] Batch [1000/1700] Loss: 5.5146
+  Epoch [45/200] Batch [1050/1700] Loss: 4.8924
+  Epoch [45/200] Batch [1100/1700] Loss: 1.9955
+  Epoch [45/200] Batch [1150/1700] Loss: 1.4153
+  Epoch [45/200] Batch [1200/1700] Loss: 5.2467
+  Epoch [45/200] Batch [1250/1700] Loss: 1.8160
+  Epoch [45/200] Batch [1300/1700] Loss: 4.3047
+  Epoch [45/200] Batch [1350/1700] Loss: 3.7105
+  Epoch [45/200] Batch [1400/1700] Loss: 3.2609
+  Epoch [45/200] Batch [1450/1700] Loss: 2.3793
+  Epoch [45/200] Batch [1500/1700] Loss: 3.2855
+  Epoch [45/200] Batch [1550/1700] Loss: 6.0321
+  Epoch [45/200] Batch [1600/1700] Loss: 4.1828
+  Epoch [45/200] Batch [1650/1700] Loss: 3.9093
+  Epoch [45/200] Batch [1700/1700] Loss: 2.7335
+  Train - Loss: 4.3379 | MAE: 1.58mm | RMSE: 2.08mm | R2: 0.6568
+  Val   - Loss: 9.5312 | MAE: 2.54mm | RMSE: 3.09mm | R2: -0.2230
+
+Epoch 46/200 (lr=0.000881)
+  Epoch [46/200] Batch [50/1700] Loss: 2.4595
+  Epoch [46/200] Batch [100/1700] Loss: 12.8308
+  Epoch [46/200] Batch [150/1700] Loss: 6.0130
+  Epoch [46/200] Batch [200/1700] Loss: 5.4622
+  Epoch [46/200] Batch [250/1700] Loss: 5.5410
+  Epoch [46/200] Batch [300/1700] Loss: 2.8287
+  Epoch [46/200] Batch [350/1700] Loss: 7.0615
+  Epoch [46/200] Batch [400/1700] Loss: 2.3638
+  Epoch [46/200] Batch [450/1700] Loss: 6.5223
+  Epoch [46/200] Batch [500/1700] Loss: 3.2177
+  Epoch [46/200] Batch [550/1700] Loss: 4.3992
+  Epoch [46/200] Batch [600/1700] Loss: 3.4136
+  Epoch [46/200] Batch [650/1700] Loss: 2.8158
+  Epoch [46/200] Batch [700/1700] Loss: 6.1136
+  Epoch [46/200] Batch [750/1700] Loss: 4.0136
+  Epoch [46/200] Batch [800/1700] Loss: 6.5030
+  Epoch [46/200] Batch [850/1700] Loss: 4.7652
+  Epoch [46/200] Batch [900/1700] Loss: 2.0934
+  Epoch [46/200] Batch [950/1700] Loss: 6.2912
+  Epoch [46/200] Batch [1000/1700] Loss: 4.5333
+  Epoch [46/200] Batch [1050/1700] Loss: 3.8273
+  Epoch [46/200] Batch [1100/1700] Loss: 4.5644
+  Epoch [46/200] Batch [1150/1700] Loss: 6.0044
+  Epoch [46/200] Batch [1200/1700] Loss: 7.5064
+  Epoch [46/200] Batch [1250/1700] Loss: 1.6480
+  Epoch [46/200] Batch [1300/1700] Loss: 5.0926
+  Epoch [46/200] Batch [1350/1700] Loss: 2.7776
+  Epoch [46/200] Batch [1400/1700] Loss: 3.9118
+  Epoch [46/200] Batch [1450/1700] Loss: 3.3127
+  Epoch [46/200] Batch [1500/1700] Loss: 2.8150
+  Epoch [46/200] Batch [1550/1700] Loss: 7.2220
+  Epoch [46/200] Batch [1600/1700] Loss: 1.2655
+  Epoch [46/200] Batch [1650/1700] Loss: 1.4000
+  Epoch [46/200] Batch [1700/1700] Loss: 5.5454
+  Train - Loss: 4.2173 | MAE: 1.55mm | RMSE: 2.05mm | R2: 0.6663
+  Val   - Loss: 9.7384 | MAE: 2.59mm | RMSE: 3.13mm | R2: -0.2494
+
+Epoch 47/200 (lr=0.000876)
+  Epoch [47/200] Batch [50/1700] Loss: 5.6201
+  Epoch [47/200] Batch [100/1700] Loss: 4.8916
+  Epoch [47/200] Batch [150/1700] Loss: 4.5517
+  Epoch [47/200] Batch [200/1700] Loss: 1.5617
+  Epoch [47/200] Batch [250/1700] Loss: 1.6395
+  Epoch [47/200] Batch [300/1700] Loss: 5.5762
+  Epoch [47/200] Batch [350/1700] Loss: 6.0654
+  Epoch [47/200] Batch [400/1700] Loss: 7.9788
+  Epoch [47/200] Batch [450/1700] Loss: 3.2976
+  Epoch [47/200] Batch [500/1700] Loss: 4.4647
+  Epoch [47/200] Batch [550/1700] Loss: 3.2584
+  Epoch [47/200] Batch [600/1700] Loss: 3.4718
+  Epoch [47/200] Batch [650/1700] Loss: 2.7826
+  Epoch [47/200] Batch [700/1700] Loss: 2.9201
+  Epoch [47/200] Batch [750/1700] Loss: 7.4609
+  Epoch [47/200] Batch [800/1700] Loss: 4.7569
+  Epoch [47/200] Batch [850/1700] Loss: 3.8300
+  Epoch [47/200] Batch [900/1700] Loss: 6.2871
+  Epoch [47/200] Batch [950/1700] Loss: 0.9870
+  Epoch [47/200] Batch [1000/1700] Loss: 5.8560
+  Epoch [47/200] Batch [1050/1700] Loss: 4.9745
+  Epoch [47/200] Batch [1100/1700] Loss: 3.5921
+  Epoch [47/200] Batch [1150/1700] Loss: 3.3047
+  Epoch [47/200] Batch [1200/1700] Loss: 5.6057
+  Epoch [47/200] Batch [1250/1700] Loss: 7.1135
+  Epoch [47/200] Batch [1300/1700] Loss: 2.5607
+  Epoch [47/200] Batch [1350/1700] Loss: 5.1691
+  Epoch [47/200] Batch [1400/1700] Loss: 5.8583
+  Epoch [47/200] Batch [1450/1700] Loss: 3.6839
+  Epoch [47/200] Batch [1500/1700] Loss: 2.1907
+  Epoch [47/200] Batch [1550/1700] Loss: 2.1507
+  Epoch [47/200] Batch [1600/1700] Loss: 2.0928
+  Epoch [47/200] Batch [1650/1700] Loss: 3.6054
+  Epoch [47/200] Batch [1700/1700] Loss: 1.5580
+  Train - Loss: 4.1362 | MAE: 1.54mm | RMSE: 2.03mm | R2: 0.6728
+  Val   - Loss: 8.7073 | MAE: 2.43mm | RMSE: 2.96mm | R2: -0.1175
+
+Epoch 48/200 (lr=0.000871)
+  Epoch [48/200] Batch [50/1700] Loss: 3.4272
+  Epoch [48/200] Batch [100/1700] Loss: 3.1418
+  Epoch [48/200] Batch [150/1700] Loss: 2.7440
+  Epoch [48/200] Batch [200/1700] Loss: 4.5923
+  Epoch [48/200] Batch [250/1700] Loss: 5.0059
+  Epoch [48/200] Batch [300/1700] Loss: 6.1081
+  Epoch [48/200] Batch [350/1700] Loss: 4.0806
+  Epoch [48/200] Batch [400/1700] Loss: 2.4270
+  Epoch [48/200] Batch [450/1700] Loss: 5.2863
+  Epoch [48/200] Batch [500/1700] Loss: 1.9348
+  Epoch [48/200] Batch [550/1700] Loss: 5.9241
+  Epoch [48/200] Batch [600/1700] Loss: 4.4827
+  Epoch [48/200] Batch [650/1700] Loss: 2.4761
+  Epoch [48/200] Batch [700/1700] Loss: 2.8528
+  Epoch [48/200] Batch [750/1700] Loss: 2.4916
+  Epoch [48/200] Batch [800/1700] Loss: 2.7300
+  Epoch [48/200] Batch [850/1700] Loss: 4.6236
+  Epoch [48/200] Batch [900/1700] Loss: 2.9788
+  Epoch [48/200] Batch [950/1700] Loss: 4.8287
+  Epoch [48/200] Batch [1000/1700] Loss: 1.2766
+  Epoch [48/200] Batch [1050/1700] Loss: 6.4838
+  Epoch [48/200] Batch [1100/1700] Loss: 3.0126
+  Epoch [48/200] Batch [1150/1700] Loss: 5.2124
+  Epoch [48/200] Batch [1200/1700] Loss: 7.3895
+  Epoch [48/200] Batch [1250/1700] Loss: 5.1699
+  Epoch [48/200] Batch [1300/1700] Loss: 3.5525
+  Epoch [48/200] Batch [1350/1700] Loss: 6.8853
+  Epoch [48/200] Batch [1400/1700] Loss: 1.7345
+  Epoch [48/200] Batch [1450/1700] Loss: 3.7294
+  Epoch [48/200] Batch [1500/1700] Loss: 3.3513
+  Epoch [48/200] Batch [1550/1700] Loss: 1.6813
+  Epoch [48/200] Batch [1600/1700] Loss: 2.6940
+  Epoch [48/200] Batch [1650/1700] Loss: 3.0839
+  Epoch [48/200] Batch [1700/1700] Loss: 2.4637
+  Train - Loss: 4.0558 | MAE: 1.52mm | RMSE: 2.01mm | R2: 0.6791
+  Val   - Loss: 8.7262 | MAE: 2.42mm | RMSE: 2.96mm | R2: -0.1194
+
+Epoch 49/200 (lr=0.000866)
+  Epoch [49/200] Batch [50/1700] Loss: 1.2863
+  Epoch [49/200] Batch [100/1700] Loss: 7.7423
+  Epoch [49/200] Batch [150/1700] Loss: 6.3283
+  Epoch [49/200] Batch [200/1700] Loss: 3.2529
+  Epoch [49/200] Batch [250/1700] Loss: 2.9513
+  Epoch [49/200] Batch [300/1700] Loss: 1.6508
+  Epoch [49/200] Batch [350/1700] Loss: 4.0933
+  Epoch [49/200] Batch [400/1700] Loss: 3.1797
+  Epoch [49/200] Batch [450/1700] Loss: 4.7986
+  Epoch [49/200] Batch [500/1700] Loss: 5.8813
+  Epoch [49/200] Batch [550/1700] Loss: 2.6349
+  Epoch [49/200] Batch [600/1700] Loss: 3.3504
+  Epoch [49/200] Batch [650/1700] Loss: 3.1336
+  Epoch [49/200] Batch [700/1700] Loss: 3.2485
+  Epoch [49/200] Batch [750/1700] Loss: 3.9967
+  Epoch [49/200] Batch [800/1700] Loss: 3.2933
+  Epoch [49/200] Batch [850/1700] Loss: 6.6860
+  Epoch [49/200] Batch [900/1700] Loss: 2.8807
+  Epoch [49/200] Batch [950/1700] Loss: 2.8877
+  Epoch [49/200] Batch [1000/1700] Loss: 1.9867
+  Epoch [49/200] Batch [1050/1700] Loss: 3.1425
+  Epoch [49/200] Batch [1100/1700] Loss: 3.8620
+  Epoch [49/200] Batch [1150/1700] Loss: 2.9918
+  Epoch [49/200] Batch [1200/1700] Loss: 1.7823
+  Epoch [49/200] Batch [1250/1700] Loss: 3.3927
+  Epoch [49/200] Batch [1300/1700] Loss: 3.8291
+  Epoch [49/200] Batch [1350/1700] Loss: 4.1625
+  Epoch [49/200] Batch [1400/1700] Loss: 5.8020
+  Epoch [49/200] Batch [1450/1700] Loss: 5.6081
+  Epoch [49/200] Batch [1500/1700] Loss: 8.2541
+  Epoch [49/200] Batch [1550/1700] Loss: 3.8494
+  Epoch [49/200] Batch [1600/1700] Loss: 6.6472
+  Epoch [49/200] Batch [1650/1700] Loss: 3.0480
+  Epoch [49/200] Batch [1700/1700] Loss: 8.4615
+  Train - Loss: 3.9466 | MAE: 1.49mm | RMSE: 1.99mm | R2: 0.6878
+  Val   - Loss: 9.0783 | MAE: 2.52mm | RMSE: 3.01mm | R2: -0.1612
+
+  Early stopping at epoch 49 (no improvement for 30 epochs)
+
+============================================================
+Final Testing with best model...
+  Loaded best model from epoch 19
+
+  Test Results:
+    Loss:  12.3998
+    MAE:   2.88 mm
+    RMSE:  3.52 mm
+    R2:    -0.2194
+    MAPE:  22.68%
+
+  Per-pig averaged predictions:
+    nky3_12-174: True=11.3mm, Pred=16.5mm, Error=5.2mm
+    nky3_11-32335L: True=10.1mm, Pred=15.5mm, Error=5.4mm
+    nky1_3-18: True=13.9mm, Pred=14.6mm, Error=0.7mm
+    nky1_3-12: True=17.2mm, Pred=16.8mm, Error=0.4mm
+    fmh_37T219: True=16.0mm, Pred=15.6mm, Error=0.4mm
+    fmh_21T66: True=20.0mm, Pred=14.2mm, Error=5.8mm
+    fmh_22T53: True=13.0mm, Pred=16.2mm, Error=3.2mm
+    nky3_10-31811: True=12.2mm, Pred=15.4mm, Error=3.2mm
+    nky3_12-144: True=9.3mm, Pred=15.3mm, Error=6.0mm
+    fmh_36LY0342: True=17.0mm, Pred=16.1mm, Error=0.9mm
+    nky3_11-32637L: True=12.7mm, Pred=15.4mm, Error=2.7mm
+    nky3_13-307: True=10.0mm, Pred=14.9mm, Error=4.9mm
+    fmh_3LY0812: True=21.0mm, Pred=17.9mm, Error=3.1mm
+    nky1_2-1: True=16.1mm, Pred=15.2mm, Error=0.9mm
+    nky1_3-16: True=13.7mm, Pred=15.6mm, Error=1.9mm
+    nky1_3-21: True=18.0mm, Pred=17.2mm, Error=0.8mm
+    nky1_3-7: True=13.8mm, Pred=15.9mm, Error=2.1mm
+    fmh_1LY920: True=15.0mm, Pred=16.1mm, Error=1.1mm
+    fmh_41LY0936: True=15.0mm, Pred=18.1mm, Error=3.1mm
+    nky3_12-247: True=11.1mm, Pred=13.6mm, Error=2.5mm
+
+  Per-pig Metrics:
+    MAE:  2.72 mm
+    RMSE: 3.28 mm
+    R2:   -0.0597
+Results plot saved to F:\Postgraduate\Lab\ËÇÎ¹Õ¾\±³±ìËã·¨\ÍøÂç\pointmlp_backfat\checkpoints\training_results.png
+
+============================================================
+Training complete!
+All outputs saved to: F:\Postgraduate\Lab\ËÇÎ¹Õ¾\±³±ìËã·¨\ÍøÂç\pointmlp_backfat\checkpoints
+============================================================

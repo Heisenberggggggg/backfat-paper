@@ -1,0 +1,456 @@
+[2026-04-02 14:52:38] ============================================================
+[2026-04-02 14:52:38] Projection CNN (ResNet-18, 3ch) Backfat Regression
+[2026-04-02 14:52:38] Input: BEV(XY->Z) + Front(XZ->Y) + Side(YZ->X)
+[2026-04-02 14:52:38] Device: cuda
+[2026-04-02 14:52:38] ============================================================
+[2026-04-02 14:52:38] 
+[1/4] Loading metadata...
+[2026-04-02 14:52:38]   Total: 912 pigs, 18240 frames
+[2026-04-02 14:52:38]   Backfat range: 7.1 - 31.0 mm (mean=16.2)
+[2026-04-02 14:52:38] 
+[2/4] Splitting by pig ID (80/10/10)...
+[2026-04-02 14:52:38]   Train: 729 pigs, 14580 frames
+[2026-04-02 14:52:38]   Val:   91 pigs, 1820 frames
+[2026-04-02 14:52:38]   Test:  92 pigs, 1840 frames
+[2026-04-02 14:52:38] 
+[3/4] Creating data loaders...
+[2026-04-02 14:52:38] 
+[4/4] Initializing ResNet-18 (3-channel projection, ImageNet pretrained)...
+[2026-04-02 14:52:39]   Total parameters:     11,242,305
+[2026-04-02 14:52:39]   Trainable parameters: 11,242,305
+[2026-04-02 14:52:39] 
+  Hyperparams: lr=0.0001, weight_decay=0.0001, batch_size=32, epochs=100, dropout=0.3
+[2026-04-02 14:52:39]   Loss: SmoothL1Loss
+[2026-04-02 14:52:39]   ImageNet normalization applied to 3-channel projection
+[2026-04-02 14:52:39] 
+Training for 100 epochs...
+[2026-04-02 14:52:39] ============================================================
+  Epoch [1/100] Batch [50/455] Loss: 7.6420
+  Epoch [1/100] Batch [100/455] Loss: 2.4805
+  Epoch [1/100] Batch [150/455] Loss: 2.7291
+  Epoch [1/100] Batch [200/455] Loss: 2.2027
+  Epoch [1/100] Batch [250/455] Loss: 2.4622
+  Epoch [1/100] Batch [300/455] Loss: 2.5676
+  Epoch [1/100] Batch [350/455] Loss: 3.1598
+  Epoch [1/100] Batch [400/455] Loss: 2.4742
+  Epoch [1/100] Batch [450/455] Loss: 2.7716
+[2026-04-02 14:53:49] Epoch 1/100 (lr=0.000100)
+[2026-04-02 14:53:49]   Train - Loss: 3.6551 | MAE: 4.13mm | R2: -1.3321
+[2026-04-02 14:53:49]   Val   - Loss: 2.4212 | MAE: 2.89mm | R2: 0.1097
+[2026-04-02 14:53:49]   * Best model saved! (Val Loss: 2.4212, R2: 0.1097)
+  Epoch [2/100] Batch [50/455] Loss: 2.8990
+  Epoch [2/100] Batch [100/455] Loss: 2.4046
+  Epoch [2/100] Batch [150/455] Loss: 1.7316
+  Epoch [2/100] Batch [200/455] Loss: 2.1657
+  Epoch [2/100] Batch [250/455] Loss: 1.9529
+  Epoch [2/100] Batch [300/455] Loss: 3.4498
+  Epoch [2/100] Batch [350/455] Loss: 2.9059
+  Epoch [2/100] Batch [400/455] Loss: 2.3487
+  Epoch [2/100] Batch [450/455] Loss: 2.1061
+[2026-04-02 14:54:55] Epoch 2/100 (lr=0.000100)
+[2026-04-02 14:54:55]   Train - Loss: 2.5518 | MAE: 3.02mm | R2: -0.0763
+[2026-04-02 14:54:55]   Val   - Loss: 2.4777 | MAE: 2.95mm | R2: 0.0847
+  Epoch [3/100] Batch [50/455] Loss: 2.0861
+  Epoch [3/100] Batch [100/455] Loss: 3.1643
+  Epoch [3/100] Batch [150/455] Loss: 2.7110
+  Epoch [3/100] Batch [200/455] Loss: 2.3342
+  Epoch [3/100] Batch [250/455] Loss: 2.0544
+  Epoch [3/100] Batch [300/455] Loss: 2.2617
+  Epoch [3/100] Batch [350/455] Loss: 2.6394
+  Epoch [3/100] Batch [400/455] Loss: 2.6621
+  Epoch [3/100] Batch [450/455] Loss: 2.5735
+[2026-04-02 14:55:59] Epoch 3/100 (lr=0.000100)
+[2026-04-02 14:55:59]   Train - Loss: 2.4925 | MAE: 2.96mm | R2: -0.0494
+[2026-04-02 14:55:59]   Val   - Loss: 2.4039 | MAE: 2.87mm | R2: 0.1197
+[2026-04-02 14:55:59]   * Best model saved! (Val Loss: 2.4039, R2: 0.1197)
+  Epoch [4/100] Batch [50/455] Loss: 1.8237
+  Epoch [4/100] Batch [100/455] Loss: 2.0668
+  Epoch [4/100] Batch [150/455] Loss: 3.1089
+  Epoch [4/100] Batch [200/455] Loss: 1.9503
+  Epoch [4/100] Batch [250/455] Loss: 2.4250
+  Epoch [4/100] Batch [300/455] Loss: 2.1293
+  Epoch [4/100] Batch [350/455] Loss: 2.1720
+  Epoch [4/100] Batch [400/455] Loss: 1.5555
+  Epoch [4/100] Batch [450/455] Loss: 2.5190
+[2026-04-02 14:57:03] Epoch 4/100 (lr=0.000100)
+[2026-04-02 14:57:03]   Train - Loss: 2.4337 | MAE: 2.90mm | R2: -0.0073
+[2026-04-02 14:57:03]   Val   - Loss: 2.4536 | MAE: 2.92mm | R2: 0.0638
+  Epoch [5/100] Batch [50/455] Loss: 2.8432
+  Epoch [5/100] Batch [100/455] Loss: 1.8251
+  Epoch [5/100] Batch [150/455] Loss: 2.5433
+  Epoch [5/100] Batch [200/455] Loss: 1.4249
+  Epoch [5/100] Batch [250/455] Loss: 2.1486
+  Epoch [5/100] Batch [300/455] Loss: 2.7910
+  Epoch [5/100] Batch [350/455] Loss: 2.2343
+  Epoch [5/100] Batch [400/455] Loss: 2.4187
+  Epoch [5/100] Batch [450/455] Loss: 1.9432
+[2026-04-02 14:58:08] Epoch 5/100 (lr=0.000100)
+[2026-04-02 14:58:08]   Train - Loss: 2.4109 | MAE: 2.87mm | R2: 0.0084
+[2026-04-02 14:58:08]   Val   - Loss: 2.5334 | MAE: 3.00mm | R2: -0.0553
+  Epoch [6/100] Batch [50/455] Loss: 2.2170
+  Epoch [6/100] Batch [100/455] Loss: 2.6545
+  Epoch [6/100] Batch [150/455] Loss: 2.5908
+  Epoch [6/100] Batch [200/455] Loss: 2.3787
+  Epoch [6/100] Batch [250/455] Loss: 3.3609
+  Epoch [6/100] Batch [300/455] Loss: 2.0177
+  Epoch [6/100] Batch [350/455] Loss: 2.3067
+  Epoch [6/100] Batch [400/455] Loss: 2.1441
+  Epoch [6/100] Batch [450/455] Loss: 2.3459
+[2026-04-02 14:59:12] Epoch 6/100 (lr=0.000099)
+[2026-04-02 14:59:12]   Train - Loss: 2.3761 | MAE: 2.84mm | R2: 0.0289
+[2026-04-02 14:59:12]   Val   - Loss: 2.8811 | MAE: 3.35mm | R2: -0.2998
+  Epoch [7/100] Batch [50/455] Loss: 2.0365
+  Epoch [7/100] Batch [100/455] Loss: 1.8558
+  Epoch [7/100] Batch [150/455] Loss: 2.0320
+  Epoch [7/100] Batch [200/455] Loss: 2.2623
+  Epoch [7/100] Batch [250/455] Loss: 1.8352
+  Epoch [7/100] Batch [300/455] Loss: 2.5924
+  Epoch [7/100] Batch [350/455] Loss: 2.0629
+  Epoch [7/100] Batch [400/455] Loss: 2.1445
+  Epoch [7/100] Batch [450/455] Loss: 2.3928
+[2026-04-02 15:00:19] Epoch 7/100 (lr=0.000099)
+[2026-04-02 15:00:19]   Train - Loss: 2.3226 | MAE: 2.78mm | R2: 0.0612
+[2026-04-02 15:00:19]   Val   - Loss: 2.4516 | MAE: 2.92mm | R2: 0.0434
+  Epoch [8/100] Batch [50/455] Loss: 2.9100
+  Epoch [8/100] Batch [100/455] Loss: 1.9766
+  Epoch [8/100] Batch [150/455] Loss: 2.2027
+  Epoch [8/100] Batch [200/455] Loss: 2.1266
+  Epoch [8/100] Batch [250/455] Loss: 2.2907
+  Epoch [8/100] Batch [300/455] Loss: 2.0251
+  Epoch [8/100] Batch [350/455] Loss: 1.8419
+  Epoch [8/100] Batch [400/455] Loss: 1.4713
+  Epoch [8/100] Batch [450/455] Loss: 2.0011
+[2026-04-02 15:01:34] Epoch 8/100 (lr=0.000099)
+[2026-04-02 15:01:34]   Train - Loss: 2.2962 | MAE: 2.76mm | R2: 0.0724
+[2026-04-02 15:01:34]   Val   - Loss: 2.6604 | MAE: 3.13mm | R2: -0.1211
+  Epoch [9/100] Batch [50/455] Loss: 2.1265
+  Epoch [9/100] Batch [100/455] Loss: 2.2231
+  Epoch [9/100] Batch [150/455] Loss: 2.2603
+  Epoch [9/100] Batch [200/455] Loss: 2.3562
+  Epoch [9/100] Batch [250/455] Loss: 2.0265
+  Epoch [9/100] Batch [300/455] Loss: 1.9833
+  Epoch [9/100] Batch [350/455] Loss: 2.6399
+  Epoch [9/100] Batch [400/455] Loss: 1.8573
+  Epoch [9/100] Batch [450/455] Loss: 2.0399
+[2026-04-02 15:02:50] Epoch 9/100 (lr=0.000098)
+[2026-04-02 15:02:50]   Train - Loss: 2.2660 | MAE: 2.72mm | R2: 0.0850
+[2026-04-02 15:02:50]   Val   - Loss: 2.3643 | MAE: 2.83mm | R2: 0.0769
+[2026-04-02 15:02:50]   * Best model saved! (Val Loss: 2.3643, R2: 0.0769)
+  Epoch [10/100] Batch [50/455] Loss: 2.1175
+  Epoch [10/100] Batch [100/455] Loss: 2.6494
+  Epoch [10/100] Batch [150/455] Loss: 2.2681
+  Epoch [10/100] Batch [200/455] Loss: 2.2235
+  Epoch [10/100] Batch [250/455] Loss: 1.9337
+  Epoch [10/100] Batch [300/455] Loss: 2.0207
+  Epoch [10/100] Batch [350/455] Loss: 1.9999
+  Epoch [10/100] Batch [400/455] Loss: 1.9728
+  Epoch [10/100] Batch [450/455] Loss: 2.2019
+[2026-04-02 15:04:05] Epoch 10/100 (lr=0.000098)
+[2026-04-02 15:04:05]   Train - Loss: 2.2307 | MAE: 2.69mm | R2: 0.1123
+[2026-04-02 15:04:05]   Val   - Loss: 2.4702 | MAE: 2.94mm | R2: 0.0293
+  Epoch [11/100] Batch [50/455] Loss: 2.6303
+  Epoch [11/100] Batch [100/455] Loss: 2.1364
+  Epoch [11/100] Batch [150/455] Loss: 1.7082
+  Epoch [11/100] Batch [200/455] Loss: 2.5757
+  Epoch [11/100] Batch [250/455] Loss: 2.2258
+  Epoch [11/100] Batch [300/455] Loss: 2.9473
+  Epoch [11/100] Batch [350/455] Loss: 1.6993
+  Epoch [11/100] Batch [400/455] Loss: 2.5292
+  Epoch [11/100] Batch [450/455] Loss: 2.3099
+[2026-04-02 15:05:20] Epoch 11/100 (lr=0.000098)
+[2026-04-02 15:05:20]   Train - Loss: 2.1911 | MAE: 2.65mm | R2: 0.1427
+[2026-04-02 15:05:20]   Val   - Loss: 2.4878 | MAE: 2.96mm | R2: -0.0037
+  Epoch [12/100] Batch [50/455] Loss: 1.3047
+  Epoch [12/100] Batch [100/455] Loss: 1.7687
+  Epoch [12/100] Batch [150/455] Loss: 2.0483
+  Epoch [12/100] Batch [200/455] Loss: 1.7330
+  Epoch [12/100] Batch [250/455] Loss: 2.3730
+  Epoch [12/100] Batch [300/455] Loss: 2.0778
+  Epoch [12/100] Batch [350/455] Loss: 2.9478
+  Epoch [12/100] Batch [400/455] Loss: 2.2985
+  Epoch [12/100] Batch [450/455] Loss: 2.3120
+[2026-04-02 15:06:35] Epoch 12/100 (lr=0.000097)
+[2026-04-02 15:06:35]   Train - Loss: 2.1670 | MAE: 2.62mm | R2: 0.1422
+[2026-04-02 15:06:35]   Val   - Loss: 2.5838 | MAE: 3.05mm | R2: -0.0058
+  Epoch [13/100] Batch [50/455] Loss: 1.8867
+  Epoch [13/100] Batch [100/455] Loss: 1.9145
+  Epoch [13/100] Batch [150/455] Loss: 2.0597
+  Epoch [13/100] Batch [200/455] Loss: 2.4367
+  Epoch [13/100] Batch [250/455] Loss: 1.9908
+  Epoch [13/100] Batch [300/455] Loss: 2.0540
+  Epoch [13/100] Batch [350/455] Loss: 2.7866
+  Epoch [13/100] Batch [400/455] Loss: 2.2327
+  Epoch [13/100] Batch [450/455] Loss: 2.3957
+[2026-04-02 15:07:50] Epoch 13/100 (lr=0.000097)
+[2026-04-02 15:07:50]   Train - Loss: 2.1380 | MAE: 2.59mm | R2: 0.1717
+[2026-04-02 15:07:50]   Val   - Loss: 2.3630 | MAE: 2.83mm | R2: 0.0967
+[2026-04-02 15:07:50]   * Best model saved! (Val Loss: 2.3630, R2: 0.0967)
+  Epoch [14/100] Batch [50/455] Loss: 1.8066
+  Epoch [14/100] Batch [100/455] Loss: 2.3066
+  Epoch [14/100] Batch [150/455] Loss: 2.5373
+  Epoch [14/100] Batch [200/455] Loss: 1.4623
+  Epoch [14/100] Batch [250/455] Loss: 1.4598
+  Epoch [14/100] Batch [300/455] Loss: 2.8505
+  Epoch [14/100] Batch [350/455] Loss: 2.0355
+  Epoch [14/100] Batch [400/455] Loss: 2.2703
+  Epoch [14/100] Batch [450/455] Loss: 2.3785
+[2026-04-02 15:09:05] Epoch 14/100 (lr=0.000096)
+[2026-04-02 15:09:05]   Train - Loss: 2.1057 | MAE: 2.56mm | R2: 0.1758
+[2026-04-02 15:09:05]   Val   - Loss: 2.4878 | MAE: 2.95mm | R2: 0.0486
+  Epoch [15/100] Batch [50/455] Loss: 2.0263
+  Epoch [15/100] Batch [100/455] Loss: 1.8169
+  Epoch [15/100] Batch [150/455] Loss: 2.2110
+  Epoch [15/100] Batch [200/455] Loss: 1.9322
+  Epoch [15/100] Batch [250/455] Loss: 2.7438
+  Epoch [15/100] Batch [300/455] Loss: 2.0717
+  Epoch [15/100] Batch [350/455] Loss: 2.5768
+  Epoch [15/100] Batch [400/455] Loss: 1.6683
+  Epoch [15/100] Batch [450/455] Loss: 1.6924
+[2026-04-02 15:10:21] Epoch 15/100 (lr=0.000095)
+[2026-04-02 15:10:21]   Train - Loss: 2.0814 | MAE: 2.54mm | R2: 0.2026
+[2026-04-02 15:10:21]   Val   - Loss: 2.4655 | MAE: 2.93mm | R2: 0.0191
+  Epoch [16/100] Batch [50/455] Loss: 1.9174
+  Epoch [16/100] Batch [100/455] Loss: 1.9551
+  Epoch [16/100] Batch [150/455] Loss: 1.9929
+  Epoch [16/100] Batch [200/455] Loss: 2.4377
+  Epoch [16/100] Batch [250/455] Loss: 1.3670
+  Epoch [16/100] Batch [300/455] Loss: 2.0671
+  Epoch [16/100] Batch [350/455] Loss: 2.1629
+  Epoch [16/100] Batch [400/455] Loss: 1.7691
+  Epoch [16/100] Batch [450/455] Loss: 1.6875
+[2026-04-02 15:11:36] Epoch 16/100 (lr=0.000095)
+[2026-04-02 15:11:36]   Train - Loss: 2.0423 | MAE: 2.50mm | R2: 0.2220
+[2026-04-02 15:11:36]   Val   - Loss: 2.6283 | MAE: 3.09mm | R2: -0.0920
+  Epoch [17/100] Batch [50/455] Loss: 1.8210
+  Epoch [17/100] Batch [100/455] Loss: 1.7470
+  Epoch [17/100] Batch [150/455] Loss: 2.4215
+  Epoch [17/100] Batch [200/455] Loss: 2.4428
+  Epoch [17/100] Batch [250/455] Loss: 2.0081
+  Epoch [17/100] Batch [300/455] Loss: 2.5943
+  Epoch [17/100] Batch [350/455] Loss: 2.0922
+  Epoch [17/100] Batch [400/455] Loss: 2.2456
+  Epoch [17/100] Batch [450/455] Loss: 2.6755
+[2026-04-02 15:12:50] Epoch 17/100 (lr=0.000094)
+[2026-04-02 15:12:50]   Train - Loss: 2.0164 | MAE: 2.47mm | R2: 0.2370
+[2026-04-02 15:12:50]   Val   - Loss: 2.3954 | MAE: 2.86mm | R2: 0.0811
+  Epoch [18/100] Batch [50/455] Loss: 1.4028
+  Epoch [18/100] Batch [100/455] Loss: 2.5775
+  Epoch [18/100] Batch [150/455] Loss: 1.8881
+  Epoch [18/100] Batch [200/455] Loss: 1.8597
+  Epoch [18/100] Batch [250/455] Loss: 1.9895
+  Epoch [18/100] Batch [300/455] Loss: 1.9358
+  Epoch [18/100] Batch [350/455] Loss: 2.1698
+  Epoch [18/100] Batch [400/455] Loss: 1.9241
+  Epoch [18/100] Batch [450/455] Loss: 1.7632
+[2026-04-02 15:14:05] Epoch 18/100 (lr=0.000093)
+[2026-04-02 15:14:05]   Train - Loss: 1.9824 | MAE: 2.43mm | R2: 0.2595
+[2026-04-02 15:14:05]   Val   - Loss: 2.4849 | MAE: 2.95mm | R2: 0.0243
+  Epoch [19/100] Batch [50/455] Loss: 2.0987
+  Epoch [19/100] Batch [100/455] Loss: 2.2866
+  Epoch [19/100] Batch [150/455] Loss: 1.8217
+  Epoch [19/100] Batch [200/455] Loss: 2.4839
+  Epoch [19/100] Batch [250/455] Loss: 2.0827
+  Epoch [19/100] Batch [300/455] Loss: 2.1309
+  Epoch [19/100] Batch [350/455] Loss: 1.9296
+  Epoch [19/100] Batch [400/455] Loss: 2.1511
+  Epoch [19/100] Batch [450/455] Loss: 1.8112
+[2026-04-02 15:15:21] Epoch 19/100 (lr=0.000092)
+[2026-04-02 15:15:21]   Train - Loss: 1.9750 | MAE: 2.43mm | R2: 0.2648
+[2026-04-02 15:15:21]   Val   - Loss: 2.4878 | MAE: 2.95mm | R2: 0.0165
+  Epoch [20/100] Batch [50/455] Loss: 1.5734
+  Epoch [20/100] Batch [100/455] Loss: 2.3998
+  Epoch [20/100] Batch [150/455] Loss: 1.8123
+  Epoch [20/100] Batch [200/455] Loss: 2.5150
+  Epoch [20/100] Batch [250/455] Loss: 2.2758
+  Epoch [20/100] Batch [300/455] Loss: 2.0335
+  Epoch [20/100] Batch [350/455] Loss: 2.2615
+  Epoch [20/100] Batch [400/455] Loss: 1.7341
+  Epoch [20/100] Batch [450/455] Loss: 2.3604
+[2026-04-02 15:16:37] Epoch 20/100 (lr=0.000091)
+[2026-04-02 15:16:37]   Train - Loss: 1.9522 | MAE: 2.40mm | R2: 0.2791
+[2026-04-02 15:16:37]   Val   - Loss: 2.6380 | MAE: 3.10mm | R2: -0.1242
+  Epoch [21/100] Batch [50/455] Loss: 1.8075
+  Epoch [21/100] Batch [100/455] Loss: 1.5881
+  Epoch [21/100] Batch [150/455] Loss: 2.4436
+  Epoch [21/100] Batch [200/455] Loss: 2.1085
+  Epoch [21/100] Batch [250/455] Loss: 1.2320
+  Epoch [21/100] Batch [300/455] Loss: 1.5979
+  Epoch [21/100] Batch [350/455] Loss: 1.8919
+  Epoch [21/100] Batch [400/455] Loss: 2.1772
+  Epoch [21/100] Batch [450/455] Loss: 1.8760
+[2026-04-02 15:17:52] Epoch 21/100 (lr=0.000091)
+[2026-04-02 15:17:52]   Train - Loss: 1.9014 | MAE: 2.35mm | R2: 0.3082
+[2026-04-02 15:17:52]   Val   - Loss: 2.5157 | MAE: 2.98mm | R2: 0.0208
+  Epoch [22/100] Batch [50/455] Loss: 1.3484
+  Epoch [22/100] Batch [100/455] Loss: 1.3026
+  Epoch [22/100] Batch [150/455] Loss: 2.0587
+  Epoch [22/100] Batch [200/455] Loss: 2.4749
+  Epoch [22/100] Batch [250/455] Loss: 2.1228
+  Epoch [22/100] Batch [300/455] Loss: 1.7612
+  Epoch [22/100] Batch [350/455] Loss: 2.1144
+  Epoch [22/100] Batch [400/455] Loss: 2.1798
+  Epoch [22/100] Batch [450/455] Loss: 1.8086
+[2026-04-02 15:19:06] Epoch 22/100 (lr=0.000090)
+[2026-04-02 15:19:06]   Train - Loss: 1.8775 | MAE: 2.33mm | R2: 0.3180
+[2026-04-02 15:19:06]   Val   - Loss: 2.6283 | MAE: 3.10mm | R2: -0.0802
+  Epoch [23/100] Batch [50/455] Loss: 1.9051
+  Epoch [23/100] Batch [100/455] Loss: 1.8478
+  Epoch [23/100] Batch [150/455] Loss: 1.4209
+  Epoch [23/100] Batch [200/455] Loss: 1.7643
+  Epoch [23/100] Batch [250/455] Loss: 1.7622
+  Epoch [23/100] Batch [300/455] Loss: 1.9303
+  Epoch [23/100] Batch [350/455] Loss: 1.8881
+  Epoch [23/100] Batch [400/455] Loss: 2.2977
+  Epoch [23/100] Batch [450/455] Loss: 1.4173
+[2026-04-02 15:20:21] Epoch 23/100 (lr=0.000089)
+[2026-04-02 15:20:21]   Train - Loss: 1.8451 | MAE: 2.29mm | R2: 0.3336
+[2026-04-02 15:20:21]   Val   - Loss: 2.4824 | MAE: 2.95mm | R2: 0.0113
+  Epoch [24/100] Batch [50/455] Loss: 1.4851
+  Epoch [24/100] Batch [100/455] Loss: 2.3724
+  Epoch [24/100] Batch [150/455] Loss: 1.3043
+  Epoch [24/100] Batch [200/455] Loss: 2.1272
+  Epoch [24/100] Batch [250/455] Loss: 1.5260
+  Epoch [24/100] Batch [300/455] Loss: 2.1278
+  Epoch [24/100] Batch [350/455] Loss: 1.2216
+  Epoch [24/100] Batch [400/455] Loss: 1.4777
+  Epoch [24/100] Batch [450/455] Loss: 1.4104
+[2026-04-02 15:21:37] Epoch 24/100 (lr=0.000088)
+[2026-04-02 15:21:37]   Train - Loss: 1.8170 | MAE: 2.27mm | R2: 0.3540
+[2026-04-02 15:21:37]   Val   - Loss: 2.5408 | MAE: 3.00mm | R2: -0.0091
+  Epoch [25/100] Batch [50/455] Loss: 1.5114F:\Postgraduate\Lab\ËÇÎ¹Õ¾\±³±ìËã·¨\ÍøÂç\depthmap_cnn\train_projection.py:482: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  ckpt = torch.load(os.path.join(args.save_dir, 'best_model_projection.pth'),
+
+  Epoch [25/100] Batch [100/455] Loss: 1.3217
+  Epoch [25/100] Batch [150/455] Loss: 2.0359
+  Epoch [25/100] Batch [200/455] Loss: 1.9292
+  Epoch [25/100] Batch [250/455] Loss: 1.6034
+  Epoch [25/100] Batch [300/455] Loss: 1.8072
+  Epoch [25/100] Batch [350/455] Loss: 2.1665
+  Epoch [25/100] Batch [400/455] Loss: 1.8901
+  Epoch [25/100] Batch [450/455] Loss: 1.5940
+[2026-04-02 15:22:52] Epoch 25/100 (lr=0.000087)
+[2026-04-02 15:22:52]   Train - Loss: 1.7870 | MAE: 2.24mm | R2: 0.3667
+[2026-04-02 15:22:52]   Val   - Loss: 2.4006 | MAE: 2.86mm | R2: 0.0731
+  Epoch [26/100] Batch [50/455] Loss: 1.8560
+  Epoch [26/100] Batch [100/455] Loss: 1.8767
+  Epoch [26/100] Batch [150/455] Loss: 1.9724
+  Epoch [26/100] Batch [200/455] Loss: 1.1939
+  Epoch [26/100] Batch [250/455] Loss: 2.1209
+  Epoch [26/100] Batch [300/455] Loss: 1.7910
+  Epoch [26/100] Batch [350/455] Loss: 1.7707
+  Epoch [26/100] Batch [400/455] Loss: 1.6124
+  Epoch [26/100] Batch [450/455] Loss: 1.1623
+[2026-04-02 15:24:07] Epoch 26/100 (lr=0.000086)
+[2026-04-02 15:24:07]   Train - Loss: 1.8044 | MAE: 2.25mm | R2: 0.3561
+[2026-04-02 15:24:07]   Val   - Loss: 2.5146 | MAE: 2.97mm | R2: -0.0290
+  Epoch [27/100] Batch [50/455] Loss: 1.7799
+  Epoch [27/100] Batch [100/455] Loss: 1.3887
+  Epoch [27/100] Batch [150/455] Loss: 1.7577
+  Epoch [27/100] Batch [200/455] Loss: 1.6539
+  Epoch [27/100] Batch [250/455] Loss: 1.4702
+  Epoch [27/100] Batch [300/455] Loss: 1.8928
+  Epoch [27/100] Batch [350/455] Loss: 1.6295
+  Epoch [27/100] Batch [400/455] Loss: 1.7759
+  Epoch [27/100] Batch [450/455] Loss: 2.0995
+[2026-04-02 15:25:22] Epoch 27/100 (lr=0.000084)
+[2026-04-02 15:25:22]   Train - Loss: 1.7544 | MAE: 2.20mm | R2: 0.3927
+[2026-04-02 15:25:22]   Val   - Loss: 2.4363 | MAE: 2.90mm | R2: 0.0687
+  Epoch [28/100] Batch [50/455] Loss: 1.3591
+  Epoch [28/100] Batch [100/455] Loss: 1.7003
+  Epoch [28/100] Batch [150/455] Loss: 1.9052
+  Epoch [28/100] Batch [200/455] Loss: 1.8154
+  Epoch [28/100] Batch [250/455] Loss: 1.3578
+  Epoch [28/100] Batch [300/455] Loss: 1.3393
+  Epoch [28/100] Batch [350/455] Loss: 1.8502
+  Epoch [28/100] Batch [400/455] Loss: 1.6464
+  Epoch [28/100] Batch [450/455] Loss: 1.6821
+[2026-04-02 15:26:38] Epoch 28/100 (lr=0.000083)
+[2026-04-02 15:26:38]   Train - Loss: 1.7265 | MAE: 2.17mm | R2: 0.4033
+[2026-04-02 15:26:38]   Val   - Loss: 2.5160 | MAE: 2.98mm | R2: -0.0172
+  Epoch [29/100] Batch [50/455] Loss: 1.8329
+  Epoch [29/100] Batch [100/455] Loss: 1.3039
+  Epoch [29/100] Batch [150/455] Loss: 1.6496
+  Epoch [29/100] Batch [200/455] Loss: 1.8025
+  Epoch [29/100] Batch [250/455] Loss: 1.7348
+  Epoch [29/100] Batch [300/455] Loss: 1.3429
+  Epoch [29/100] Batch [350/455] Loss: 2.0398
+  Epoch [29/100] Batch [400/455] Loss: 1.7476
+  Epoch [29/100] Batch [450/455] Loss: 1.5209
+[2026-04-02 15:27:53] Epoch 29/100 (lr=0.000082)
+[2026-04-02 15:27:53]   Train - Loss: 1.7008 | MAE: 2.15mm | R2: 0.4215
+[2026-04-02 15:27:53]   Val   - Loss: 2.5881 | MAE: 3.05mm | R2: -0.0443
+  Epoch [30/100] Batch [50/455] Loss: 1.9799
+  Epoch [30/100] Batch [100/455] Loss: 1.5037
+  Epoch [30/100] Batch [150/455] Loss: 1.4172
+  Epoch [30/100] Batch [200/455] Loss: 1.6823
+  Epoch [30/100] Batch [250/455] Loss: 2.2841
+  Epoch [30/100] Batch [300/455] Loss: 2.0369
+  Epoch [30/100] Batch [350/455] Loss: 1.3058
+  Epoch [30/100] Batch [400/455] Loss: 1.4656
+  Epoch [30/100] Batch [450/455] Loss: 1.5298
+[2026-04-02 15:29:08] Epoch 30/100 (lr=0.000081)
+[2026-04-02 15:29:08]   Train - Loss: 1.7033 | MAE: 2.15mm | R2: 0.4159
+[2026-04-02 15:29:08]   Val   - Loss: 2.4420 | MAE: 2.90mm | R2: 0.0529
+  Epoch [31/100] Batch [50/455] Loss: 1.0819
+  Epoch [31/100] Batch [100/455] Loss: 1.8460
+  Epoch [31/100] Batch [150/455] Loss: 1.7890
+  Epoch [31/100] Batch [200/455] Loss: 1.4254
+  Epoch [31/100] Batch [250/455] Loss: 1.8507
+  Epoch [31/100] Batch [300/455] Loss: 2.2782
+  Epoch [31/100] Batch [350/455] Loss: 1.7799
+  Epoch [31/100] Batch [400/455] Loss: 1.7941
+  Epoch [31/100] Batch [450/455] Loss: 1.3955
+[2026-04-02 15:30:23] Epoch 31/100 (lr=0.000080)
+[2026-04-02 15:30:23]   Train - Loss: 1.6615 | MAE: 2.11mm | R2: 0.4403
+[2026-04-02 15:30:23]   Val   - Loss: 2.6019 | MAE: 3.07mm | R2: -0.0688
+  Epoch [32/100] Batch [50/455] Loss: 2.1398
+  Epoch [32/100] Batch [100/455] Loss: 1.2804
+  Epoch [32/100] Batch [150/455] Loss: 1.9055
+  Epoch [32/100] Batch [200/455] Loss: 1.5848
+  Epoch [32/100] Batch [250/455] Loss: 1.5648
+  Epoch [32/100] Batch [300/455] Loss: 1.6667
+  Epoch [32/100] Batch [350/455] Loss: 1.4388
+  Epoch [32/100] Batch [400/455] Loss: 1.5427
+  Epoch [32/100] Batch [450/455] Loss: 1.4365
+[2026-04-02 15:31:38] Epoch 32/100 (lr=0.000078)
+[2026-04-02 15:31:38]   Train - Loss: 1.6410 | MAE: 2.09mm | R2: 0.4523
+[2026-04-02 15:31:38]   Val   - Loss: 2.3974 | MAE: 2.85mm | R2: 0.0766
+  Epoch [33/100] Batch [50/455] Loss: 1.5800
+  Epoch [33/100] Batch [100/455] Loss: 1.6614
+  Epoch [33/100] Batch [150/455] Loss: 1.9339
+  Epoch [33/100] Batch [200/455] Loss: 1.6861
+  Epoch [33/100] Batch [250/455] Loss: 0.9932
+  Epoch [33/100] Batch [300/455] Loss: 1.7729
+  Epoch [33/100] Batch [350/455] Loss: 1.9806
+  Epoch [33/100] Batch [400/455] Loss: 1.2992
+  Epoch [33/100] Batch [450/455] Loss: 1.8014
+[2026-04-02 15:32:53] Epoch 33/100 (lr=0.000077)
+[2026-04-02 15:32:53]   Train - Loss: 1.6239 | MAE: 2.07mm | R2: 0.4558
+[2026-04-02 15:32:53]   Val   - Loss: 2.4928 | MAE: 2.95mm | R2: -0.0170
+[2026-04-02 15:32:53] 
+  Early stopping at epoch 33 (no improvement for 20 epochs)
+[2026-04-02 15:32:53] 
+============================================================
+[2026-04-02 15:32:53] Testing with best model...
+[2026-04-02 15:32:53]   Loaded best model from epoch 13
+[2026-04-02 15:33:10] 
+  Test Results:
+[2026-04-02 15:33:10]     Loss: 2.7635
+[2026-04-02 15:33:10]     MAE:  3.22 mm
+[2026-04-02 15:33:10]     RMSE: 4.01 mm
+[2026-04-02 15:33:10]     R2:   0.0868
+[2026-04-02 15:33:10]     MAPE: 19.5%
+[2026-04-02 15:33:10]   Plot saved to: F:\Postgraduate\Lab\ËÇÎ¹Õ¾\±³±ìËã·¨\ÍøÂç\depthmap_cnn\checkpoints_projection\training_results_projection.png
+[2026-04-02 15:33:10] 
+============================================================
+[2026-04-02 15:33:10] Results Comparison:
+[2026-04-02 15:33:10]   Method                                    Test R2   Test MAE   Test RMSE
+[2026-04-02 15:33:10]   ---------------------------------------- --------  ---------  ----------
+[2026-04-02 15:33:10]   XGBoost (41-dim handcraft)                   0.04     2.93mm      3.61mm
+[2026-04-02 15:33:10]   PointMLP v4 (3D point cloud)                ~0.10     ~3.0mm      ~3.6mm
+[2026-04-02 15:33:10]   DepthMap CNN (raw depth, 1ch)                0.21     2.99mm      3.72mm
+[2026-04-02 15:33:10]   Projection CNN (BEV+Front+Side, 3ch)       0.0868      3.22mm       4.01mm
+[2026-04-02 15:33:10]   Sister: CNN-ViT (RGB only)                   0.74     0.84mm      1.05mm
+[2026-04-02 15:33:10] ============================================================
+[2026-04-02 15:33:10] 
+Done!

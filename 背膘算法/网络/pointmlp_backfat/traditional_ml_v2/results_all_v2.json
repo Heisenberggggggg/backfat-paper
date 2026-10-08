@@ -1,0 +1,55 @@
+{
+  "xgboost": {
+    "cv_r2_mean": 0.0276,
+    "cv_r2_std": 0.1028,
+    "cv_mae_mean": 2.9477,
+    "train_metrics": {
+      "MAE": 0.8135,
+      "RMSE": 1.0351,
+      "R2": 0.925,
+      "MAPE": 5.28
+    },
+    "test_metrics": {
+      "MAE": 2.906,
+      "RMSE": 3.5804,
+      "R2": 0.026,
+      "MAPE": 18.86
+    }
+  },
+  "random_forest": {
+    "cv_r2_mean": 0.0872,
+    "cv_r2_std": 0.0714,
+    "cv_mae_mean": 2.8421,
+    "train_metrics": {
+      "MAE": 2.2631,
+      "RMSE": 2.8688,
+      "R2": 0.4236,
+      "MAPE": 14.7
+    },
+    "test_metrics": {
+      "MAE": 2.8323,
+      "RMSE": 3.496,
+      "R2": 0.0714,
+      "MAPE": 18.43
+    }
+  },
+  "lasso": {
+    "cv_r2_mean": 0.0908,
+    "cv_r2_std": 0.0618,
+    "cv_mae_mean": 2.8393,
+    "train_metrics": {
+      "MAE": 2.7774,
+      "RMSE": 3.5073,
+      "R2": 0.1385,
+      "MAPE": 18.09
+    },
+    "test_metrics": {
+      "MAE": 2.883,
+      "RMSE": 3.5396,
+      "R2": 0.0481,
+      "MAPE": 18.71
+    },
+    "alpha": 0.11513953993264481,
+    "n_nonzero_features": 11
+  }
+}

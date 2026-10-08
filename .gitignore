@@ -1,0 +1,73 @@
+# ============================================================
+# 饲喂站 / 背膘论文仓库 .gitignore（白名单模式）
+# 来源：2026-10-08 建仓。仓库只同步「算法脚本 + 规划文档」，
+#       数据、权重、图像、固件代码、专利草稿一律不进仓库。
+# 新增想同步的目录：在下方「顶层白名单」加一行 !/目录名/
+# ============================================================
+
+# ---- 顶层白名单：先忽略所有顶层条目，再放行需要的 ----
+/*
+!/.gitignore
+!/课题整体规划研究/
+!/背膘算法/
+
+# ---- 自带 .git 的独立仓库 / 第三方代码（嵌入会变成空壳） ----
+/背膘算法/orbbec_ceding/
+/背膘算法/网络/Point-Transformers_jiu/
+/背膘算法/网络/Point-Transformers_jiu_硕改/
+
+# ---- 与论文算法无关或体积大的目录 ----
+/背膘算法/Azure-Kinect-DK-3D-reconstruction/
+/背膘算法/ICP_jiu*/
+/背膘算法/备份/
+/背膘算法/网络/MLP/
+
+# ---- 派生数据集 / 训练产物 / 缓存 ----
+depthmap_dataset/
+projection_dataset/
+abc_data/
+checkpoints*/
+out_*/
+venv/
+.venv/
+__pycache__/
+.ruff_cache/
+.idea/
+.claude/
+.accelerate/
+
+# ---- 文件类型：数据、权重、图像、办公文档 ----
+*.npy
+*.npz
+*.pth
+*.pt
+*.ckpt
+*.onnx
+*.engine
+*.ply
+*.pcd
+*.asc
+*.png
+*.jpg
+*.jpeg
+*.bmp
+*.mp4
+*.zip
+*.7z
+*.bak
+*.pyc
+*.docx
+*.xlsx
+*.xls
+*.pdf
+*.pptx
+*.doc
+
+# ---- 专利草稿（未递交）与聊天记录导出：不上传 ----
+PATENT_DRAFT*
+reference_patent.txt
+_chat_history_extracted.txt
+
+# ---- CSV 默认不上传（逐帧特征表很大），twoview 下的索引与结果表放行 ----
+*.csv
+!/背膘算法/twoview/**/*.csv

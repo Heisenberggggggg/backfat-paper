@@ -1,0 +1,87 @@
+[2026-09-28 15:19:45] labels=new pigs=663 groups=561 frames=13258 y mean 17.94 sd 3.80  (load 15s)
+  fold 1: train 454 / val 76 / test 133
+    ep 01 val MAE 2.518 *
+    ep 02 val MAE 2.611
+    ep 03 val MAE 2.383 *
+    ep 04 val MAE 2.553
+    ep 05 val MAE 2.291 *
+    ep 06 val MAE 2.494
+    ep 07 val MAE 2.579
+    ep 08 val MAE 2.237 *
+    ep 09 val MAE 2.183 *
+    ep 10 val MAE 2.212
+    ep 11 val MAE 2.442
+    ep 12 val MAE 2.201
+    ep 13 val MAE 2.185
+    ep 14 val MAE 2.162 *
+    ep 15 val MAE 2.216
+  fold 1 TEST  model MAE 2.553 R2 0.160 CCC 0.347 | mean-baseline MAE 2.893
+  fold 2: train 455 / val 76 / test 132
+    ep 01 val MAE 3.217 *
+    ep 02 val MAE 2.838 *
+    ep 03 val MAE 3.045
+    ep 04 val MAE 2.693 *
+    ep 05 val MAE 2.686 *
+    ep 06 val MAE 2.726
+    ep 07 val MAE 2.716
+    ep 08 val MAE 2.642 *
+    ep 09 val MAE 2.622 *
+    ep 10 val MAE 2.687
+    ep 11 val MAE 2.658
+    ep 12 val MAE 2.632
+    ep 13 val MAE 2.617 *
+    ep 14 val MAE 2.616 *
+    ep 15 val MAE 2.601 *
+  fold 2 TEST  model MAE 2.557 R2 0.321 CCC 0.454 | mean-baseline MAE 3.017
+  fold 3: train 454 / val 76 / test 133
+    ep 01 val MAE 3.049 *
+    ep 02 val MAE 4.472
+    ep 03 val MAE 2.766 *
+    ep 04 val MAE 3.082
+    ep 05 val MAE 2.694 *
+    ep 06 val MAE 2.765
+    ep 07 val MAE 2.639 *
+    ep 08 val MAE 2.659
+    ep 09 val MAE 2.651
+    ep 10 val MAE 2.711
+    ep 11 val MAE 2.785
+    ep 12 val MAE 2.608 *
+    ep 13 val MAE 2.610
+    ep 14 val MAE 2.620
+    ep 15 val MAE 2.604 *
+  fold 3 TEST  model MAE 2.319 R2 0.308 CCC 0.464 | mean-baseline MAE 2.842
+  fold 4: train 454 / val 76 / test 133
+    ep 01 val MAE 2.933 *
+    ep 02 val MAE 2.660 *
+    ep 03 val MAE 2.729
+    ep 04 val MAE 2.800
+    ep 05 val MAE 2.815
+    ep 06 val MAE 2.683
+    ep 07 val MAE 2.706
+    ep 08 val MAE 2.950
+    ep 09 val MAE 2.680
+    ep 10 val MAE 2.562 *
+    ep 11 val MAE 2.585
+    ep 12 val MAE 2.595
+    ep 13 val MAE 2.687
+    ep 14 val MAE 2.608
+    ep 15 val MAE 2.601
+  fold 4 TEST  model MAE 2.652 R2 0.292 CCC 0.468 | mean-baseline MAE 3.134
+  fold 5: train 455 / val 76 / test 132
+    ep 01 val MAE 2.801 *
+    ep 02 val MAE 2.846
+    ep 03 val MAE 3.203
+    ep 04 val MAE 3.221
+    ep 05 val MAE 2.956
+    ep 06 val MAE 3.231
+    ep 07 val MAE 2.705 *
+    ep 08 val MAE 2.724
+    ep 09 val MAE 2.753
+    ep 10 val MAE 2.628 *
+    ep 11 val MAE 2.735
+    ep 12 val MAE 2.643
+    ep 13 val MAE 2.655
+    ep 14 val MAE 2.664
+    ep 15 val MAE 2.652
+  fold 5 TEST  model MAE 2.474 R2 0.373 CCC 0.510 | mean-baseline MAE 3.160
+== new labels, pooled over folds: MAE 2.511 RMSE 3.186 R2 0.297 CCC 0.453 Spearman 0.511 | baseline MAE 3.009 RMSE 3.805 | 9.9 min

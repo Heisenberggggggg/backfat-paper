@@ -1,0 +1,36 @@
+DK_BASE: G:\耕来硕数据\DK, exists=False
+FMH_BASE: G:\耕来硕数据\丰美禾数据, exists=False
+======================================================================
+[1] FMH ear tag analysis
+======================================================================
+  WARN: 8.24 not found
+  WARN: 8.25 not found
+  WARN: 8.26 not found
+  WARN: 8.27 not found
+  WARN: 10.29 not found
+  WARN: 10.30 not found
+  WARN: 10.31 not found
+  WARN: 11.1 not found
+  WARN: 11.2 not found
+  WARN: 11.3 not found
+  WARN: 11.4 not found
+  WARN: 11.5 not found
+
+  Total FMH pig dirs: 0
+
+  Prefix        Count     Pct  Examples
+  ----------------------------------------------------------------------
+
+  Unique ear tags: 0
+  Multi-day ear tags: 0
+
+  --- Breed x Date distribution ---
+  Breed     8.24  8.25  8.26  8.27 10.29 10.30 10.31  11.1  11.2  11.3  11.4  11.5   Total
+  ------------------------------------------------------------------------------------------
+
+======================================================================
+[2] DK (NKY) ear tag analysis
+======================================================================
+
+======================================================================
+Done
