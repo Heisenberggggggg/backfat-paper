@@ -14,7 +14,9 @@
 # ---- 自带 .git 的独立仓库 / 第三方代码（嵌入会变成空壳） ----
 /背膘算法/orbbec_ceding/
 /背膘算法/网络/Point-Transformers_jiu/
-/背膘算法/网络/Point-Transformers_jiu_硕改/
+# 硕改版：自带 .git 已于 2026-10-09 挪到 F:\Postgraduate\Lab\_git_backup\，现在放行代码；
+# 其中 data/ 有 1.8GB 点云，必须排除
+/背膘算法/网络/Point-Transformers_jiu_硕改/data/
 
 # ---- 与论文算法无关或体积大的目录 ----
 /背膘算法/Azure-Kinect-DK-3D-reconstruction/

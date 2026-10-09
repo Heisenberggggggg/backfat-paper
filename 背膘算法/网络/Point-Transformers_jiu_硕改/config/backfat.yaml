@@ -1,0 +1,34 @@
+batch_size: 16
+epoch: 80
+learning_rate: 1e-3
+gpu: 0
+num_point: 2048    # 每个点云样本包含的点数
+optimizer: Adam
+weight_decay: 1e-4
+#weight_decay: 1e-3
+use_normals: False      #是否使用法向量
+
+num_class: 1            # 回归任务，输出1个值
+use_uniform_sample: True       # 是否在加载时对点进行均匀采样
+log_dir: model_146_1.1       # 日志目录名
+device: "cuda"
+
+
+# --- Hydra 高级配置 ---
+data:
+  root: 'data'
+  train_dir: 'train'
+  test_dir: 'test'
+  valid_dir: 'valid' # 也可以加上你的验证集
+
+defaults:
+  - model: Hengshuang       # 1. 默认加载模型配置
+  - _self_
+
+hydra:
+  run:
+     dir: log/regression_146/${model.name}      #2. Hydra 自动管理输出目录
+
+  sweep:
+    dir: log/cls
+    subdir: ${model.name}
