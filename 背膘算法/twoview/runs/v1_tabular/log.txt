@@ -1,0 +1,117 @@
+[2026-10-10 23:20:30] pigs=663 groups=561 gest_day missing=114 prev_bf available=102
+fold check vs vision baseline column: max |diff| = 0.0004 (IDENTICAL folds)
+  T1 fold 1: ridge MAE 2.876  xgb MAE 2.730 (trees 101)
+  T1 fold 2: ridge MAE 3.030  xgb MAE 2.732 (trees 69)
+  T1 fold 3: ridge MAE 2.744  xgb MAE 2.582 (trees 157)
+  T1 fold 4: ridge MAE 3.120  xgb MAE 3.104 (trees 1604)
+  T1 fold 5: ridge MAE 3.037  xgb MAE 2.844 (trees 163)
+  T2 fold 1: ridge MAE 2.757  xgb MAE 2.684 (trees 303)
+  T2 fold 2: ridge MAE 2.625  xgb MAE 2.653 (trees 121)
+  T2 fold 3: ridge MAE 2.497  xgb MAE 2.470 (trees 541)
+  T2 fold 4: ridge MAE 2.762  xgb MAE 2.928 (trees 1613)
+  T2 fold 5: ridge MAE 2.680  xgb MAE 2.673 (trees 443)
+
+model                 subset              n    MAE   RMSE     R2    CCC  Spear
+mean                  all                663  3.009  3.805  -0.002  -0.002  -0.023
+mean                  DAN_parity1        386  2.606  3.253  -0.010  -0.001  0.001
+mean                  DAN_multiparous     61  3.303  4.371  -0.070  -0.004  -0.080
+mean                  NAM_multiparous    189  3.591  4.458  -0.012  -0.001  -0.031
+mean                  has_prev_season    102  3.662  4.619  -0.411  -0.001  -0.033
+vision_resnet18       all                663  2.511  3.186   0.297  0.453  0.511
+vision_resnet18       DAN_parity1        386  2.391  2.995   0.144  0.298  0.365
+vision_resnet18       DAN_multiparous     61  2.643  3.597   0.275  0.451  0.575
+vision_resnet18       NAM_multiparous    189  2.655  3.346   0.430  0.576  0.658
+vision_resnet18       has_prev_season    102  2.978  3.534   0.175  0.321  0.401
+T1_ridge              all                663  2.961  3.711   0.047  0.098  0.189
+T1_ridge              DAN_parity1        386  2.672  3.315  -0.049  -0.005  -0.063
+T1_ridge              DAN_multiparous     61  3.277  4.228  -0.001  0.028  0.029
+T1_ridge              NAM_multiparous    189  3.361  4.189   0.107  0.133  0.409
+T1_ridge              has_prev_season    102  3.510  4.381  -0.269  0.046  0.136
+T1_xgb                all                663  2.798  3.519   0.143  0.270  0.345
+T1_xgb                DAN_parity1        386  2.573  3.174   0.038  0.089  0.175
+T1_xgb                DAN_multiparous     61  3.297  4.311  -0.041  0.149  0.208
+T1_xgb                NAM_multiparous    189  3.068  3.855   0.244  0.401  0.494
+T1_xgb                has_prev_season    102  3.149  3.956  -0.035  0.039  0.066
+T2_ridge              all                663  2.664  3.368   0.215  0.358  0.322
+T2_ridge              DAN_parity1        386  2.517  3.126   0.067  0.164  0.135
+T2_ridge              DAN_multiparous     61  3.088  4.111   0.054  0.120  0.115
+T2_ridge              NAM_multiparous    189  2.756  3.502   0.376  0.533  0.500
+T2_ridge              has_prev_season    102  2.078  2.516   0.581  0.741  0.715
+T2_xgb                all                663  2.681  3.378   0.210  0.385  0.374
+T2_xgb                DAN_parity1        386  2.549  3.136   0.061  0.156  0.180
+T2_xgb                DAN_multiparous     61  3.401  4.392  -0.081  0.179  0.264
+T2_xgb                NAM_multiparous    189  2.694  3.433   0.400  0.580  0.595
+T2_xgb                has_prev_season    102  2.316  2.873   0.454  0.660  0.661
+
+vision vs T1_ridge     [all            ] ΔR² +0.251 (95% CI +0.185, +0.317)  ΔMAE -0.449 (95% CI -0.584, -0.320)  Wilcoxon p=3.14e-10
+vision vs T1_ridge     [DAN_parity1    ] ΔR² +0.193 (95% CI +0.096, +0.284)  ΔMAE -0.283 (95% CI -0.426, -0.131)  Wilcoxon p=0.000401
+vision vs T1_ridge     [NAM_multiparous] ΔR² +0.327 (95% CI +0.226, +0.410)  ΔMAE -0.710 (95% CI -0.982, -0.414)  Wilcoxon p=5.19e-06
+vision vs T1_xgb       [all            ] ΔR² +0.155 (95% CI +0.096, +0.212)  ΔMAE -0.290 (95% CI -0.405, -0.172)  Wilcoxon p=7.41e-07
+vision vs T1_xgb       [DAN_parity1    ] ΔR² +0.105 (95% CI +0.022, +0.180)  ΔMAE -0.184 (95% CI -0.303, -0.062)  Wilcoxon p=0.0052
+vision vs T1_xgb       [NAM_multiparous] ΔR² +0.187 (95% CI +0.084, +0.283)  ΔMAE -0.418 (95% CI -0.656, -0.163)  Wilcoxon p=0.000454
+vision vs T2_ridge     [all            ] ΔR² +0.081 (95% CI +0.022, +0.146)  ΔMAE -0.152 (95% CI -0.277, -0.038)  Wilcoxon p=0.0245
+vision vs T2_ridge     [DAN_parity1    ] ΔR² +0.078 (95% CI -0.009, +0.163)  ΔMAE -0.126 (95% CI -0.259, +0.009)  Wilcoxon p=0.072
+vision vs T2_ridge     [NAM_multiparous] ΔR² +0.053 (95% CI -0.057, +0.163)  ΔMAE -0.097 (95% CI -0.363, +0.173)  Wilcoxon p=0.527
+vision vs T2_xgb       [all            ] ΔR² +0.087 (95% CI +0.030, +0.150)  ΔMAE -0.170 (95% CI -0.287, -0.057)  Wilcoxon p=0.0113
+vision vs T2_xgb       [DAN_parity1    ] ΔR² +0.083 (95% CI +0.000, +0.159)  ΔMAE -0.158 (95% CI -0.288, -0.028)  Wilcoxon p=0.0184
+vision vs T2_xgb       [NAM_multiparous] ΔR² +0.030 (95% CI -0.065, +0.118)  ΔMAE -0.038 (95% CI -0.266, +0.196)  Wilcoxon p=0.716
+done in 38s -> F:\Postgraduate\Lab\饲喂站\背膘算法\twoview\runs\v1_tabular
+[2026-10-10 23:23:11] pigs=663 groups=561 gest_day missing=114 prev_bf available=102
+fold check vs vision baseline column: max |diff| = 0.0004 (IDENTICAL folds)
+TabPFN failed (OSError: [WinError 10038] 在一个非套接字上尝试了一个操作。) -> skipped
+  T1 fold 1: ridge MAE 2.876  xgb MAE 2.730 (trees 101)
+  T1 fold 2: ridge MAE 3.030  xgb MAE 2.732 (trees 69)
+  T1 fold 3: ridge MAE 2.744  xgb MAE 2.582 (trees 157)
+  T1 fold 4: ridge MAE 3.120  xgb MAE 3.104 (trees 1604)
+  T1 fold 5: ridge MAE 3.037  xgb MAE 2.844 (trees 163)
+  T2 fold 1: ridge MAE 2.757  xgb MAE 2.684 (trees 303)
+  T2 fold 2: ridge MAE 2.625  xgb MAE 2.653 (trees 121)
+  T2 fold 3: ridge MAE 2.497  xgb MAE 2.470 (trees 541)
+  T2 fold 4: ridge MAE 2.762  xgb MAE 2.928 (trees 1613)
+  T2 fold 5: ridge MAE 2.680  xgb MAE 2.673 (trees 443)
+
+model                 subset              n    MAE   RMSE     R2    CCC  Spear
+mean                  all                663  3.009  3.805  -0.002  -0.002  -0.023
+mean                  DAN_parity1        386  2.606  3.253  -0.010  -0.001  0.001
+mean                  DAN_multiparous     61  3.303  4.371  -0.070  -0.004  -0.080
+mean                  NAM_multiparous    189  3.591  4.458  -0.012  -0.001  -0.031
+mean                  has_prev_season    102  3.662  4.619  -0.411  -0.001  -0.033
+vision_resnet18       all                663  2.511  3.186   0.297  0.453  0.511
+vision_resnet18       DAN_parity1        386  2.391  2.995   0.144  0.298  0.365
+vision_resnet18       DAN_multiparous     61  2.643  3.597   0.275  0.451  0.575
+vision_resnet18       NAM_multiparous    189  2.655  3.346   0.430  0.576  0.658
+vision_resnet18       has_prev_season    102  2.978  3.534   0.175  0.321  0.401
+T1_ridge              all                663  2.961  3.711   0.047  0.098  0.189
+T1_ridge              DAN_parity1        386  2.672  3.315  -0.049  -0.005  -0.063
+T1_ridge              DAN_multiparous     61  3.277  4.228  -0.001  0.028  0.029
+T1_ridge              NAM_multiparous    189  3.361  4.189   0.107  0.133  0.409
+T1_ridge              has_prev_season    102  3.510  4.381  -0.269  0.046  0.136
+T1_xgb                all                663  2.798  3.519   0.143  0.270  0.345
+T1_xgb                DAN_parity1        386  2.573  3.174   0.038  0.089  0.175
+T1_xgb                DAN_multiparous     61  3.297  4.311  -0.041  0.149  0.208
+T1_xgb                NAM_multiparous    189  3.068  3.855   0.244  0.401  0.494
+T1_xgb                has_prev_season    102  3.149  3.956  -0.035  0.039  0.066
+T2_ridge              all                663  2.664  3.368   0.215  0.358  0.322
+T2_ridge              DAN_parity1        386  2.517  3.126   0.067  0.164  0.135
+T2_ridge              DAN_multiparous     61  3.088  4.111   0.054  0.120  0.115
+T2_ridge              NAM_multiparous    189  2.756  3.502   0.376  0.533  0.500
+T2_ridge              has_prev_season    102  2.078  2.516   0.581  0.741  0.715
+T2_xgb                all                663  2.681  3.378   0.210  0.385  0.374
+T2_xgb                DAN_parity1        386  2.549  3.136   0.061  0.156  0.180
+T2_xgb                DAN_multiparous     61  3.401  4.392  -0.081  0.179  0.264
+T2_xgb                NAM_multiparous    189  2.694  3.433   0.400  0.580  0.595
+T2_xgb                has_prev_season    102  2.316  2.873   0.454  0.660  0.661
+
+vision vs T1_ridge     [all            ] ΔR² +0.251 (95% CI +0.185, +0.317)  ΔMAE -0.449 (95% CI -0.584, -0.320)  Wilcoxon p=3.14e-10
+vision vs T1_ridge     [DAN_parity1    ] ΔR² +0.193 (95% CI +0.096, +0.284)  ΔMAE -0.283 (95% CI -0.426, -0.131)  Wilcoxon p=0.000401
+vision vs T1_ridge     [NAM_multiparous] ΔR² +0.327 (95% CI +0.226, +0.410)  ΔMAE -0.710 (95% CI -0.982, -0.414)  Wilcoxon p=5.19e-06
+vision vs T1_xgb       [all            ] ΔR² +0.155 (95% CI +0.096, +0.212)  ΔMAE -0.290 (95% CI -0.405, -0.172)  Wilcoxon p=7.41e-07
+vision vs T1_xgb       [DAN_parity1    ] ΔR² +0.105 (95% CI +0.022, +0.180)  ΔMAE -0.184 (95% CI -0.303, -0.062)  Wilcoxon p=0.0052
+vision vs T1_xgb       [NAM_multiparous] ΔR² +0.187 (95% CI +0.084, +0.283)  ΔMAE -0.418 (95% CI -0.656, -0.163)  Wilcoxon p=0.000454
+vision vs T2_ridge     [all            ] ΔR² +0.081 (95% CI +0.022, +0.146)  ΔMAE -0.152 (95% CI -0.277, -0.038)  Wilcoxon p=0.0245
+vision vs T2_ridge     [DAN_parity1    ] ΔR² +0.078 (95% CI -0.009, +0.163)  ΔMAE -0.126 (95% CI -0.259, +0.009)  Wilcoxon p=0.072
+vision vs T2_ridge     [NAM_multiparous] ΔR² +0.053 (95% CI -0.057, +0.163)  ΔMAE -0.097 (95% CI -0.363, +0.173)  Wilcoxon p=0.527
+vision vs T2_xgb       [all            ] ΔR² +0.087 (95% CI +0.030, +0.150)  ΔMAE -0.170 (95% CI -0.287, -0.057)  Wilcoxon p=0.0113
+vision vs T2_xgb       [DAN_parity1    ] ΔR² +0.083 (95% CI +0.000, +0.159)  ΔMAE -0.158 (95% CI -0.288, -0.028)  Wilcoxon p=0.0184
+vision vs T2_xgb       [NAM_multiparous] ΔR² +0.030 (95% CI -0.065, +0.118)  ΔMAE -0.038 (95% CI -0.266, +0.196)  Wilcoxon p=0.716
+done in 50s -> F:\Postgraduate\Lab\饲喂站\背膘算法\twoview\runs\v1_tabular
