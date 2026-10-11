@@ -1,0 +1,87 @@
+[2026-10-11 21:02:32] model=dinov2-base enc=relh pigs=663 feat_dim=1536 pca=32 caliper missing=1
+[2026-10-11 21:02:58] model=dinov2-base enc=relh pigs=663 feat_dim=1536 pca=32 caliper missing=1
+[2026-10-11 21:03:55] model=dinov2-base enc=relh pigs=663 feat_dim=1536 pca=32 caliper missing=1
+[2026-10-11 21:06:00] model=dinov2-base enc=relh pigs=663 feat_dim=1536 pca=16 caliper missing=1
+[2026-10-11 21:06:41] model=dinov2-base enc=relh pigs=663 feat_dim=1536 pca=16 caliper missing=1
+[2026-10-11 21:07:09] model=dinov2-base enc=relh pigs=663 feat_dim=1536 pca=16 caliper missing=1
+[2026-10-11 21:07:53] model=dinov2-base enc=relh pigs=663 feat_dim=1536 pca=16 caliper missing=1
+[2026-10-11 21:12:27] model=dinov2-base enc=relh pigs=663 feat_dim=1536 pca=16 caliper missing=1
+[2026-10-11 22:53:03] model=dinov2-base enc=relh pigs=663 feat_dim=1536 pca=16 caliper missing=1
+  fold 1: PCA var 0.73, ridge alpha 885.9 | vis 2.846 | R 2.649 | R+vis 2.704 | R+cal 2.363 | R+cal+vis 2.332 | R+prev+cal 2.275 | R+prev+cal+vis 2.313 | device ['cuda']
+  fold 2: PCA var 0.74, ridge alpha 885.9 | vis 2.895 | R 2.760 | R+vis 2.713 | R+cal 2.335 | R+cal+vis 2.256 | R+prev+cal 2.237 | R+prev+cal+vis 2.163 | device ['cuda']
+  fold 3: PCA var 0.73, ridge alpha 483.3 | vis 2.673 | R 2.510 | R+vis 2.501 | R+cal 2.066 | R+cal+vis 2.175 | R+prev+cal 2.066 | R+prev+cal+vis 2.161 | device ['cuda']
+  fold 4: PCA var 0.74, ridge alpha 1623.8 | vis 2.883 | R 2.971 | R+vis 2.884 | R+cal 2.451 | R+cal+vis 2.520 | R+prev+cal 2.297 | R+prev+cal+vis 2.363 | device ['cuda']
+  fold 5: PCA var 0.74, ridge alpha 885.9 | vis 2.935 | R 2.881 | R+vis 2.809 | R+cal 2.474 | R+cal+vis 2.505 | R+prev+cal 2.298 | R+prev+cal+vis 2.320 | device ['cuda']
+
+model                 subset              n    MAE   RMSE     R2    CCC  Spear
+vis                   all                663  2.846  3.604   0.101  0.216  0.296
+vis                   DAN_parity1        386  2.618  3.267  -0.019  0.109  0.130
+vis                   NAM_multiparous    189  3.149  3.974   0.196  0.305  0.444
+vis                   no_prev_season     561  2.795  3.536   0.037  0.124  0.191
+vis                   has_prev_season    102  3.127  3.961  -0.037  0.109  0.145
+R                     all                663  2.754  3.489   0.158  0.264  0.356
+R                     DAN_parity1        386  2.519  3.156   0.049  0.102  0.227
+R                     NAM_multiparous    189  3.074  3.853   0.244  0.380  0.467
+R                     no_prev_season     561  2.704  3.418   0.101  0.185  0.262
+R                     has_prev_season    102  3.032  3.856   0.017  0.056  0.150
+R+vis                 all                663  2.722  3.464   0.170  0.309  0.395
+R+vis                 DAN_parity1        386  2.548  3.178   0.036  0.144  0.215
+R+vis                 NAM_multiparous    189  2.970  3.752   0.283  0.434  0.549
+R+vis                 no_prev_season     561  2.684  3.408   0.106  0.224  0.309
+R+vis                 has_prev_season    102  2.934  3.755   0.068  0.159  0.260
+R+cal                 all                663  2.337  3.015   0.371  0.538  0.588
+R+cal                 DAN_parity1        386  2.243  2.862   0.218  0.375  0.438
+R+cal                 NAM_multiparous    189  2.345  3.021   0.535  0.685  0.738
+R+cal                 no_prev_season     561  2.258  2.934   0.337  0.508  0.553
+R+cal                 has_prev_season    102  2.776  3.427   0.224  0.384  0.435
+R+cal+vis             all                663  2.357  3.038   0.361  0.534  0.580
+R+cal+vis             DAN_parity1        386  2.326  2.932   0.180  0.361  0.417
+R+cal+vis             NAM_multiparous    189  2.316  3.000   0.542  0.686  0.757
+R+cal+vis             no_prev_season     561  2.290  2.974   0.319  0.496  0.542
+R+cal+vis             has_prev_season    102  2.728  3.369   0.250  0.395  0.483
+R+prev+cal            all                663  2.235  2.874   0.428  0.594  0.607
+R+prev+cal            DAN_parity1        386  2.206  2.791   0.256  0.420  0.450
+R+prev+cal            NAM_multiparous    189  2.097  2.701   0.629  0.761  0.778
+R+prev+cal            no_prev_season     561  2.261  2.937   0.336  0.498  0.544
+R+prev+cal            has_prev_season    102  2.089  2.497   0.588  0.741  0.686
+R+prev+cal+vis        all                663  2.264  2.909   0.414  0.586  0.604
+R+prev+cal+vis        DAN_parity1        386  2.277  2.853   0.223  0.406  0.443
+R+prev+cal+vis        NAM_multiparous    189  2.093  2.707   0.627  0.758  0.790
+R+prev+cal+vis        no_prev_season     561  2.290  2.967   0.322  0.492  0.543
+R+prev+cal+vis        has_prev_season    102  2.122  2.564   0.565  0.717  0.682
+vis_ridge             all                663  2.558  3.210   0.287  0.459  0.516
+vis_ridge             DAN_parity1        386  2.389  2.981   0.152  0.335  0.390
+vis_ridge             NAM_multiparous    189  2.891  3.542   0.361  0.527  0.604
+vis_ridge             no_prev_season     561  2.503  3.165   0.229  0.400  0.458
+vis_ridge             has_prev_season    102  2.860  3.445   0.216  0.413  0.467
+resnet18              all                663  2.511  3.186   0.297  0.453  0.511
+resnet18              DAN_parity1        386  2.391  2.995   0.144  0.298  0.365
+resnet18              NAM_multiparous    189  2.655  3.346   0.430  0.576  0.658
+resnet18              no_prev_season     561  2.426  3.119   0.251  0.390  0.470
+resnet18              has_prev_season    102  2.978  3.534   0.175  0.321  0.401
+
+foundation vs ResNet-18 (vision only)            [all            ] ΔR² -0.197 (-0.253, -0.143)  ΔMAE +0.337 (+0.226, +0.446)  Wilcoxon p=1.4e-07
+foundation vs ResNet-18 (vision only)            [DAN_parity1    ] ΔR² -0.162 (-0.251, -0.080)  ΔMAE +0.225 (+0.101, +0.354)  Wilcoxon p=0.00257
+foundation vs ResNet-18 (vision only)            [NAM_multiparous] ΔR² -0.236 (-0.321, -0.140)  ΔMAE +0.496 (+0.255, +0.713)  Wilcoxon p=0.000269
+foundation vs ResNet-18 (vision only)            [no_prev_season ] ΔR² -0.214 (-0.276, -0.154)  ΔMAE +0.370 (+0.255, +0.493)  Wilcoxon p=3.22e-08
+vision only vs records                           [all            ] ΔR² -0.058 (-0.113, -0.000)  ΔMAE +0.093 (-0.010, +0.190)  Wilcoxon p=0.0582
+vision only vs records                           [DAN_parity1    ] ΔR² -0.070 (-0.140, -0.001)  ΔMAE +0.101 (+0.004, +0.200)  Wilcoxon p=0.0481
+vision only vs records                           [NAM_multiparous] ΔR² -0.047 (-0.156, +0.061)  ΔMAE +0.072 (-0.167, +0.320)  Wilcoxon p=0.531
+vision only vs records                           [no_prev_season ] ΔR² -0.063 (-0.121, -0.008)  ΔMAE +0.090 (-0.003, +0.184)  Wilcoxon p=0.0865
+Q0 imaging increment over records                [all            ] ΔR² +0.012 (-0.032, +0.054)  ΔMAE -0.032 (-0.112, +0.048)  Wilcoxon p=0.642
+Q0 imaging increment over records                [DAN_parity1    ] ΔR² -0.014 (-0.069, +0.040)  ΔMAE +0.030 (-0.055, +0.112)  Wilcoxon p=0.551
+Q0 imaging increment over records                [NAM_multiparous] ΔR² +0.039 (-0.041, +0.122)  ΔMAE -0.103 (-0.295, +0.070)  Wilcoxon p=0.394
+Q0 imaging increment over records                [no_prev_season ] ΔR² +0.005 (-0.042, +0.052)  ΔMAE -0.020 (-0.099, +0.057)  Wilcoxon p=0.82
+Q1 camera vs caliper (with records)              [all            ] ΔR² -0.201 (-0.263, -0.140)  ΔMAE +0.383 (+0.270, +0.508)  Wilcoxon p=7.1e-09
+Q1 camera vs caliper (with records)              [DAN_parity1    ] ΔR² -0.182 (-0.293, -0.070)  ΔMAE +0.305 (+0.163, +0.452)  Wilcoxon p=5.25e-05
+Q1 camera vs caliper (with records)              [NAM_multiparous] ΔR² -0.254 (-0.345, -0.157)  ΔMAE +0.621 (+0.365, +0.895)  Wilcoxon p=1.13e-05
+Q1 camera vs caliper (with records)              [no_prev_season ] ΔR² -0.233 (-0.298, -0.165)  ΔMAE +0.426 (+0.308, +0.550)  Wilcoxon p=1.44e-09
+Q2 camera increment over records+caliper         [all            ] ΔR² -0.010 (-0.036, +0.016)  ΔMAE +0.020 (-0.038, +0.076)  Wilcoxon p=0.278
+Q2 camera increment over records+caliper         [DAN_parity1    ] ΔR² -0.040 (-0.085, +0.008)  ΔMAE +0.085 (+0.014, +0.150)  Wilcoxon p=0.0112
+Q2 camera increment over records+caliper         [NAM_multiparous] ΔR² +0.006 (-0.028, +0.043)  ΔMAE -0.025 (-0.141, +0.081)  Wilcoxon p=0.98
+Q2 camera increment over records+caliper         [no_prev_season ] ΔR² -0.018 (-0.046, +0.010)  ΔMAE +0.033 (-0.026, +0.090)  Wilcoxon p=0.152
+Q3 camera increment over records+prev+caliper    [all            ] ΔR² -0.014 (-0.036, +0.006)  ΔMAE +0.029 (-0.019, +0.076)  Wilcoxon p=0.263
+Q3 camera increment over records+prev+caliper    [DAN_parity1    ] ΔR² -0.034 (-0.067, +0.003)  ΔMAE +0.071 (+0.011, +0.129)  Wilcoxon p=0.0291
+Q3 camera increment over records+prev+caliper    [NAM_multiparous] ΔR² -0.002 (-0.029, +0.026)  ΔMAE -0.002 (-0.090, +0.084)  Wilcoxon p=0.869
+Q3 camera increment over records+prev+caliper    [no_prev_season ] ΔR² -0.014 (-0.040, +0.013)  ΔMAE +0.029 (-0.027, +0.082)  Wilcoxon p=0.267
+done in 90s -> F:\Postgraduate\Lab\饲喂站\背膘算法\twoview\runs\a3_foundation\dinov2-base_relh

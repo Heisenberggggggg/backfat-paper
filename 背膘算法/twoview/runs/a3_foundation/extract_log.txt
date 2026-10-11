@@ -1,0 +1,6 @@
+[2026-10-11 20:58:57] model=dinov2-base (facebook/dinov2-base) hidden=768 patch=14 registers=0 pigs=663
+  enc=relh: frames=13258 skipped=0 dim=1536 frames/pig min=19 -> F:\Postgraduate\Lab\饲喂站\背膘算法\twoview\runs\a3_foundation\feat_dinov2-base_relh.npz  (89s)
+  enc=normal: frames=13258 skipped=0 dim=1536 frames/pig min=19 -> F:\Postgraduate\Lab\饲喂站\背膘算法\twoview\runs\a3_foundation\feat_dinov2-base_normal.npz  (185s)
+[2026-10-11 21:09:01] model=dinov3-vitb16 (facebook/dinov3-vitb16-pretrain-lvd1689m) hidden=768 patch=16 registers=4 pigs=663
+  enc=relh: frames=13258 skipped=0 dim=1536 frames/pig min=19 -> F:\Postgraduate\Lab\饲喂站\背膘算法\twoview\runs\a3_foundation\feat_dinov3-vitb16_relh.npz  (68s)
+  enc=normal: frames=13258 skipped=0 dim=1536 frames/pig min=19 -> F:\Postgraduate\Lab\饲喂站\背膘算法\twoview\runs\a3_foundation\feat_dinov3-vitb16_normal.npz  (148s)

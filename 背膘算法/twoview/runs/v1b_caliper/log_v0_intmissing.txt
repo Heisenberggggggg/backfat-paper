@@ -1,0 +1,55 @@
+[2026-10-11 13:53:44] pigs=663; caliper parse: implausible=1, int_only=48, ok=614
+  fold 1: train 487 test 127  caliper slope 3.41 mm/unit  MAE lin 2.595  T1cal 2.290  T2cal 2.238  vision 2.573
+  fold 2: train 491 test 123  caliper slope 3.27 mm/unit  MAE lin 2.511  T1cal 2.371  T2cal 2.301  vision 2.555
+  fold 3: train 493 test 121  caliper slope 3.50 mm/unit  MAE lin 2.416  T1cal 1.956  T2cal 1.968  vision 2.260
+  fold 4: train 494 test 120  caliper slope 3.39 mm/unit  MAE lin 2.740  T1cal 2.497  T2cal 2.344  vision 2.644
+  fold 5: train 491 test 123  caliper slope 3.33 mm/unit  MAE lin 2.799  T1cal 2.523  T2cal 2.382  vision 2.532
+
+model                 subset              n    MAE   RMSE     R2    CCC  Spear
+vision_resnet18       all_with_caliper   614  2.513  3.166   0.298  0.452  0.499
+vision_resnet18       DAN_parity1        353  2.390  2.983   0.130  0.282  0.336
+vision_resnet18       NAM_multiparous    180  2.657  3.351   0.430  0.574  0.663
+vision_resnet18       no_prev_season     528  2.427  3.093   0.246  0.389  0.451
+vision_resnet18       has_prev_season     86  3.041  3.584   0.176  0.323  0.411
+T1_tabpfn             all_with_caliper   614  2.752  3.485   0.149  0.257  0.334
+T1_tabpfn             DAN_parity1        353  2.509  3.149   0.031  0.084  0.177
+T1_tabpfn             NAM_multiparous    180  3.086  3.871   0.240  0.374  0.469
+T1_tabpfn             no_prev_season     528  2.701  3.405   0.087  0.177  0.232
+T1_tabpfn             has_prev_season     86  3.067  3.945   0.002  0.044  0.137
+T2_tabpfn             all_with_caliper   614  2.620  3.300   0.237  0.377  0.351
+T2_tabpfn             DAN_parity1        353  2.494  3.096   0.063  0.151  0.188
+T2_tabpfn             NAM_multiparous    180  2.712  3.420   0.407  0.565  0.526
+T2_tabpfn             no_prev_season     528  2.683  3.396   0.092  0.170  0.220
+T2_tabpfn             has_prev_season     86  2.234  2.634   0.555  0.706  0.679
+caliper_lin           all_with_caliper   614  2.612  3.327   0.224  0.368  0.431
+caliper_lin           DAN_parity1        353  2.490  3.080   0.073  0.211  0.286
+caliper_lin           NAM_multiparous    180  2.793  3.583   0.348  0.505  0.715
+caliper_lin           no_prev_season     528  2.501  3.166   0.210  0.388  0.435
+caliper_lin           has_prev_season     86  3.296  4.184  -0.123  0.173  0.353
+T1cal_tabpfn          all_with_caliper   614  2.327  3.005   0.367  0.535  0.575
+T1cal_tabpfn          DAN_parity1        353  2.253  2.868   0.196  0.336  0.396
+T1cal_tabpfn          NAM_multiparous    180  2.341  3.029   0.535  0.687  0.742
+T1cal_tabpfn          no_prev_season     528  2.264  2.926   0.326  0.497  0.525
+T1cal_tabpfn          has_prev_season     86  2.714  3.455   0.235  0.393  0.445
+T2cal_tabpfn          all_with_caliper   614  2.247  2.887   0.416  0.582  0.583
+T2cal_tabpfn          DAN_parity1        353  2.246  2.816   0.225  0.375  0.392
+T2cal_tabpfn          NAM_multiparous    180  2.089  2.710   0.627  0.761  0.778
+T2cal_tabpfn          no_prev_season     528  2.263  2.937   0.320  0.479  0.515
+T2cal_tabpfn          has_prev_season     86  2.147  2.558   0.580  0.738  0.677
+
+vision vs caliper_lin   [all_with_caliper] ΔR² +0.073 (95% CI +0.000, +0.142)  ΔMAE -0.097 (95% CI -0.237, +0.034)  Wilcoxon p=0.236
+vision vs caliper_lin   [DAN_parity1     ] ΔR² +0.057 (95% CI -0.065, +0.180)  ΔMAE -0.101 (95% CI -0.267, +0.067)  Wilcoxon p=0.353
+vision vs caliper_lin   [NAM_multiparous ] ΔR² +0.082 (95% CI -0.017, +0.179)  ΔMAE -0.143 (95% CI -0.390, +0.119)  Wilcoxon p=0.35
+vision vs caliper_lin   [no_prev_season  ] ΔR² +0.036 (95% CI -0.043, +0.112)  ΔMAE -0.072 (95% CI -0.209, +0.062)  Wilcoxon p=0.39
+vision vs caliper_lin   [has_prev_season ] ΔR² +0.298 (95% CI +0.049, +0.576)  ΔMAE -0.246 (95% CI -0.710, +0.182)  Wilcoxon p=0.309
+vision vs T1cal_tabpfn  [all_with_caliper] ΔR² -0.070 (95% CI -0.137, -0.001)  ΔMAE +0.187 (95% CI +0.062, +0.318)  Wilcoxon p=0.00281
+vision vs T1cal_tabpfn  [DAN_parity1     ] ΔR² -0.068 (95% CI -0.175, +0.048)  ΔMAE +0.135 (95% CI -0.020, +0.290)  Wilcoxon p=0.0361
+vision vs T1cal_tabpfn  [NAM_multiparous ] ΔR² -0.104 (95% CI -0.196, -0.014)  ΔMAE +0.313 (95% CI +0.061, +0.583)  Wilcoxon p=0.0275
+vision vs T1cal_tabpfn  [no_prev_season  ] ΔR² -0.079 (95% CI -0.153, -0.005)  ΔMAE +0.163 (95% CI +0.032, +0.301)  Wilcoxon p=0.0158
+vision vs T1cal_tabpfn  [has_prev_season ] ΔR² -0.067 (95% CI -0.268, +0.161)  ΔMAE +0.329 (95% CI -0.045, +0.676)  Wilcoxon p=0.0389
+vision vs T2cal_tabpfn  [all_with_caliper] ΔR² -0.118 (95% CI -0.178, -0.057)  ΔMAE +0.268 (95% CI +0.139, +0.396)  Wilcoxon p=8.14e-05
+vision vs T2cal_tabpfn  [DAN_parity1     ] ΔR² -0.095 (95% CI -0.186, -0.000)  ΔMAE +0.142 (95% CI -0.007, +0.284)  Wilcoxon p=0.0393
+vision vs T2cal_tabpfn  [NAM_multiparous ] ΔR² -0.197 (95% CI -0.288, -0.109)  ΔMAE +0.564 (95% CI +0.326, +0.829)  Wilcoxon p=0.00015
+vision vs T2cal_tabpfn  [no_prev_season  ] ΔR² -0.074 (95% CI -0.146, -0.004)  ΔMAE +0.165 (95% CI +0.036, +0.293)  Wilcoxon p=0.00939
+vision vs T2cal_tabpfn  [has_prev_season ] ΔR² -0.410 (95% CI -0.574, -0.256)  ΔMAE +0.895 (95% CI +0.486, +1.306)  Wilcoxon p=0.000104
+done in 38s -> F:\Postgraduate\Lab\饲喂站\背膘算法\twoview\runs\v1b_caliper

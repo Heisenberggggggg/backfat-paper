@@ -240,6 +240,7 @@ def main():
         'DAN_multiparous': (line == 'DAN') & (parity >= 2),
         'NAM_multiparous': (line == 'NAM') & (parity >= 2),
         'has_prev_season': ~np.isnan(prev_bf),
+        'no_prev_season': np.isnan(prev_bf),   # 2026-10-11 补：首次测定（无上季记录），视觉的主要应用场景
     }
     table = {name: {s: metrics(y[m], p[m]) for s, m in subsets.items()} for name, p in preds.items()}
     log('\nmodel                 subset              n    MAE   RMSE     R2    CCC  Spear')
@@ -255,7 +256,7 @@ def main():
     for name in preds:
         if name in ('mean', 'vision_resnet18'):
             continue
-        for s in ('all', 'DAN_parity1', 'NAM_multiparous'):
+        for s in ('all', 'DAN_parity1', 'NAM_multiparous', 'no_prev_season', 'has_prev_season'):
             m = subsets[s]
             ea, eb = np.abs(vis[m] - y[m]), np.abs(preds[name][m] - y[m])
             w = wilcoxon(ea, eb)

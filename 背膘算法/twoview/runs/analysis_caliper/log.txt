@@ -1,0 +1,59 @@
+[2026-10-11 14:20:39] n=662 pigs with caliper; caliper mean 4.17 SD 0.53 range 2.2–5.0
+
+1. caliper vs backfat correlation
+   all                    n= 662  r=0.479 (p=2.9e-39)  Spearman=0.454  slope=3.41 mm/unit  caliper 4.17±0.53  backfat 17.9±3.8
+   line=DAN               n= 447  r=0.402 (p=7.9e-19)  Spearman=0.344  slope=4.02 mm/unit  caliper 4.32±0.34  backfat 17.8±3.4
+   line=NAM               n= 215  r=0.680 (p=1.6e-30)  Spearman=0.708  slope=4.38 mm/unit  caliper 3.85±0.70  backfat 18.2±4.5
+   DAN multi              n=  61  r=0.454 (p=0.00024)  Spearman=0.391  slope=4.64 mm/unit  caliper 4.28±0.42  backfat 19.0±4.3
+   DAN p1                 n= 386  r=0.404 (p=1.5e-16)  Spearman=0.347  slope=3.97 mm/unit  caliper 4.33±0.33  backfat 17.7±3.2
+   NAM multi              n= 188  r=0.676 (p=1.9e-26)  Spearman=0.711  slope=4.68 mm/unit  caliper 3.95±0.64  backfat 18.4±4.4
+   NAM p1                 n=  27  r=0.710 (p=3.4e-05)  Spearman=0.801  slope=4.55 mm/unit  caliper 3.17±0.70  backfat 16.4±4.5
+   season=Aug             n= 267  r=0.617 (p=2.3e-29)  Spearman=0.659  slope=3.72 mm/unit  caliper 3.82±0.61  backfat 17.1±3.7
+   season=OctNov          n= 395  r=0.308 (p=4.2e-10)  Spearman=0.260  slope=3.94 mm/unit  caliper 4.41±0.29  backfat 18.5±3.8
+
+2. does the caliper–backfat relation differ by line / parity? (OLS, Type II)
+   y ~ caliper * C(line) + C(parity_grp) + C(season)   R²=0.303
+      C(line)                      F=  17.83  p=2.75e-05
+      C(parity_grp)                F=   3.35  p=0.0677
+      C(season)                    F=   0.96  p=0.329
+      caliper                      F= 222.81  p=1.37e-43
+      caliper:C(line)              F=   0.03  p=0.856
+        coef C(line)[T.NAM]                   +1.330 (95% CI -3.185, +5.845)
+        coef C(parity_grp)[T.p1]              -0.683 (95% CI -1.415, +0.050)
+        coef C(season)[T.OctNov]              -0.303 (95% CI -0.911, +0.305)
+        coef caliper                          +4.254 (95% CI +3.301, +5.207)
+        coef caliper:C(line)[T.NAM]           +0.101 (95% CI -0.991, +1.194)
+   y ~ caliper * C(parity_grp) + C(line) + C(season)   R²=0.311
+      C(parity_grp)                F=   3.57  p=0.0592
+      C(line)                      F=  14.87  p=0.000127
+      C(season)                    F=   0.60  p=0.439
+      caliper                      F= 225.19  p=5.6e-44
+      caliper:C(parity_grp)        F=   7.05  p=0.0081
+        coef C(parity_grp)[T.p1]              +4.471 (95% CI +0.586, +8.356)
+        coef C(line)[T.NAM]                   +1.596 (95% CI +0.783, +2.409)
+        coef C(season)[T.OctNov]              -0.236 (95% CI -0.833, +0.362)
+        coef caliper                          +4.875 (95% CI +4.178, +5.572)
+        coef caliper:C(parity_grp)[T.p1]      -1.271 (95% CI -2.210, -0.331)
+
+3. backfat by caliper reading (linearity)
+            count   mean   std
+cbin                          
+[0.0, 3.0)     32  13.69  2.87
+[3.0, 3.5)     44  15.05  3.10
+[3.5, 3.9)     68  15.10  2.91
+[3.9, 4.1)     65  17.95  3.09
+[4.1, 4.3)    117  18.35  3.24
+[4.3, 4.5)    172  18.29  3.24
+[4.5, 4.7)    104  19.44  3.36
+[4.7, 6.0)     60  21.20  4.37
+   distinct readings: {2.2: 3, 2.4: 2, 2.6: 11, 2.8: 16, 3.0: 14, 3.2: 9, 3.4: 21, 3.6: 21, 3.8: 47, 4.0: 65, 4.2: 117, 4.4: 172, 4.6: 104, 4.8: 39, 5.0: 21}
+
+4. information overlap between camera (OOF prediction) and caliper
+   r(camera, caliper)        = 0.438 (p=2.5e-32)
+   r(camera, backfat)        = 0.546
+   r(caliper, backfat)       = 0.479
+   partial r(camera, backfat | caliper) = 0.426 (p=1.6e-30)
+   partial r(caliper, backfat | camera) = 0.319 (p=4.2e-17)
+   [DAN] r(camera,caliper)=0.235  partial camera|caliper=0.384  partial caliper|camera=0.343
+   [NAM] r(camera,caliper)=0.660  partial camera|caliper=0.386  partial caliper|camera=0.432
+done -> F:\Postgraduate\Lab\饲喂站\背膘算法\twoview\runs\analysis_caliper
