@@ -81,6 +81,9 @@ def main():
     ap.add_argument('--model', choices=list(MODELS), required=True)
     ap.add_argument('--encodings', default='relh,normal')
     ap.add_argument('--bs', type=int, default=64)
+    # 2026-10-11 V7：--pigs dk 提取省农科院 DK 159 头（index_v2 farm=DK；metadata pig_id 形如 nky1_2-1），
+    #               输出 feat_<model>_<enc>_dk.npz，不覆盖丰美禾特征
+    ap.add_argument('--pigs', choices=['fmh', 'dk'], default='fmh')
     a = ap.parse_args()
     from transformers import AutoModel
     os.makedirs(OUT, exist_ok=True)
@@ -92,12 +95,20 @@ def main():
         logf.flush()
 
     t0 = time.time()
-    with open(PIGS, encoding='utf-8-sig') as f:
-        uids = [r['uid'] for r in csv.DictReader(f)]
     frames = {}
     with open(os.path.join(DM_DIR, 'metadata.csv'), encoding='utf-8') as f:
         for r in csv.DictReader(f):
             frames.setdefault(r['pig_id'], []).append(r['frame_path'])
+    if a.pigs == 'fmh':
+        with open(PIGS, encoding='utf-8-sig') as f:
+            uids = [r['uid'] for r in csv.DictReader(f)]
+    else:
+        pre = {'nky1': 'dk_nkyfirst_', 'nky2': 'dk_nkysecond_', 'nky3': 'dk_nkythird_'}
+        meta2uid = {p: pre[p.split('_')[0]] + p.split('_', 1)[1] for p in frames if p.split('_')[0] in pre}
+        with open(os.path.join(HERE, 'index_v2.csv'), encoding='utf-8-sig') as f:
+            uids = sorted(r['uid'] for r in csv.DictReader(f) if r['farm'] == 'DK')
+        uid2meta = {v: k for k, v in meta2uid.items()}
+        frames = {u: frames[uid2meta[u]] for u in uids}
     dev = 'cuda'
     model = AutoModel.from_pretrained(MODELS[a.model], torch_dtype=torch.float16).to(dev).eval()
     cfg = model.config
@@ -139,7 +150,7 @@ def main():
         ff = np.concatenate(feats)
         owner = np.array(owner)
         pig = np.stack([ff[owner == i].astype(np.float32).mean(0) for i in range(len(uids))])
-        out = os.path.join(OUT, f'feat_{a.model}_{enc}.npz')
+        out = os.path.join(OUT, f'feat_{a.model}_{enc}' + ('' if a.pigs == 'fmh' else '_dk') + '.npz')
         np.savez_compressed(out, uids=np.array(uids), owner=owner, frame_feat=ff, pig_feat=pig)
         log(f'  enc={enc}: frames={len(ff)} skipped={skipped} dim={ff.shape[1]} '
             f'frames/pig min={np.bincount(owner).min()} -> {out}  ({time.time() - t0:.0f}s)')

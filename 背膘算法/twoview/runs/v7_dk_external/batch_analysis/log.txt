@@ -1,0 +1,32 @@
+[2026-10-11 23:19:48] input F:\Postgraduate\Lab\饲喂站\背膘算法\twoview\runs\v7_dk_external\preds.csv
+
+1. median camera-to-back depth by batch (pig-level median of frame medians)
+   fmh_10.29    n=  62  depth median    816 mm  (IQR 792–841)
+   fmh_10.30    n=  63  depth median    822 mm  (IQR 796–837)
+   fmh_10.31    n=  73  depth median    843 mm  (IQR 820–867)
+   fmh_11.1     n=  67  depth median    899 mm  (IQR 872–923)
+   fmh_11.2     n=  37  depth median    861 mm  (IQR 847–879)
+   fmh_11.3     n=  73  depth median    857 mm  (IQR 841–877)
+   fmh_11.4     n=  40  depth median    852 mm  (IQR 831–870)
+   fmh_11.5     n=  70  depth median    842 mm  (IQR 814–876)
+   fmh_8.24     n=  59  depth median    816 mm  (IQR 781–839)
+   fmh_8.25     n=  64  depth median    822 mm  (IQR 798–843)
+   fmh_8.26     n=  69  depth median    839 mm  (IQR 812–866)
+   fmh_8.27     n=  76  depth median    856 mm  (IQR 836–873)
+   nkyfirst     n=  38  depth median    731 mm  (IQR 704–773)
+   nkysecond    n=  32  depth median    691 mm  (IQR 673–709)
+   nkythird     n=  89  depth median    868 mm  (IQR 836–906)
+
+2. DK per-batch bias / ranking
+   nkyfirst   n= 38 backfat 16.52±2.60 | resnet18_mean3: bias +1.67 ρ 0.490 r 0.462 | dinov3_relh_ridge: bias +2.23 ρ 0.024 r -0.005 | dinov3_normal_ridge: bias +1.89 ρ 0.057 r 0.019
+   nkysecond  n= 32 backfat 15.06±3.06 | resnet18_mean3: bias +1.32 ρ 0.560 r 0.585 | dinov3_relh_ridge: bias +1.25 ρ 0.232 r 0.395 | dinov3_normal_ridge: bias +1.58 ρ 0.530 r 0.558
+   nkythird   n= 89 backfat 13.53±2.97 | resnet18_mean3: bias +5.24 ρ 0.583 r 0.580 | dinov3_relh_ridge: bias +2.54 ρ 0.257 r 0.265 | dinov3_normal_ridge: bias +3.72 ρ 0.342 r 0.304
+
+3. few-shot intercept calibration: per-batch vs pooled (200 draws; evaluated on non-calibration pigs)
+   resnet18_mean3       k= 5/batch (15 pigs total)  per-batch: MAE 2.118 R2 0.285 ρ 0.608  | pooled: MAE 2.649 R2 -0.057
+   resnet18_mean3       k=10/batch (30 pigs total)  per-batch: MAE 2.026 R2 0.343 ρ 0.627  | pooled: MAE 2.635 R2 -0.049
+   dinov3_relh_ridge    k= 5/batch (15 pigs total)  per-batch: MAE 2.904 R2 -0.352 ρ 0.313  | pooled: MAE 2.774 R2 -0.209
+   dinov3_relh_ridge    k=10/batch (30 pigs total)  per-batch: MAE 2.761 R2 -0.230 ρ 0.335  | pooled: MAE 2.741 R2 -0.182
+   dinov3_normal_ridge  k= 5/batch (15 pigs total)  per-batch: MAE 2.796 R2 -0.221 ρ 0.389  | pooled: MAE 2.853 R2 -0.198
+   dinov3_normal_ridge  k=10/batch (30 pigs total)  per-batch: MAE 2.691 R2 -0.144 ρ 0.405  | pooled: MAE 2.829 R2 -0.175
+done -> F:\Postgraduate\Lab\饲喂站\背膘算法\twoview\runs\v7_dk_external\batch_analysis

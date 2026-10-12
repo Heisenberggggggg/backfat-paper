@@ -5,6 +5,25 @@
 
 ---
 
+## 2026-10-11（五）｜ V7 DK 外测：直接迁移失败（群体背膘水平差异）；每批补测 5 头 B 超校正截距即恢复到场内水平
+
+**做法**：只用丰美禾 663 头训练 / 拟合，DK 159 头（丹系，无胎次 / 卡尺）只作测试。ResNet-18（与 labelfix 相同训练函数，3 个种子平均）、冻结 DINOv3（relh / normal）+ RidgeCV。`twoview/v7_dk_external.py`、`twoview/v7b_dk_batch_shift.py` → `runs/v7_dk_external/{log.txt, batch_analysis/log.txt}`。DK 标签与 index_v2 逐头核对一致；画面朝向与丰美禾相同。
+
+**结果**
+1. 直接迁移：所有模型高估 2–4 mm，R² < 0（ResNet MAE 4.01、R² −1.22、ρ 0.36；DINOv3-relh MAE 3.26、R² −0.61、ρ 0.33）。
+2. 偏差主因是**猪群背膘水平差异**，不是相机高度：nkythird 相机距离 868 mm（与丰美禾 816–899 相近），但背膘最低（13.5 mm），偏差最大（ResNet +5.24）；nkyfirst / nkysecond 相机近得多（731 / 691 mm），偏差反而小（+1.67 / +1.32）。
+3. ResNet 批次内排序保留：ρ 0.49 / 0.56 / 0.58。
+4. **按批次截距校准（每批随机 5 头 B 超，共 15 头，200 次）**：ResNet MAE 2.12、R² 0.285、ρ 0.61（每批 10 头：MAE 2.03、R² 0.343、ρ 0.63）——与丰美禾场内 CV（R² 0.297）相当；整体单一截距校准无效（R² −0.06）。
+5. 冻结 DINOv3 跨场排序弱于 ResNet（按批次校准后 ρ 0.31–0.41；批次内 relh ρ 0.02–0.26）→ 场内 DINOv3 ≈ ResNet，跨场 ResNet 更稳健。
+6. 场内参照：DK 内部 5 折 DINOv3-relh + Ridge R² 0.20、ρ 0.45。
+
+**结论 / 影响**
+- 论文跨场部分如实报告「无校准不可迁移」，并给出可操作方案：**每个新场 / 测定批次补测约 5 头 B 超校正截距**。这也是保形区间 / 复测分流（V6）的天然入口。
+- 10/15 检查点：FMH 内部达到情形 A；跨场在按批次校准条件下达标（未校准不达标），写作时明确该前提。
+- 边缘部署主模型待定：场内 DINOv3（免训练）与 ResNet 相当，跨场 ResNet 更稳；V6、部署前再定。
+
+---
+
 ## 2026-10-11（四）｜ A3 + 公平融合：相机在「记录 + 卡尺」之上有显著增量；冻结 DINOv3 ≈ 训练过的 ResNet-18
 
 **做法**：冻结 DINOv3 ViT-B/16（本人 HF 账号获批）与 DINOv2-base 提取俯视深度图特征（编码：相对高度 relh / 表面法向 normal；CLS + 猪体 patch 均值，猪级取帧均值），`twoview/a3_extract_foundation_features.py`。融合 `twoview/a3_foundation_regression.py --vis stack`：每个外层折内，训练猪的视觉评分来自按 group 的内层 5 折全维 RidgeCV（OOF），测试猪用全训练集 RidgeCV；该评分与表格变量一起进 TabPFN → **无泄漏**。同一套 5 折。结果 `runs/a3_foundation/<model>_<enc>_stack/log.txt`。
