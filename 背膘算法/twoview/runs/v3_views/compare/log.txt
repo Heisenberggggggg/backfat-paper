@@ -1,0 +1,47 @@
+[2026-10-12 11:55:55] V3 view comparison
+   master: F:\Postgraduate\Lab\饲喂站\背膘算法\twoview\runs\v3_views\master_s128\test_preds.csv
+   sub: F:\Postgraduate\Lab\饲喂站\背膘算法\twoview\runs\v3_views\sub_s128\test_preds.csv
+   dual: F:\Postgraduate\Lab\饲喂站\背膘算法\twoview\runs\v3_views\dual_s128\test_preds.csv
+   pigs with all predictions: 663/663
+
+model      subset             n    MAE    RMSE   R2     CCC    Spearman
+master     all               663  2.475  3.160  0.309  0.448  0.533
+master     DAN_parity1       386  2.364  2.970  0.158  0.288  0.386
+master     NAM_multiparous   189  2.607  3.318  0.440  0.571  0.681
+master     no_prev_season    561  2.399  3.097  0.261  0.385  0.491
+master     has_prev_season   102  2.892  3.484  0.198  0.341  0.430
+sub        all               663  2.577  3.267  0.261  0.343  0.525
+sub        DAN_parity1       386  2.383  3.011  0.135  0.222  0.374
+sub        NAM_multiparous   189  2.852  3.561  0.354  0.437  0.675
+sub        no_prev_season    561  2.496  3.162  0.230  0.311  0.497
+sub        has_prev_season   102  3.022  3.793  0.049  0.227  0.326
+dual       all               663  2.451  3.109  0.331  0.431  0.580
+dual       DAN_parity1       386  2.315  2.924  0.184  0.282  0.434
+dual       NAM_multiparous   189  2.621  3.282  0.452  0.550  0.733
+dual       no_prev_season    561  2.382  3.030  0.293  0.384  0.544
+dual       has_prev_season   102  2.830  3.511  0.185  0.317  0.430
+late       all               663  2.476  3.141  0.317  0.409  0.577
+late       DAN_parity1       386  2.330  2.931  0.180  0.264  0.425
+late       NAM_multiparous   189  2.682  3.346  0.430  0.523  0.733
+late       no_prev_season    561  2.405  3.060  0.279  0.360  0.543
+late       has_prev_season   102  2.871  3.554  0.165  0.294  0.424
+
+r(master pred, sub pred) = 0.716; r(master resid, sub resid) = 0.917
+
+vs master (Δ = model − master): ΔR² / ΔMAE group-bootstrap 95% CI; Wilcoxon on |error|
+   sub   [all             ] ΔR² -0.048 (-0.091, -0.003)  ΔMAE +0.103 (+0.010, +0.193)  Wilcoxon p=0.0649
+   sub   [DAN_parity1     ] ΔR² -0.022 (-0.088, +0.047)  ΔMAE +0.018 (-0.095, +0.125)  Wilcoxon p=0.682
+   sub   [NAM_multiparous ] ΔR² -0.087 (-0.151, -0.013)  ΔMAE +0.245 (+0.058, +0.429)  Wilcoxon p=0.0391
+   sub   [no_prev_season  ] ΔR² -0.033 (-0.085, +0.024)  ΔMAE +0.098 (-0.011, +0.197)  Wilcoxon p=0.0627
+   sub   [has_prev_season ] ΔR² -0.144 (-0.324, +0.004)  ΔMAE +0.125 (-0.143, +0.414)  Wilcoxon p=0.744
+   dual  [all             ] ΔR² +0.022 (-0.005, +0.052)  ΔMAE -0.023 (-0.079, +0.031)  Wilcoxon p=0.403
+   dual  [DAN_parity1     ] ΔR² +0.026 (-0.015, +0.071)  ΔMAE -0.051 (-0.120, +0.016)  Wilcoxon p=0.18
+   dual  [NAM_multiparous ] ΔR² +0.012 (-0.026, +0.056)  ΔMAE +0.015 (-0.091, +0.118)  Wilcoxon p=0.708
+   dual  [no_prev_season  ] ΔR² +0.031 (+0.000, +0.064)  ΔMAE -0.016 (-0.078, +0.045)  Wilcoxon p=0.611
+   dual  [has_prev_season ] ΔR² -0.013 (-0.093, +0.074)  ΔMAE -0.059 (-0.229, +0.099)  Wilcoxon p=0.329
+   late  [all             ] ΔR² +0.008 (-0.014, +0.032)  ΔMAE +0.002 (-0.046, +0.050)  Wilcoxon p=0.907
+   late  [DAN_parity1     ] ΔR² +0.022 (-0.011, +0.060)  ΔMAE -0.034 (-0.094, +0.020)  Wilcoxon p=0.321
+   late  [NAM_multiparous ] ΔR² -0.010 (-0.041, +0.029)  ΔMAE +0.076 (-0.021, +0.172)  Wilcoxon p=0.251
+   late  [no_prev_season  ] ΔR² +0.017 (-0.009, +0.046)  ΔMAE +0.006 (-0.050, +0.057)  Wilcoxon p=0.815
+   late  [has_prev_season ] ΔR² -0.032 (-0.110, +0.039)  ΔMAE -0.021 (-0.165, +0.129)  Wilcoxon p=0.463
+done -> F:\Postgraduate\Lab\饲喂站\背膘算法\twoview\runs\v3_views\compare

@@ -1,0 +1,407 @@
+[2026-10-12 09:56:11] view=master args={'view': 'master', 'seeds': [42, 43, 44], 'size': 128, 'epochs': 15, 'bs': 64, 'lr': 0.0003, 'p_drop': 0.2}
+   pigs with this view: 663/663 (missing: []); frames {'master': 13258} (load 15s)
+  seed 42 fold 1: train 454 / val 76 / test 133
+    ep 01 val MAE 2.518 *
+    ep 02 val MAE 2.405 *
+    ep 03 val MAE 2.383 *
+    ep 04 val MAE 2.398
+    ep 05 val MAE 2.255 *
+    ep 06 val MAE 2.105 *
+    ep 07 val MAE 2.298
+    ep 08 val MAE 2.352
+    ep 09 val MAE 2.173
+    ep 10 val MAE 2.327
+    ep 11 val MAE 2.248
+    ep 12 val MAE 2.155
+    ep 13 val MAE 2.125
+    ep 14 val MAE 2.134
+    ep 15 val MAE 2.140
+  seed 42 fold 1 TEST MAE 2.623 R2 0.121
+  seed 42 fold 2: train 455 / val 76 / test 132
+    ep 01 val MAE 3.217 *
+    ep 02 val MAE 2.764 *
+    ep 03 val MAE 3.097
+    ep 04 val MAE 2.723 *
+    ep 05 val MAE 2.818
+    ep 06 val MAE 2.616 *
+    ep 07 val MAE 2.761
+    ep 08 val MAE 2.719
+    ep 09 val MAE 2.962
+    ep 10 val MAE 2.677
+    ep 11 val MAE 2.714
+    ep 12 val MAE 2.739
+    ep 13 val MAE 2.605 *
+    ep 14 val MAE 2.665
+    ep 15 val MAE 2.670
+  seed 42 fold 2 TEST MAE 2.579 R2 0.309
+  seed 42 fold 3: train 454 / val 76 / test 133
+    ep 01 val MAE 3.049 *
+    ep 02 val MAE 2.862 *
+    ep 03 val MAE 3.560
+    ep 04 val MAE 2.848 *
+    ep 05 val MAE 2.624 *
+    ep 06 val MAE 2.579 *
+    ep 07 val MAE 2.816
+    ep 08 val MAE 2.643
+    ep 09 val MAE 2.664
+    ep 10 val MAE 2.622
+    ep 11 val MAE 2.651
+    ep 12 val MAE 2.618
+    ep 13 val MAE 2.602
+    ep 14 val MAE 2.581
+    ep 15 val MAE 2.592
+  seed 42 fold 3 TEST MAE 2.438 R2 0.264
+  seed 42 fold 4: train 454 / val 76 / test 133
+    ep 01 val MAE 2.933 *
+    ep 02 val MAE 2.682 *
+    ep 03 val MAE 2.833
+    ep 04 val MAE 2.889
+    ep 05 val MAE 2.781
+    ep 06 val MAE 2.744
+    ep 07 val MAE 2.744
+    ep 08 val MAE 2.680 *
+    ep 09 val MAE 2.618 *
+    ep 10 val MAE 2.723
+    ep 11 val MAE 2.643
+    ep 12 val MAE 2.666
+    ep 13 val MAE 2.706
+    ep 14 val MAE 2.679
+    ep 15 val MAE 2.671
+  seed 42 fold 4 TEST MAE 2.642 R2 0.263
+  seed 42 fold 5: train 455 / val 76 / test 132
+    ep 01 val MAE 2.801 *
+    ep 02 val MAE 3.109
+    ep 03 val MAE 2.850
+    ep 04 val MAE 2.737 *
+    ep 05 val MAE 3.567
+    ep 06 val MAE 3.226
+    ep 07 val MAE 2.941
+    ep 08 val MAE 2.903
+    ep 09 val MAE 2.770
+    ep 10 val MAE 2.807
+    ep 11 val MAE 2.754
+    ep 12 val MAE 2.665 *
+    ep 13 val MAE 2.820
+    ep 14 val MAE 2.808
+    ep 15 val MAE 2.786
+  seed 42 fold 5 TEST MAE 2.501 R2 0.351
+== seed 42: n=663 MAE 2.557 R2 0.269 CCC 0.414 Spearman 0.494 | 7.2 min
+  seed 43 fold 1: train 454 / val 76 / test 133
+    ep 01 val MAE 3.080 *
+    ep 02 val MAE 2.462 *
+    ep 03 val MAE 2.385 *
+    ep 04 val MAE 2.263 *
+    ep 05 val MAE 2.709
+    ep 06 val MAE 2.285
+    ep 07 val MAE 2.232 *
+    ep 08 val MAE 2.278
+    ep 09 val MAE 2.254
+    ep 10 val MAE 2.251
+    ep 11 val MAE 2.263
+    ep 12 val MAE 2.157 *
+    ep 13 val MAE 2.179
+    ep 14 val MAE 2.116 *
+    ep 15 val MAE 2.135
+  seed 43 fold 1 TEST MAE 2.517 R2 0.168
+  seed 43 fold 2: train 455 / val 76 / test 132
+    ep 01 val MAE 2.814 *
+    ep 02 val MAE 3.523
+    ep 03 val MAE 2.828
+    ep 04 val MAE 2.846
+    ep 05 val MAE 2.738 *
+    ep 06 val MAE 2.615 *
+    ep 07 val MAE 2.596 *
+    ep 08 val MAE 2.768
+    ep 09 val MAE 2.792
+    ep 10 val MAE 2.497 *
+    ep 11 val MAE 2.577
+    ep 12 val MAE 2.572
+    ep 13 val MAE 2.494 *
+    ep 14 val MAE 2.528
+    ep 15 val MAE 2.526
+  seed 43 fold 2 TEST MAE 2.537 R2 0.324
+  seed 43 fold 3: train 454 / val 76 / test 133
+    ep 01 val MAE 3.230 *
+    ep 02 val MAE 3.014 *
+    ep 03 val MAE 2.751 *
+    ep 04 val MAE 3.342
+    ep 05 val MAE 2.683 *
+    ep 06 val MAE 2.926
+    ep 07 val MAE 2.703
+    ep 08 val MAE 2.733
+    ep 09 val MAE 2.697
+    ep 10 val MAE 2.709
+    ep 11 val MAE 2.638 *
+    ep 12 val MAE 2.588 *
+    ep 13 val MAE 2.611
+    ep 14 val MAE 2.599
+    ep 15 val MAE 2.596
+  seed 43 fold 3 TEST MAE 2.283 R2 0.347
+  seed 43 fold 4: train 454 / val 76 / test 133
+    ep 01 val MAE 2.954 *
+    ep 02 val MAE 2.885 *
+    ep 03 val MAE 3.251
+    ep 04 val MAE 3.130
+    ep 05 val MAE 2.784 *
+[2026-10-12 10:35:35] view=master args={'view': 'master', 'seeds': [42, 43, 44], 'size': 128, 'epochs': 15, 'bs': 64, 'lr': 0.0003, 'p_drop': 0.2, 'sub_qc': [0.04, 0.25]}
+   pigs with this view: 663/663 (missing: []); frames {'master': 13258} (load 14s)
+  seed 42 fold 1: train 454 / val 76 / test 133
+    ep 01 val MAE 2.518 *
+    ep 02 val MAE 2.405 *
+    ep 03 val MAE 2.383 *
+    ep 04 val MAE 2.398
+    ep 05 val MAE 2.255 *
+    ep 06 val MAE 2.105 *
+    ep 07 val MAE 2.298
+    ep 08 val MAE 2.352
+    ep 09 val MAE 2.173
+    ep 10 val MAE 2.327
+    ep 11 val MAE 2.248
+    ep 12 val MAE 2.155
+    ep 13 val MAE 2.125
+    ep 14 val MAE 2.134
+    ep 15 val MAE 2.140
+  seed 42 fold 1 TEST MAE 2.623 R2 0.121
+  seed 42 fold 2: train 455 / val 76 / test 132
+    ep 01 val MAE 3.217 *
+    ep 02 val MAE 2.764 *
+    ep 03 val MAE 3.097
+    ep 04 val MAE 2.723 *
+    ep 05 val MAE 2.818
+    ep 06 val MAE 2.616 *
+    ep 07 val MAE 2.761
+    ep 08 val MAE 2.719
+    ep 09 val MAE 2.962
+    ep 10 val MAE 2.677
+    ep 11 val MAE 2.714
+    ep 12 val MAE 2.739
+    ep 13 val MAE 2.605 *
+    ep 14 val MAE 2.665
+    ep 15 val MAE 2.670
+  seed 42 fold 2 TEST MAE 2.579 R2 0.309
+  seed 42 fold 3: train 454 / val 76 / test 133
+    ep 01 val MAE 3.049 *
+    ep 02 val MAE 2.862 *
+    ep 03 val MAE 3.560
+    ep 04 val MAE 2.848 *
+    ep 05 val MAE 2.624 *
+    ep 06 val MAE 2.579 *
+    ep 07 val MAE 2.816
+    ep 08 val MAE 2.643
+    ep 09 val MAE 2.664
+    ep 10 val MAE 2.622
+    ep 11 val MAE 2.651
+    ep 12 val MAE 2.618
+    ep 13 val MAE 2.602
+    ep 14 val MAE 2.581
+    ep 15 val MAE 2.592
+  seed 42 fold 3 TEST MAE 2.438 R2 0.264
+  seed 42 fold 4: train 454 / val 76 / test 133
+    ep 01 val MAE 2.933 *
+    ep 02 val MAE 2.682 *
+    ep 03 val MAE 2.833
+    ep 04 val MAE 2.889
+    ep 05 val MAE 2.781
+    ep 06 val MAE 2.744
+    ep 07 val MAE 2.744
+    ep 08 val MAE 2.680 *
+    ep 09 val MAE 2.618 *
+    ep 10 val MAE 2.723
+    ep 11 val MAE 2.643
+    ep 12 val MAE 2.666
+    ep 13 val MAE 2.706
+    ep 14 val MAE 2.679
+    ep 15 val MAE 2.671
+  seed 42 fold 4 TEST MAE 2.642 R2 0.263
+  seed 42 fold 5: train 455 / val 76 / test 132
+    ep 01 val MAE 2.801 *
+    ep 02 val MAE 3.109
+    ep 03 val MAE 2.850
+    ep 04 val MAE 2.737 *
+    ep 05 val MAE 3.567
+    ep 06 val MAE 3.226
+    ep 07 val MAE 2.941
+    ep 08 val MAE 2.903
+    ep 09 val MAE 2.770
+    ep 10 val MAE 2.807
+    ep 11 val MAE 2.754
+    ep 12 val MAE 2.665 *
+    ep 13 val MAE 2.820
+    ep 14 val MAE 2.808
+    ep 15 val MAE 2.786
+  seed 42 fold 5 TEST MAE 2.501 R2 0.351
+== seed 42: n=663 MAE 2.557 R2 0.269 CCC 0.414 Spearman 0.494 | 5.3 min
+  seed 43 fold 1: train 454 / val 76 / test 133
+    ep 01 val MAE 3.080 *
+    ep 02 val MAE 2.462 *
+    ep 03 val MAE 2.385 *
+    ep 04 val MAE 2.263 *
+    ep 05 val MAE 2.709
+    ep 06 val MAE 2.285
+    ep 07 val MAE 2.232 *
+    ep 08 val MAE 2.278
+    ep 09 val MAE 2.254
+    ep 10 val MAE 2.251
+    ep 11 val MAE 2.263
+    ep 12 val MAE 2.157 *
+    ep 13 val MAE 2.179
+    ep 14 val MAE 2.116 *
+    ep 15 val MAE 2.135
+  seed 43 fold 1 TEST MAE 2.517 R2 0.168
+  seed 43 fold 2: train 455 / val 76 / test 132
+    ep 01 val MAE 2.814 *
+    ep 02 val MAE 3.523
+    ep 03 val MAE 2.828
+    ep 04 val MAE 2.846
+    ep 05 val MAE 2.738 *
+    ep 06 val MAE 2.615 *
+    ep 07 val MAE 2.596 *
+    ep 08 val MAE 2.768
+    ep 09 val MAE 2.792
+    ep 10 val MAE 2.497 *
+    ep 11 val MAE 2.577
+    ep 12 val MAE 2.572
+    ep 13 val MAE 2.494 *
+    ep 14 val MAE 2.528
+    ep 15 val MAE 2.526
+  seed 43 fold 2 TEST MAE 2.537 R2 0.324
+  seed 43 fold 3: train 454 / val 76 / test 133
+    ep 01 val MAE 3.230 *
+    ep 02 val MAE 3.014 *
+    ep 03 val MAE 2.751 *
+    ep 04 val MAE 3.342
+    ep 05 val MAE 2.683 *
+    ep 06 val MAE 2.926
+    ep 07 val MAE 2.703
+    ep 08 val MAE 2.733
+    ep 09 val MAE 2.697
+    ep 10 val MAE 2.709
+    ep 11 val MAE 2.638 *
+    ep 12 val MAE 2.588 *
+    ep 13 val MAE 2.611
+    ep 14 val MAE 2.599
+    ep 15 val MAE 2.596
+  seed 43 fold 3 TEST MAE 2.283 R2 0.347
+  seed 43 fold 4: train 454 / val 76 / test 133
+    ep 01 val MAE 2.954 *
+    ep 02 val MAE 2.885 *
+    ep 03 val MAE 3.251
+    ep 04 val MAE 3.130
+    ep 05 val MAE 2.784 *
+    ep 06 val MAE 2.783 *
+    ep 07 val MAE 2.793
+    ep 08 val MAE 2.838
+    ep 09 val MAE 2.617 *
+    ep 10 val MAE 2.516 *
+    ep 11 val MAE 2.618
+    ep 12 val MAE 2.609
+    ep 13 val MAE 2.586
+    ep 14 val MAE 2.573
+    ep 15 val MAE 2.600
+  seed 43 fold 4 TEST MAE 2.550 R2 0.354
+  seed 43 fold 5: train 455 / val 76 / test 132
+    ep 01 val MAE 2.976 *
+    ep 02 val MAE 2.766 *
+    ep 03 val MAE 3.497
+    ep 04 val MAE 2.813
+    ep 05 val MAE 3.435
+    ep 06 val MAE 2.728 *
+    ep 07 val MAE 2.971
+    ep 08 val MAE 2.803
+    ep 09 val MAE 2.809
+    ep 10 val MAE 2.700 *
+    ep 11 val MAE 2.735
+    ep 12 val MAE 2.699 *
+    ep 13 val MAE 2.740
+    ep 14 val MAE 2.744
+    ep 15 val MAE 2.741
+  seed 43 fold 5 TEST MAE 2.454 R2 0.371
+== seed 43: n=663 MAE 2.468 R2 0.321 CCC 0.465 Spearman 0.540 | 10.2 min
+  seed 44 fold 1: train 454 / val 76 / test 133
+    ep 01 val MAE 2.617 *
+    ep 02 val MAE 2.299 *
+    ep 03 val MAE 2.486
+    ep 04 val MAE 2.463
+    ep 05 val MAE 2.458
+    ep 06 val MAE 2.246 *
+    ep 07 val MAE 2.360
+    ep 08 val MAE 2.230 *
+    ep 09 val MAE 2.311
+    ep 10 val MAE 2.195 *
+    ep 11 val MAE 2.371
+    ep 12 val MAE 2.170 *
+    ep 13 val MAE 2.216
+    ep 14 val MAE 2.192
+    ep 15 val MAE 2.203
+  seed 44 fold 1 TEST MAE 2.472 R2 0.186
+  seed 44 fold 2: train 455 / val 76 / test 132
+    ep 01 val MAE 2.909 *
+    ep 02 val MAE 3.369
+    ep 03 val MAE 3.258
+    ep 04 val MAE 2.689 *
+    ep 05 val MAE 2.645 *
+    ep 06 val MAE 2.888
+    ep 07 val MAE 3.159
+    ep 08 val MAE 2.675
+    ep 09 val MAE 2.838
+    ep 10 val MAE 2.640 *
+    ep 11 val MAE 2.680
+    ep 12 val MAE 2.707
+    ep 13 val MAE 2.647
+    ep 14 val MAE 2.636 *
+    ep 15 val MAE 2.660
+  seed 44 fold 2 TEST MAE 2.519 R2 0.320
+  seed 44 fold 3: train 454 / val 76 / test 133
+    ep 01 val MAE 2.881 *
+    ep 02 val MAE 2.920
+    ep 03 val MAE 2.840 *
+    ep 04 val MAE 2.640 *
+    ep 05 val MAE 3.186
+    ep 06 val MAE 2.726
+    ep 07 val MAE 2.828
+    ep 08 val MAE 3.037
+    ep 09 val MAE 2.760
+    ep 10 val MAE 2.736
+    ep 11 val MAE 2.728
+    ep 12 val MAE 2.739
+    ep 13 val MAE 2.739
+    ep 14 val MAE 2.747
+    ep 15 val MAE 2.734
+  seed 44 fold 3 TEST MAE 2.360 R2 0.252
+  seed 44 fold 4: train 454 / val 76 / test 133
+    ep 01 val MAE 2.820 *
+    ep 02 val MAE 2.820
+    ep 03 val MAE 3.462
+    ep 04 val MAE 2.891
+    ep 05 val MAE 2.711 *
+    ep 06 val MAE 2.716
+    ep 07 val MAE 2.804
+    ep 08 val MAE 2.677 *
+    ep 09 val MAE 2.701
+    ep 10 val MAE 2.599 *
+    ep 11 val MAE 2.628
+    ep 12 val MAE 2.639
+    ep 13 val MAE 2.671
+    ep 14 val MAE 2.626
+    ep 15 val MAE 2.635
+  seed 44 fold 4 TEST MAE 2.661 R2 0.267
+  seed 44 fold 5: train 455 / val 76 / test 132
+    ep 01 val MAE 2.922 *
+    ep 02 val MAE 2.802 *
+    ep 03 val MAE 2.808
+    ep 04 val MAE 2.714 *
+    ep 05 val MAE 2.772
+    ep 06 val MAE 2.803
+    ep 07 val MAE 2.729
+    ep 08 val MAE 2.702 *
+    ep 09 val MAE 2.846
+    ep 10 val MAE 2.706
+    ep 11 val MAE 2.743
+    ep 12 val MAE 2.760
+    ep 13 val MAE 2.697 *
+    ep 14 val MAE 2.718
+    ep 15 val MAE 2.704
+  seed 44 fold 5 TEST MAE 2.455 R2 0.373
+== seed 44: n=663 MAE 2.493 R2 0.286 CCC 0.445 Spearman 0.507 | 15.3 min
+== master seed-mean (3 seeds): n=663 MAE 2.475 RMSE 3.160 R2 0.309 CCC 0.448 Spearman 0.533 | 15.3 min
+done -> F:\Postgraduate\Lab\饲喂站\背膘算法\twoview\runs\v3_views\master_s128

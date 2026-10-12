@@ -1,0 +1,141 @@
+[2026-10-12 08:41:47] V6 conformal intervals + retest triage
+   stack F:\Postgraduate\Lab\饲喂站\背膘算法\twoview\runs\a3_foundation\dinov3-vitb16_relh_stack\preds.csv
+   tab   F:\Postgraduate\Lab\饲喂站\背膘算法\twoview\runs\v1_tabular\preds.csv
+   frame F:\Postgraduate\Lab\饲喂站\背膘算法\twoview\runs\framepreds_new_s128\frame_preds.csv
+   dk    F:\Postgraduate\Lab\饲喂站\背膘算法\twoview\runs\v7_dk_external\preds.csv
+   n=663 pigs, 561 groups; frames/pig median 20 (range 19–20); |mean(frame) − resnet18 pig pred| max 0.001
+   subsets: all 663, DAN_parity1 386, NAM_multiparous 189, no_prev_season 561, has_prev_season 102
+   mondrian groups: DAN_multi 61, DAN_p1 386, NAM_multi 189, NAM_p1 27
+   σ̂ features: frame_sd (median 1.80), |vis_ridge − resnet18| (median 1.09), ŷ, NAM, multiparous, has_prev
+
+== vis  (MAE 2.514, R² 0.316)
+   α=0.1 (target 90%): coverage [Wilson 95% CI] mean width (mm)
+     marginal   all 0.902 [0.88,0.92] w 10.47 | DAN_parity1 0.915 [0.88,0.94] w 10.46 | NAM_multiparous 0.878 [0.82,0.92] w 10.48 | no_prev_season 0.906 [0.88,0.93] w 10.47 | has_prev_season 0.882 [0.81,0.93] w 10.47
+     mondrian   all 0.914 [0.89,0.93] w 10.63 | DAN_parity1 0.909 [0.88,0.93] w 10.19 | NAM_multiparous 0.915 [0.87,0.95] w 11.18 | no_prev_season 0.913 [0.89,0.93] w 10.60 | has_prev_season 0.922 [0.85,0.96] w 10.81
+     normalized all 0.902 [0.88,0.92] w 10.41 | DAN_parity1 0.889 [0.85,0.92] w 9.83 | NAM_multiparous 0.931 [0.89,0.96] w 11.63 | no_prev_season 0.897 [0.87,0.92] w 10.21 | has_prev_season 0.931 [0.87,0.97] w 11.49
+   α=0.2 (target 80%): coverage [Wilson 95% CI] mean width (mm)
+     marginal   all 0.799 [0.77,0.83] w 7.91 | DAN_parity1 0.813 [0.77,0.85] w 7.91 | NAM_multiparous 0.757 [0.69,0.81] w 7.91 | no_prev_season 0.811 [0.78,0.84] w 7.91 | has_prev_season 0.735 [0.64,0.81] w 7.91
+     mondrian   all 0.802 [0.77,0.83] w 8.01 | DAN_parity1 0.801 [0.76,0.84] w 7.79 | NAM_multiparous 0.804 [0.74,0.85] w 8.59 | no_prev_season 0.807 [0.77,0.84] w 7.97 | has_prev_season 0.775 [0.68,0.84] w 8.23
+     normalized all 0.804 [0.77,0.83] w 8.11 | DAN_parity1 0.790 [0.75,0.83] w 7.67 | NAM_multiparous 0.815 [0.75,0.86] w 9.04 | no_prev_season 0.799 [0.76,0.83] w 7.95 | has_prev_season 0.833 [0.75,0.89] w 8.95
+   ranking quality: sigma_hat ρ 0.032 AUROC(|e|>3) 0.519 | frame_sd ρ -0.032 AUROC(|e|>3) 0.507 | vis_disagree ρ -0.023 AUROC(|e|>3) 0.504 | mondrian_width ρ 0.021 AUROC(|e|>3) 0.520
+   triage: retest frac → MAE of non-retested / share |e|>3 mm among non-retested
+     frac  random        sigma_hat     frame_sd      vis_disagree  mondrian      oracle
+     0.00  2.514/0.330  2.514/0.330  2.514/0.330  2.514/0.330  2.514/0.330  2.514/0.330
+     0.05  2.515/0.330  2.491/0.322  2.520/0.335  2.512/0.332  2.526/0.335  2.255/0.295
+     0.10  2.514/0.330  2.474/0.320  2.523/0.337  2.513/0.328  2.526/0.333  2.072/0.256
+     0.15  2.516/0.331  2.477/0.316  2.524/0.333  2.544/0.333  2.513/0.326  1.908/0.213
+     0.20  2.515/0.330  2.474/0.315  2.522/0.330  2.519/0.330  2.519/0.328  1.766/0.162
+     0.25  2.512/0.330  2.452/0.310  2.546/0.334  2.508/0.328  2.490/0.322  1.632/0.107
+     0.30  2.513/0.330  2.415/0.306  2.561/0.336  2.530/0.332  2.502/0.321  1.504/0.043
+     0.40  2.516/0.331  2.473/0.322  2.549/0.329  2.511/0.324  2.413/0.307  1.273/0.000
+     0.50  2.519/0.332  2.516/0.323  2.612/0.338  2.523/0.326  2.471/0.311  1.054/0.000
+     σ̂ − random @ 10%: ΔMAE(kept) -0.044 (-0.096, +0.004); Δshare|e|>3 -0.011 (-0.025, +0.001)
+     σ̂ − random @ 20%: ΔMAE(kept) -0.049 (-0.125, +0.023); Δshare|e|>3 -0.017 (-0.036, +0.003)
+     σ̂ − random @ 30%: ΔMAE(kept) -0.090 (-0.198, +0.006); Δshare|e|>3 -0.023 (-0.050, +0.003)
+
+== resnet18  (MAE 2.511, R² 0.297)
+   α=0.1 (target 90%): coverage [Wilson 95% CI] mean width (mm)
+     marginal   all 0.905 [0.88,0.93] w 10.47 | DAN_parity1 0.925 [0.89,0.95] w 10.46 | NAM_multiparous 0.873 [0.82,0.91] w 10.49 | no_prev_season 0.911 [0.88,0.93] w 10.47 | has_prev_season 0.873 [0.79,0.92] w 10.47
+     mondrian   all 0.903 [0.88,0.92] w 10.46 | DAN_parity1 0.904 [0.87,0.93] w 9.51 | NAM_multiparous 0.899 [0.85,0.93] w 11.45 | no_prev_season 0.906 [0.88,0.93] w 10.40 | has_prev_season 0.892 [0.82,0.94] w 10.79
+     normalized all 0.900 [0.88,0.92] w 10.50 | DAN_parity1 0.907 [0.87,0.93] w 10.10 | NAM_multiparous 0.899 [0.85,0.93] w 11.32 | no_prev_season 0.893 [0.86,0.92] w 10.17 | has_prev_season 0.941 [0.88,0.97] w 12.35
+   α=0.2 (target 80%): coverage [Wilson 95% CI] mean width (mm)
+     marginal   all 0.801 [0.77,0.83] w 7.82 | DAN_parity1 0.819 [0.78,0.85] w 7.82 | NAM_multiparous 0.757 [0.69,0.81] w 7.83 | no_prev_season 0.816 [0.78,0.85] w 7.82 | has_prev_season 0.716 [0.62,0.79] w 7.82
+     mondrian   all 0.805 [0.77,0.83] w 7.94 | DAN_parity1 0.801 [0.76,0.84] w 7.62 | NAM_multiparous 0.804 [0.74,0.85] w 8.62 | no_prev_season 0.820 [0.79,0.85] w 7.91 | has_prev_season 0.725 [0.63,0.80] w 8.15
+     normalized all 0.799 [0.77,0.83] w 7.96 | DAN_parity1 0.801 [0.76,0.84] w 7.65 | NAM_multiparous 0.799 [0.74,0.85] w 8.58 | no_prev_season 0.800 [0.77,0.83] w 7.70 | has_prev_season 0.794 [0.71,0.86] w 9.36
+   ranking quality: sigma_hat ρ -0.022 AUROC(|e|>3) 0.493 | frame_sd ρ -0.025 AUROC(|e|>3) 0.526 | vis_disagree ρ -0.017 AUROC(|e|>3) 0.506 | mondrian_width ρ 0.016 AUROC(|e|>3) 0.515
+   triage: retest frac → MAE of non-retested / share |e|>3 mm among non-retested
+     frac  random        sigma_hat     frame_sd      vis_disagree  mondrian      oracle
+     0.00  2.511/0.333  2.511/0.333  2.511/0.333  2.511/0.333  2.511/0.333  2.511/0.333
+     0.05  2.511/0.333  2.464/0.322  2.529/0.337  2.476/0.329  2.526/0.337  2.232/0.298
+     0.10  2.511/0.333  2.445/0.315  2.536/0.333  2.445/0.322  2.528/0.337  2.035/0.260
+     0.15  2.512/0.334  2.461/0.316  2.547/0.330  2.460/0.324  2.505/0.332  1.878/0.216
+     0.20  2.514/0.334  2.496/0.321  2.543/0.330  2.442/0.325  2.512/0.330  1.734/0.166
+     0.25  2.509/0.333  2.487/0.324  2.559/0.332  2.435/0.324  2.527/0.334  1.603/0.111
+     0.30  2.512/0.333  2.513/0.323  2.566/0.332  2.470/0.330  2.503/0.328  1.481/0.047
+     0.40  2.513/0.334  2.519/0.332  2.577/0.327  2.506/0.334  2.437/0.314  1.247/0.000
+     0.50  2.517/0.335  2.572/0.344  2.649/0.326  2.541/0.341  2.488/0.314  1.016/0.000
+     σ̂ − random @ 10%: ΔMAE(kept) -0.060 (-0.114, -0.008); Δshare|e|>3 -0.017 (-0.029, -0.003)
+     σ̂ − random @ 20%: ΔMAE(kept) -0.024 (-0.100, +0.047); Δshare|e|>3 -0.013 (-0.032, +0.006)
+     σ̂ − random @ 30%: ΔMAE(kept) -0.007 (-0.105, +0.084); Δshare|e|>3 -0.010 (-0.034, +0.014)
+
+== R+vis  (MAE 2.455, R² 0.339)
+   α=0.1 (target 90%): coverage [Wilson 95% CI] mean width (mm)
+     marginal   all 0.899 [0.87,0.92] w 9.99 | DAN_parity1 0.909 [0.88,0.93] w 9.99 | NAM_multiparous 0.884 [0.83,0.92] w 10.00 | no_prev_season 0.898 [0.87,0.92] w 9.99 | has_prev_season 0.902 [0.83,0.95] w 9.99
+     mondrian   all 0.902 [0.88,0.92] w 10.09 | DAN_parity1 0.896 [0.86,0.92] w 9.46 | NAM_multiparous 0.905 [0.85,0.94] w 10.73 | no_prev_season 0.898 [0.87,0.92] w 10.05 | has_prev_season 0.922 [0.85,0.96] w 10.32
+     normalized all 0.902 [0.88,0.92] w 10.00 | DAN_parity1 0.894 [0.86,0.92] w 9.43 | NAM_multiparous 0.926 [0.88,0.96] w 11.15 | no_prev_season 0.898 [0.87,0.92] w 9.78 | has_prev_season 0.922 [0.85,0.96] w 11.23
+   α=0.2 (target 80%): coverage [Wilson 95% CI] mean width (mm)
+     marginal   all 0.799 [0.77,0.83] w 7.79 | DAN_parity1 0.816 [0.77,0.85] w 7.79 | NAM_multiparous 0.746 [0.68,0.80] w 7.80 | no_prev_season 0.815 [0.78,0.84] w 7.80 | has_prev_season 0.716 [0.62,0.79] w 7.79
+     mondrian   all 0.798 [0.77,0.83] w 7.81 | DAN_parity1 0.795 [0.75,0.83] w 7.45 | NAM_multiparous 0.804 [0.74,0.85] w 8.74 | no_prev_season 0.804 [0.77,0.83] w 7.76 | has_prev_season 0.765 [0.67,0.84] w 8.11
+     normalized all 0.799 [0.77,0.83] w 7.80 | DAN_parity1 0.782 [0.74,0.82] w 7.36 | NAM_multiparous 0.825 [0.76,0.87] w 8.69 | no_prev_season 0.795 [0.76,0.83] w 7.62 | has_prev_season 0.824 [0.74,0.89] w 8.75
+   ranking quality: sigma_hat ρ 0.031 AUROC(|e|>3) 0.527 | frame_sd ρ -0.007 AUROC(|e|>3) 0.501 | vis_disagree ρ -0.020 AUROC(|e|>3) 0.502 | mondrian_width ρ 0.028 AUROC(|e|>3) 0.526
+   triage: retest frac → MAE of non-retested / share |e|>3 mm among non-retested
+     frac  random        sigma_hat     frame_sd      vis_disagree  mondrian      oracle
+     0.00  2.455/0.321  2.455/0.321  2.455/0.321  2.455/0.321  2.455/0.321  2.455/0.321
+     0.05  2.456/0.321  2.439/0.311  2.458/0.325  2.462/0.324  2.466/0.322  2.191/0.286
+     0.10  2.455/0.321  2.448/0.310  2.460/0.327  2.459/0.323  2.473/0.327  2.007/0.246
+     0.15  2.456/0.322  2.419/0.307  2.447/0.319  2.490/0.332  2.477/0.323  1.856/0.202
+     0.20  2.457/0.321  2.408/0.302  2.441/0.321  2.462/0.326  2.469/0.317  1.711/0.151
+     0.25  2.453/0.322  2.384/0.290  2.450/0.324  2.457/0.324  2.451/0.306  1.581/0.095
+     0.30  2.453/0.321  2.376/0.291  2.480/0.328  2.477/0.325  2.435/0.302  1.454/0.030
+     0.40  2.456/0.322  2.417/0.299  2.463/0.322  2.447/0.317  2.370/0.294  1.221/0.000
+     0.50  2.459/0.322  2.471/0.320  2.523/0.332  2.461/0.320  2.427/0.302  1.012/0.000
+     σ̂ − random @ 10%: ΔMAE(kept) -0.019 (-0.073, +0.031); Δshare|e|>3 -0.013 (-0.026, -0.001)
+     σ̂ − random @ 20%: ΔMAE(kept) -0.052 (-0.130, +0.020); Δshare|e|>3 -0.021 (-0.038, -0.003)
+     σ̂ − random @ 30%: ΔMAE(kept) -0.075 (-0.172, +0.023); Δshare|e|>3 -0.031 (-0.056, -0.005)
+
+== R+cal  (MAE 2.337, R² 0.371)
+   α=0.1 (target 90%): coverage [Wilson 95% CI] mean width (mm)
+     marginal   all 0.903 [0.88,0.92] w 9.87 | DAN_parity1 0.925 [0.89,0.95] w 9.87 | NAM_multiparous 0.889 [0.84,0.93] w 9.88 | no_prev_season 0.909 [0.88,0.93] w 9.87 | has_prev_season 0.873 [0.79,0.92] w 9.87
+     mondrian   all 0.900 [0.88,0.92] w 10.06 | DAN_parity1 0.902 [0.87,0.93] w 9.34 | NAM_multiparous 0.894 [0.84,0.93] w 10.54 | no_prev_season 0.906 [0.88,0.93] w 10.01 | has_prev_season 0.873 [0.79,0.92] w 10.30
+     normalized all 0.900 [0.88,0.92] w 9.89 | DAN_parity1 0.904 [0.87,0.93] w 9.62 | NAM_multiparous 0.921 [0.87,0.95] w 10.35 | no_prev_season 0.895 [0.87,0.92] w 9.54 | has_prev_season 0.931 [0.87,0.97] w 11.81
+   α=0.2 (target 80%): coverage [Wilson 95% CI] mean width (mm)
+     marginal   all 0.798 [0.77,0.83] w 7.37 | DAN_parity1 0.811 [0.77,0.85] w 7.36 | NAM_multiparous 0.799 [0.74,0.85] w 7.38 | no_prev_season 0.820 [0.79,0.85] w 7.37 | has_prev_season 0.676 [0.58,0.76] w 7.37
+     mondrian   all 0.804 [0.77,0.83] w 7.50 | DAN_parity1 0.803 [0.76,0.84] w 7.15 | NAM_multiparous 0.794 [0.73,0.85] w 7.32 | no_prev_season 0.822 [0.79,0.85] w 7.50 | has_prev_season 0.706 [0.61,0.79] w 7.53
+     normalized all 0.802 [0.77,0.83] w 7.40 | DAN_parity1 0.813 [0.77,0.85] w 7.21 | NAM_multiparous 0.810 [0.75,0.86] w 7.74 | no_prev_season 0.800 [0.77,0.83] w 7.14 | has_prev_season 0.814 [0.73,0.88] w 8.84
+   ranking quality: sigma_hat ρ -0.028 AUROC(|e|>3) 0.486 | frame_sd ρ -0.042 AUROC(|e|>3) 0.495 | vis_disagree ρ -0.015 AUROC(|e|>3) 0.533 | mondrian_width ρ -0.028 AUROC(|e|>3) 0.458
+   triage: retest frac → MAE of non-retested / share |e|>3 mm among non-retested
+     frac  random        sigma_hat     frame_sd      vis_disagree  mondrian      oracle
+     0.00  2.337/0.305  2.337/0.305  2.337/0.305  2.337/0.305  2.337/0.305  2.337/0.305
+     0.05  2.338/0.305  2.335/0.302  2.354/0.310  2.341/0.303  2.328/0.302  2.066/0.268
+     0.10  2.336/0.304  2.329/0.298  2.359/0.312  2.304/0.293  2.329/0.305  1.882/0.228
+     0.15  2.339/0.305  2.320/0.296  2.352/0.303  2.295/0.285  2.325/0.303  1.726/0.183
+     0.20  2.339/0.304  2.306/0.296  2.357/0.304  2.292/0.283  2.324/0.308  1.585/0.130
+     0.25  2.335/0.305  2.332/0.304  2.373/0.308  2.304/0.282  2.330/0.310  1.461/0.072
+     0.30  2.336/0.304  2.374/0.315  2.401/0.308  2.342/0.287  2.349/0.317  1.343/0.006
+     0.40  2.338/0.305  2.397/0.317  2.416/0.314  2.351/0.286  2.396/0.329  1.107/0.000
+     0.50  2.340/0.305  2.369/0.317  2.459/0.314  2.392/0.293  2.463/0.341  0.886/0.000
+     σ̂ − random @ 10%: ΔMAE(kept) -0.017 (-0.062, +0.028); Δshare|e|>3 -0.008 (-0.021, +0.004)
+     σ̂ − random @ 20%: ΔMAE(kept) -0.034 (-0.107, +0.043); Δshare|e|>3 -0.009 (-0.028, +0.010)
+     σ̂ − random @ 30%: ΔMAE(kept) +0.038 (-0.055, +0.128); Δshare|e|>3 +0.009 (-0.012, +0.032)
+
+== R+prev+cal+vis  (MAE 2.109, R² 0.480)
+   α=0.1 (target 90%): coverage [Wilson 95% CI] mean width (mm)
+     marginal   all 0.902 [0.88,0.92] w 8.79 | DAN_parity1 0.904 [0.87,0.93] w 8.79 | NAM_multiparous 0.921 [0.87,0.95] w 8.79 | no_prev_season 0.897 [0.87,0.92] w 8.79 | has_prev_season 0.931 [0.87,0.97] w 8.79
+     mondrian   all 0.906 [0.88,0.93] w 9.04 | DAN_parity1 0.904 [0.87,0.93] w 8.81 | NAM_multiparous 0.915 [0.87,0.95] w 8.64 | no_prev_season 0.900 [0.87,0.92] w 9.06 | has_prev_season 0.941 [0.88,0.97] w 8.93
+     normalized all 0.897 [0.87,0.92] w 9.04 | DAN_parity1 0.902 [0.87,0.93] w 9.02 | NAM_multiparous 0.910 [0.86,0.94] w 9.14 | no_prev_season 0.898 [0.87,0.92] w 9.12 | has_prev_season 0.892 [0.82,0.94] w 8.57
+   α=0.2 (target 80%): coverage [Wilson 95% CI] mean width (mm)
+     marginal   all 0.801 [0.77,0.83] w 7.06 | DAN_parity1 0.795 [0.75,0.83] w 7.06 | NAM_multiparous 0.810 [0.75,0.86] w 7.06 | no_prev_season 0.802 [0.77,0.83] w 7.06 | has_prev_season 0.794 [0.71,0.86] w 7.06
+     mondrian   all 0.801 [0.77,0.83] w 7.10 | DAN_parity1 0.803 [0.76,0.84] w 7.13 | NAM_multiparous 0.788 [0.72,0.84] w 6.85 | no_prev_season 0.802 [0.77,0.83] w 7.11 | has_prev_season 0.794 [0.71,0.86] w 7.02
+     normalized all 0.802 [0.77,0.83] w 7.11 | DAN_parity1 0.801 [0.76,0.84] w 7.09 | NAM_multiparous 0.804 [0.74,0.85] w 7.18 | no_prev_season 0.809 [0.77,0.84] w 7.18 | has_prev_season 0.765 [0.67,0.84] w 6.74
+   ranking quality: sigma_hat ρ -0.017 AUROC(|e|>3) 0.474 | frame_sd ρ -0.014 AUROC(|e|>3) 0.490 | vis_disagree ρ -0.076 AUROC(|e|>3) 0.492 | mondrian_width ρ -0.022 AUROC(|e|>3) 0.475
+   triage: retest frac → MAE of non-retested / share |e|>3 mm among non-retested
+     frac  random        sigma_hat     frame_sd      vis_disagree  mondrian      oracle
+     0.00  2.109/0.271  2.109/0.271  2.109/0.271  2.109/0.271  2.109/0.271  2.109/0.271
+     0.05  2.109/0.271  2.127/0.279  2.116/0.271  2.134/0.278  2.109/0.270  1.863/0.233
+     0.10  2.108/0.271  2.118/0.278  2.116/0.270  2.111/0.275  2.102/0.273  1.702/0.191
+     0.15  2.109/0.271  2.124/0.280  2.114/0.270  2.130/0.278  2.087/0.273  1.557/0.144
+     0.20  2.109/0.271  2.120/0.277  2.113/0.274  2.132/0.275  2.104/0.275  1.419/0.089
+     0.25  2.108/0.272  2.122/0.280  2.140/0.280  2.141/0.276  2.082/0.270  1.293/0.028
+     0.30  2.109/0.271  2.112/0.276  2.159/0.280  2.157/0.278  2.089/0.272  1.174/0.000
+     0.40  2.110/0.272  2.124/0.279  2.173/0.284  2.162/0.279  2.138/0.284  0.953/0.000
+     0.50  2.111/0.272  2.150/0.284  2.187/0.290  2.172/0.278  2.149/0.275  0.757/0.000
+     σ̂ − random @ 10%: ΔMAE(kept) +0.016 (-0.025, +0.056); Δshare|e|>3 +0.007 (-0.004, +0.018)
+     σ̂ − random @ 20%: ΔMAE(kept) +0.007 (-0.058, +0.074); Δshare|e|>3 +0.006 (-0.012, +0.024)
+     σ̂ − random @ 30%: ΔMAE(kept) +0.002 (-0.092, +0.089); Δshare|e|>3 +0.005 (-0.018, +0.028)
+
+== DK external (FMH OOF residual quantile; per-batch intercept calibration k pigs/batch, 200 draws)
+   resnet18_mean3     α=0.1: q_FMH ±5.26 mm | uncalibrated cov 0.686 (nkyfirst 0.95, nkysecond 0.97, nkythird 0.47) | per-batch k=5: cov 0.947±0.024 (nkyfirst 0.95, nkysecond 0.94, nkythird 0.95) | per-batch k=10: cov 0.953±0.019 (nkyfirst 0.95, nkysecond 0.94, nkythird 0.96)
+   resnet18_mean3     α=0.2: q_FMH ±3.92 mm | uncalibrated cov 0.547 (nkyfirst 0.89, nkysecond 0.91, nkythird 0.27) | per-batch k=5: cov 0.867±0.041 (nkyfirst 0.88, nkysecond 0.84, nkythird 0.87) | per-batch k=10: cov 0.887±0.021 (nkyfirst 0.90, nkysecond 0.86, nkythird 0.89)
+   dinov3_relh_ridge  α=0.1: q_FMH ±5.15 mm | uncalibrated cov 0.792 (nkyfirst 0.89, nkysecond 0.84, nkythird 0.73) | per-batch k=5: cov 0.848±0.040 (nkyfirst 0.81, nkysecond 0.84, nkythird 0.86) | per-batch k=10: cov 0.869±0.026 (nkyfirst 0.82, nkysecond 0.86, nkythird 0.89)
+   dinov3_relh_ridge  α=0.2: q_FMH ±3.97 mm | uncalibrated cov 0.642 (nkyfirst 0.66, nkysecond 0.78, nkythird 0.58) | per-batch k=5: cov 0.735±0.048 (nkyfirst 0.72, nkysecond 0.72, nkythird 0.74) | per-batch k=10: cov 0.765±0.033 (nkyfirst 0.76, nkysecond 0.73, nkythird 0.77)
+done in 4s -> F:\Postgraduate\Lab\饲喂站\背膘算法\twoview\runs\v6_conformal
