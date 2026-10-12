@@ -13,7 +13,8 @@
 
 # ---- 自带 .git 的独立仓库 / 第三方代码（嵌入会变成空壳） ----
 /背膘算法/orbbec_ceding/
-/背膘算法/网络/Point-Transformers_jiu/
+# 原版（胡宝玖）：自带 .git（qq456cvb/Point-Transformers 克隆）已于 2026-10-12 挪到
+# F:\Postgraduate\Lab\_git_backup\Point-Transformers_jiu.git，现在放行代码（约 0.5 MB，无数据）
 # 硕改版：自带 .git 已于 2026-10-09 挪到 F:\Postgraduate\Lab\_git_backup\，现在放行代码；
 # 其中 data/ 有 1.8GB 点云，必须排除
 /背膘算法/网络/Point-Transformers_jiu_硕改/data/
