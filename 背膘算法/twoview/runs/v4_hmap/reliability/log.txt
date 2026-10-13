@@ -1,0 +1,102 @@
+[2026-10-13 11:46:37] reliability on height-map ResNet-18 OOF predictions
+   pigs 663; seed-42 frames 12359 (frames/pig median 19)
+
+=== A1 within-animal change: 102 pairs (same test fold: 102) ===
+Δultrasound mean +2.35 SD 2.59 mm; |Δ|≥2 mm: 67
+parity early→late: {(1.0, 1.0): 36, (1.0, 2.0): 2, (2.0, 1.0): 3, (2.0, 2.0): 38, (2.0, 3.0): 2, (3.0, 2.0): 2, (3.0, 3.0): 19}; line: {'NAM': 55, 'DAN': 47}
+vision          r=0.145 (95% CI -0.032, 0.328; p=0.15)  Spearman=0.178  CCC=0.123  MAE(Δ)=2.23 mm  sign agree (|Δ|≥2 mm, n=67) = 92.54%  SD(Δpred)=1.45
+tabular_T1_xgb  r=-0.114 (95% CI -0.253, 0.033; p=0.25)  Spearman=-0.056  CCC=-0.086  MAE(Δ)=2.38 mm  sign agree (|Δ|≥2 mm, n=67) = 92.54%  SD(Δpred)=1.22
+reference "predict no change": MAE(Δ)=2.82 mm
+base rate: 92.54% of |Δ|≥2 mm pairs increased → sign agreement above is mostly the population trend
+reference "everyone gets the mean Δ" (leave-one-out): MAE(Δ)=2.16 mm
+ultrasound early vs late (same animal): r=0.763 (p=1.2e-20)
+
+=== A2 frame-level repeatability: 663 pigs, 12359 frames ===
+ICC(1) single frame = 0.723; within-pig frame SD = 1.43 mm; between-pig SD = 2.32 mm
+reliability of mean of 18.6 frames (Spearman–Brown) = 0.980; frames needed for 0.90 = 3.4, for 0.95 = 7.3
+ICC per fold: {1: 0.657, 2: 0.662, 3: 0.8, 4: 0.747, 5: 0.729}
+  k= 1 frames: MAE 2.659 ± 0.043   R² 0.211 ± 0.022
+  k= 2 frames: MAE 2.533 ± 0.034   R² 0.280 ± 0.017
+  k= 3 frames: MAE 2.486 ± 0.024   R² 0.305 ± 0.012
+  k= 5 frames: MAE 2.450 ± 0.021   R² 0.323 ± 0.009
+  k=10 frames: MAE 2.421 ± 0.011   R² 0.337 ± 0.005
+  k=15 frames: MAE 2.412 ± 0.006   R² 0.342 ± 0.003
+  k=20 frames: MAE 2.408 ± 0.000   R² 0.344 ± 0.000
+
+=== A6 error structure: vision (calibration slope pred~ultrasound = 0.366) ===
+-- (a_marginal) r ~ C(line) + C(parity_grp) + gd + gd_missing + C(season)   R²=0.033
+   C(line)            F=   4.68  p=0.0309
+   C(parity_grp)      F=   1.91  p=0.167
+   C(season)          F=   6.57  p=0.0106
+   gd                 F=  12.79  p=0.000374
+   gd_missing         F=   2.53  p=0.112
+     coef C(line)[T.NAM]               -0.823 (95% CI -1.570, -0.076)
+     coef C(parity_grp)[T.p1]          +0.469 (95% CI -0.197, +1.134)
+     coef C(season)[T.OctNov]          -0.839 (95% CI -1.482, -0.196)
+     coef gd                           +0.551 (95% CI +0.248, +0.853)
+     coef gd_missing                   -0.629 (95% CI -1.405, +0.147)
+-- (b_conditional_on_y) r ~ y + C(line) + C(parity_grp) + gd + gd_missing + C(season)   R²=0.683
+   C(line)            F=   8.13  p=0.0045
+   C(parity_grp)      F=   7.09  p=0.00796
+   C(season)          F=  18.62  p=1.84e-05
+   y                  F=1344.15  p=5.96e-161
+   gd                 F=   6.58  p=0.0105
+   gd_missing         F=   0.60  p=0.44
+     coef C(line)[T.NAM]               -0.622 (95% CI -1.050, -0.193)
+     coef C(parity_grp)[T.p1]          -0.522 (95% CI -0.907, -0.137)
+     coef C(season)[T.OctNov]          +0.833 (95% CI +0.454, +1.212)
+     coef y                            -0.659 (95% CI -0.695, -0.624)
+     coef gd                           +0.228 (95% CI +0.053, +0.402)
+     coef gd_missing                   +0.176 (95% CI -0.271, +0.623)
+   mean residual by line × parity:
+                 count   mean    std
+line parity_grp                     
+DAN  multi          61 -0.698  3.318
+     p1            386  0.007  2.773
+NAM  multi         189 -0.666  3.182
+     p1             27 -0.928  3.352
+
+=== A6 error structure: tabular_T1_xgb (calibration slope pred~ultrasound = 0.158) ===
+-- (a_marginal) r ~ C(line) + C(parity_grp) + gd + gd_missing + C(season)   R²=0.004
+   C(line)            F=   0.01  p=0.906
+   C(parity_grp)      F=   1.11  p=0.291
+   C(season)          F=   0.77  p=0.381
+   gd                 F=   0.44  p=0.506
+   gd_missing         F=   0.46  p=0.5
+     coef C(line)[T.NAM]               -0.054 (95% CI -0.947, +0.839)
+     coef C(parity_grp)[T.p1]          +0.428 (95% CI -0.368, +1.223)
+     coef C(season)[T.OctNov]          -0.343 (95% CI -1.112, +0.425)
+     coef gd                           +0.122 (95% CI -0.239, +0.484)
+     coef gd_missing                   -0.319 (95% CI -1.247, +0.609)
+-- (b_conditional_on_y) r ~ y + C(line) + C(parity_grp) + gd + gd_missing + C(season)   R²=0.876
+   C(line)            F=   1.89  p=0.169
+   C(parity_grp)      F=  41.03  p=2.86e-10
+   C(season)          F= 186.14  p=1.73e-37
+   y                  F=4621.28  p=3.28e-299
+   gd                 F=  23.82  p=1.33e-06
+   gd_missing         F=  21.64  p=3.98e-06
+     coef C(line)[T.NAM]               +0.221 (95% CI -0.094, +0.536)
+     coef C(parity_grp)[T.p1]          -0.924 (95% CI -1.207, -0.641)
+     coef C(season)[T.OctNov]          +1.939 (95% CI +1.660, +2.218)
+     coef y                            -0.900 (95% CI -0.926, -0.874)
+     coef gd                           -0.319 (95% CI -0.447, -0.190)
+     coef gd_missing                   +0.779 (95% CI +0.450, +1.108)
+   mean residual by line × parity:
+                 count   mean    std
+line parity_grp                     
+DAN  multi          61 -0.649  4.297
+     p1            386 -0.034  3.178
+NAM  multi         189 -0.321  3.851
+     p1             27 -0.321  3.807
+
+=== V6 conformal intervals (height map) ===
+   α=0.1 marginal  all 0.902 [0.88,0.92] w 9.76 | DAN_parity1 0.920 [0.89,0.94] w 9.76 | NAM_multiparous 0.873 [0.82,0.91] w 9.76 | no_prev_season 0.904 [0.88,0.93] w 9.76 | has_prev_season 0.892 [0.82,0.94] w 9.76
+   α=0.1 mondrian  all 0.906 [0.88,0.93] w 10.15 | DAN_parity1 0.902 [0.87,0.93] w 9.31 | NAM_multiparous 0.915 [0.87,0.95] w 11.08 | no_prev_season 0.906 [0.88,0.93] w 10.11 | has_prev_season 0.912 [0.84,0.95] w 10.40
+   α=0.2 marginal  all 0.799 [0.77,0.83] w 7.48 | DAN_parity1 0.813 [0.77,0.85] w 7.48 | NAM_multiparous 0.767 [0.70,0.82] w 7.48 | no_prev_season 0.811 [0.78,0.84] w 7.48 | has_prev_season 0.735 [0.64,0.81] w 7.48
+   α=0.2 mondrian  all 0.796 [0.76,0.83] w 7.54 | DAN_parity1 0.801 [0.76,0.84] w 7.20 | NAM_multiparous 0.783 [0.72,0.84] w 8.08 | no_prev_season 0.807 [0.77,0.84] w 7.51 | has_prev_season 0.735 [0.64,0.81] w 7.72
+   triage signal: frame SD (seed 42) vs |error|: Spearman -0.020, AUROC(|e|>3) 0.497
+
+=== DK coverage with Farm A residual quantile (height map) ===
+   α=0.1: q ±4.86 mm | uncalibrated 0.899 (nkyfirst 0.95, nkysecond 0.91, nkythird 0.88) | per-batch k=5 0.912±0.025 | k=10 0.923±0.020
+   α=0.2: q ±3.75 mm | uncalibrated 0.792 (nkyfirst 0.87, nkysecond 0.84, nkythird 0.74) | per-batch k=5 0.822±0.033 | k=10 0.839±0.020
+done -> F:\Postgraduate\Lab\饲喂站\背膘算法\twoview\runs\v4_hmap\reliability

@@ -1,0 +1,14 @@
+[2026-10-13 11:30:09] args={'seeds': [42, 43, 44], 'epochs': 15, 'bs': 64, 'lr': 0.0003, 'area_rel': 0.8, 'len_rel': 0.85}
+   FMH 663 pigs, frames 12359/13250; DK 159/159 pigs, frames 3039/3177 (missing []) | y FMH 17.94±3.80, DK 14.55±3.16
+  seed 42: train 568 / val 95 | DK MAE 2.346 R2 0.176 bias +0.94 Spearman 0.519 | 3.5 min
+  seed 43: train 569 / val 94 | DK MAE 2.335 R2 0.136 bias +1.13 Spearman 0.547 | 6.6 min
+  seed 44: train 568 / val 95 | DK MAE 2.871 R2 -0.172 bias +2.20 Spearman 0.569 | 9.7 min
+
+DK external (n=159)
+  hmap_mean3                     MAE 2.447 RMSE 2.996 R2 0.101 CCC 0.439 Spearman 0.564 bias +1.42
+      per batch: nkyfirst n=38 bias +0.13 ρ 0.271 | nkysecond n=32 bias +1.49 ρ 0.644 | nkythird n=89 bias +1.95 ρ 0.556 |
+      per-batch intercept calibration: k=5/batch MAE 2.192 R2 0.209±0.130 ρ 0.577 | k=10/batch MAE 2.091 R2 0.270±0.074 ρ 0.592
+  depthmap_resnet18_mean3 (V7)   MAE 4.009 RMSE 4.708 R2 -1.220 CCC 0.163 Spearman 0.357 bias +3.60
+      per batch: nkyfirst n=38 bias +1.67 ρ 0.490 | nkysecond n=32 bias +1.32 ρ 0.560 | nkythird n=89 bias +5.24 ρ 0.583 |
+      per-batch intercept calibration: k=5/batch MAE 2.118 R2 0.285±0.124 ρ 0.608 | k=10/batch MAE 2.026 R2 0.343±0.071 ρ 0.627
+done in 9.7 min -> F:\Postgraduate\Lab\饲喂站\背膘算法\twoview\runs\v4_hmap\dk_external
