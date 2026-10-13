@@ -7,3 +7,6 @@
 [2026-10-11 23:11:03] model=dinov3-vitb16 (facebook/dinov3-vitb16-pretrain-lvd1689m) hidden=768 patch=16 registers=4 pigs=159
   enc=relh: frames=3179 skipped=0 dim=1536 frames/pig min=19 -> F:\Postgraduate\Lab\饲喂站\背膘算法\twoview\runs\a3_foundation\feat_dinov3-vitb16_relh_dk.npz  (21s)
   enc=normal: frames=3179 skipped=0 dim=1536 frames/pig min=19 -> F:\Postgraduate\Lab\饲喂站\背膘算法\twoview\runs\a3_foundation\feat_dinov3-vitb16_normal_dk.npz  (42s)
+[2026-10-13 11:41:51] v4f hmap features: facebook/dinov3-vitb16-pretrain-lvd1689m patch=16 input 224x448 (392 patches) registers=4
+  fmh: pigs 663 (missing []) frames 12359 dim 1536 -> F:\Postgraduate\Lab\饲喂站\背膘算法\twoview\runs\a3_foundation\feat_dinov3-vitb16_hmap.npz (130s)
+  _dk: pigs 159 (missing []) frames 3039 dim 1536 -> F:\Postgraduate\Lab\饲喂站\背膘算法\twoview\runs\a3_foundation\feat_dinov3-vitb16_hmap_dk.npz (161s)
