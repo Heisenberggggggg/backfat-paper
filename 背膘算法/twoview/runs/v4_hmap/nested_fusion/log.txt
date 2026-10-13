@@ -1,0 +1,115 @@
+[2026-10-13 14:50:51] args={'seed': 42, 'epochs': 15, 'bs': 64, 'lr': 0.0003, 'area_rel': 0.8, 'len_rel': 0.85} | pigs 663, frames 12359 (load 11s)
+  outer 1 inner 1: fit 363 / val 61 / pred 106 | MAE 2.563 R2 0.296 | 2.3 min
+  outer 1 inner 2: fit 363 / val 61 / pred 106 | MAE 2.424 R2 0.321 | 4.2 min
+  outer 1 inner 3: fit 363 / val 61 / pred 106 | MAE 2.250 R2 0.473 | 5.9 min
+  outer 1 inner 4: fit 363 / val 61 / pred 106 | MAE 2.257 R2 0.448 | 7.8 min
+  outer 1 inner 5: fit 363 / val 61 / pred 106 | MAE 2.509 R2 0.402 | 9.7 min
+  outer fold 1: inner-OOF on 530 training pigs MAE 2.401 R2 0.390
+  outer 2 inner 1: fit 364 / val 61 / pred 106 | MAE 2.486 R2 0.332 | 11.7 min
+  outer 2 inner 2: fit 363 / val 62 / pred 106 | MAE 2.375 R2 0.303 | 13.6 min
+  outer 2 inner 3: fit 364 / val 61 / pred 106 | MAE 2.052 R2 0.461 | 15.6 min
+  outer 2 inner 4: fit 364 / val 61 / pred 106 | MAE 2.491 R2 0.335 | 17.7 min
+  outer 2 inner 5: fit 363 / val 61 / pred 107 | MAE 2.540 R2 0.300 | 19.7 min
+  outer fold 2: inner-OOF on 531 training pigs MAE 2.389 R2 0.344
+  outer 3 inner 1: fit 362 / val 61 / pred 107 | MAE 2.200 R2 0.392 | 21.7 min
+  outer 3 inner 2: fit 363 / val 61 / pred 106 | MAE 2.359 R2 0.266 | 23.6 min
+  outer 3 inner 3: fit 363 / val 61 / pred 106 | MAE 2.181 R2 0.414 | 25.5 min
+  outer 3 inner 4: fit 362 / val 62 / pred 106 | MAE 2.602 R2 0.343 | 27.4 min
+  outer 3 inner 5: fit 364 / val 61 / pred 105 | MAE 2.544 R2 0.385 | 29.3 min
+  outer fold 3: inner-OOF on 530 training pigs MAE 2.377 R2 0.360
+  outer 4 inner 1: fit 362 / val 62 / pred 106 | MAE 2.419 R2 0.344 | 31.2 min
+  outer 4 inner 2: fit 363 / val 61 / pred 106 | MAE 2.395 R2 0.302 | 33.1 min
+  outer 4 inner 3: fit 363 / val 61 / pred 106 | MAE 2.364 R2 0.343 | 34.9 min
+  outer 4 inner 4: fit 362 / val 62 / pred 106 | MAE 2.682 R2 0.181 | 36.8 min
+  outer 4 inner 5: fit 362 / val 62 / pred 106 | MAE 2.336 R2 0.405 | 38.7 min
+  outer fold 4: inner-OOF on 530 training pigs MAE 2.439 R2 0.316
+  outer 5 inner 1: fit 364 / val 61 / pred 106 | MAE 2.390 R2 0.317 | 40.5 min
+  outer 5 inner 2: fit 364 / val 61 / pred 106 | MAE 2.545 R2 0.276 | 41.9 min
+  outer 5 inner 3: fit 364 / val 61 / pred 106 | MAE 2.211 R2 0.370 | 43.5 min
+  outer 5 inner 4: fit 362 / val 62 / pred 107 | MAE 2.371 R2 0.271 | 45.4 min
+  outer 5 inner 5: fit 364 / val 61 / pred 106 | MAE 2.687 R2 0.314 | 47.3 min
+  outer fold 5: inner-OOF on 531 training pigs MAE 2.441 R2 0.308
+  TabPFN outer fold 1 done | device ['cuda']
+  TabPFN outer fold 2 done | device ['cuda']
+  TabPFN outer fold 3 done | device ['cuda']
+  TabPFN outer fold 4 done | device ['cuda']
+  TabPFN outer fold 5 done | device ['cuda']
+
+model                         subset             n    MAE    RMSE   R2     CCC
+img                           all               663  2.408  3.074  0.346  0.524
+img                           DAN_parity1       386  2.277  2.866  0.216  0.413
+img                           NAM_multiparous   189  2.646  3.326  0.437  0.606
+img                           no_prev_season    561  2.317  2.994  0.310  0.484
+img                           has_prev_season   102  2.910  3.481  0.199  0.398
+R                             all               663  2.754  3.489  0.158  0.264
+R                             DAN_parity1       386  2.519  3.156  0.049  0.102
+R                             NAM_multiparous   189  3.074  3.853  0.244  0.380
+R                             no_prev_season    561  2.704  3.418  0.101  0.186
+R                             has_prev_season   102  3.032  3.856  0.017  0.056
+R+img                         all               663  2.372  3.047  0.357  0.541
+R+img                         DAN_parity1       386  2.231  2.840  0.230  0.398
+R+img                         NAM_multiparous   189  2.601  3.292  0.449  0.635
+R+img                         no_prev_season    561  2.288  2.973  0.320  0.495
+R+img                         has_prev_season   102  2.834  3.427  0.224  0.404
+R+cal                         all               663  2.337  3.015  0.371  0.538
+R+cal                         DAN_parity1       386  2.243  2.862  0.218  0.375
+R+cal                         NAM_multiparous   189  2.345  3.021  0.535  0.685
+R+cal                         no_prev_season    561  2.258  2.934  0.337  0.508
+R+cal                         has_prev_season   102  2.776  3.427  0.224  0.384
+R+cal+img                     all               663  2.250  2.880  0.426  0.602
+R+cal+img                     DAN_parity1       386  2.179  2.743  0.282  0.453
+R+cal+img                     NAM_multiparous   189  2.276  2.938  0.561  0.719
+R+cal+img                     no_prev_season    561  2.171  2.810  0.392  0.569
+R+cal+img                     has_prev_season   102  2.685  3.238  0.307  0.482
+R+prev+cal                    all               663  2.235  2.874  0.428  0.594
+R+prev+cal                    DAN_parity1       386  2.206  2.791  0.256  0.420
+R+prev+cal                    NAM_multiparous   189  2.097  2.701  0.629  0.761
+R+prev+cal                    no_prev_season    561  2.261  2.937  0.336  0.498
+R+prev+cal                    has_prev_season   102  2.089  2.497  0.588  0.741
+R+prev+cal+img                all               663  2.149  2.763  0.472  0.643
+R+prev+cal+img                DAN_parity1       386  2.121  2.669  0.320  0.492
+R+prev+cal+img                NAM_multiparous   189  2.046  2.674  0.636  0.777
+R+prev+cal+img                no_prev_season    561  2.168  2.811  0.392  0.564
+R+prev+cal+img                has_prev_season   102  2.046  2.482  0.593  0.748
+R+prev+cal+B                  all               663  2.168  2.828  0.446  0.612
+R+prev+cal+B                  DAN_parity1       386  2.148  2.750  0.278  0.449
+R+prev+cal+B                  NAM_multiparous   189  2.054  2.655  0.641  0.772
+R+prev+cal+B                  no_prev_season    561  2.208  2.897  0.354  0.517
+R+prev+cal+B                  has_prev_season   102  1.947  2.413  0.615  0.760
+R+prev+cal+img+B              all               663  2.121  2.756  0.474  0.639
+R+prev+cal+img+B              DAN_parity1       386  2.093  2.668  0.321  0.489
+R+prev+cal+img+B              NAM_multiparous   189  2.027  2.624  0.649  0.782
+R+prev+cal+img+B              no_prev_season    561  2.146  2.809  0.392  0.557
+R+prev+cal+img+B              has_prev_season   102  1.982  2.441  0.606  0.754
+img_raw (outer CNN, seed 42)  all               663  2.408  3.079  0.344  0.527
+img_raw (outer CNN, seed 42)  DAN_parity1       386  2.270  2.852  0.224  0.411
+img_raw (outer CNN, seed 42)  NAM_multiparous   189  2.652  3.350  0.429  0.609
+img_raw (outer CNN, seed 42)  no_prev_season    561  2.318  3.001  0.307  0.484
+img_raw (outer CNN, seed 42)  has_prev_season   102  2.903  3.474  0.202  0.413
+
+paired comparisons (Δ = a − b): group bootstrap 95% CI; Wilcoxon on |error|
+   Q0 imaging increment over records                    [all            ] ΔR² +0.200 (+0.131, +0.268)  ΔMAE -0.382 (-0.520, -0.245)  p=2.46e-09
+   Q0 imaging increment over records                    [DAN_parity1    ] ΔR² +0.180 (+0.101, +0.259)  ΔMAE -0.283 (-0.424, -0.147)  p=4.76e-05
+   Q0 imaging increment over records                    [NAM_multiparous] ΔR² +0.206 (+0.066, +0.329)  ΔMAE -0.476 (-0.792, -0.143)  p=0.000632
+   Q0 imaging increment over records                    [no_prev_season ] ΔR² +0.218 (+0.151, +0.287)  ΔMAE -0.417 (-0.550, -0.280)  p=1.33e-09
+   Q1 camera vs caliper (with records)                  [all            ] ΔR² -0.014 (-0.080, +0.048)  ΔMAE +0.035 (-0.095, +0.165)  p=0.811
+   Q1 camera vs caliper (with records)                  [DAN_parity1    ] ΔR² +0.011 (-0.087, +0.117)  ΔMAE -0.008 (-0.162, +0.131)  p=0.775
+   Q1 camera vs caliper (with records)                  [NAM_multiparous] ΔR² -0.087 (-0.202, +0.014)  ΔMAE +0.258 (-0.023, +0.536)  p=0.0678
+   Q1 camera vs caliper (with records)                  [no_prev_season ] ΔR² -0.018 (-0.087, +0.049)  ΔMAE +0.030 (-0.096, +0.164)  p=0.959
+   Q2 camera increment over records+caliper             [all            ] ΔR² +0.055 (+0.015, +0.092)  ΔMAE -0.087 (-0.169, -0.004)  p=0.0196
+   Q2 camera increment over records+caliper             [DAN_parity1    ] ΔR² +0.063 (+0.003, +0.126)  ΔMAE -0.064 (-0.159, +0.031)  p=0.201
+   Q2 camera increment over records+caliper             [NAM_multiparous] ΔR² +0.025 (-0.041, +0.081)  ΔMAE -0.068 (-0.232, +0.106)  p=0.283
+   Q2 camera increment over records+caliper             [no_prev_season ] ΔR² +0.055 (+0.018, +0.091)  ΔMAE -0.087 (-0.164, -0.006)  p=0.0299
+   Q3 camera increment over records+prev+caliper        [all            ] ΔR² +0.043 (+0.013, +0.072)  ΔMAE -0.085 (-0.155, -0.018)  p=0.00703
+   Q3 camera increment over records+prev+caliper        [DAN_parity1    ] ΔR² +0.064 (+0.016, +0.115)  ΔMAE -0.085 (-0.170, -0.008)  p=0.0403
+   Q3 camera increment over records+prev+caliper        [NAM_multiparous] ΔR² +0.009 (-0.037, +0.046)  ΔMAE -0.052 (-0.176, +0.075)  p=0.282
+   Q3 camera increment over records+prev+caliper        [no_prev_season ] ΔR² +0.056 (+0.020, +0.091)  ΔMAE -0.093 (-0.166, -0.018)  p=0.0122
+   body dims over records+prev+caliper+camera           [all            ] ΔR² +0.003 (-0.011, +0.016)  ΔMAE -0.028 (-0.061, +0.005)  p=0.0716
+   body dims over records+prev+caliper+camera           [DAN_parity1    ] ΔR² +0.001 (-0.022, +0.021)  ΔMAE -0.028 (-0.069, +0.015)  p=0.132
+   body dims over records+prev+caliper+camera           [NAM_multiparous] ΔR² +0.013 (-0.005, +0.033)  ΔMAE -0.019 (-0.085, +0.045)  p=0.819
+   body dims over records+prev+caliper+camera           [no_prev_season ] ΔR² +0.001 (-0.017, +0.017)  ΔMAE -0.022 (-0.058, +0.017)  p=0.162
+   CNN score vs body dims (with records+prev+caliper)   [all            ] ΔR² +0.025 (-0.002, +0.053)  ΔMAE -0.020 (-0.081, +0.046)  p=0.709
+   CNN score vs body dims (with records+prev+caliper)   [DAN_parity1    ] ΔR² +0.042 (-0.005, +0.091)  ΔMAE -0.027 (-0.104, +0.052)  p=0.536
+   CNN score vs body dims (with records+prev+caliper)   [NAM_multiparous] ΔR² -0.005 (-0.049, +0.033)  ΔMAE -0.007 (-0.137, +0.122)  p=0.955
+   CNN score vs body dims (with records+prev+caliper)   [no_prev_season ] ΔR² +0.038 (+0.004, +0.071)  ΔMAE -0.042 (-0.111, +0.032)  p=0.365
+done in 48.8 min -> F:\Postgraduate\Lab\饲喂站\背膘算法\twoview\runs\v4_hmap\nested_fusion
