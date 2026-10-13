@@ -1,0 +1,37 @@
+[2026-10-13 21:55:45] v5d multitask vs v4b baseline
+   baseline v4b: R² 0.378 MAE 2.340 slope 0.366
+
+1. backfat: mode vs v4b (Δ = mode − v4b; group bootstrap 95% CI; Wilcoxon on |error|)
+   cal      R² 0.355 MAE 2.376 slope 0.358
+      [all            ] ΔR² -0.023 (-0.040, -0.007)  ΔMAE +0.036 (-0.000, +0.073)  p=0.0149
+      [DAN_parity1    ] ΔR² -0.020 (-0.045, +0.005)  ΔMAE +0.041 (-0.002, +0.082)  p=0.0244
+      [NAM_multiparous] ΔR² -0.016 (-0.038, +0.007)  ΔMAE +0.017 (-0.055, +0.086)  p=0.593
+      [no_prev_season ] ΔR² -0.027 (-0.045, -0.007)  ΔMAE +0.037 (+0.002, +0.074)  p=0.0195
+   caldims  R² 0.361 MAE 2.379 slope 0.364
+      [all            ] ΔR² -0.017 (-0.032, -0.003)  ΔMAE +0.039 (+0.003, +0.075)  p=0.126
+      [DAN_parity1    ] ΔR² -0.013 (-0.038, +0.011)  ΔMAE +0.028 (-0.020, +0.072)  p=0.588
+      [NAM_multiparous] ΔR² -0.023 (-0.049, -0.002)  ΔMAE +0.070 (+0.005, +0.137)  p=0.0562
+      [no_prev_season ] ΔR² -0.018 (-0.033, -0.002)  ΔMAE +0.039 (+0.001, +0.076)  p=0.165
+   lds      R² 0.368 MAE 2.347 slope 0.397
+      [all            ] ΔR² -0.011 (-0.028, +0.007)  ΔMAE +0.006 (-0.035, +0.049)  p=0.615
+      [DAN_parity1    ] ΔR² -0.011 (-0.042, +0.019)  ΔMAE +0.018 (-0.031, +0.069)  p=0.363
+      [NAM_multiparous] ΔR² -0.018 (-0.045, +0.009)  ΔMAE -0.002 (-0.088, +0.083)  p=0.971
+      [no_prev_season ] ΔR² -0.010 (-0.030, +0.009)  ΔMAE +0.013 (-0.027, +0.055)  p=0.578
+   nll      R² 0.368 MAE 2.361 slope 0.360
+      [all            ] ΔR² -0.010 (-0.027, +0.006)  ΔMAE +0.022 (-0.012, +0.056)  p=0.273
+      [DAN_parity1    ] ΔR² -0.006 (-0.029, +0.017)  ΔMAE +0.027 (-0.012, +0.067)  p=0.238
+      [NAM_multiparous] ΔR² -0.002 (-0.026, +0.023)  ΔMAE +0.005 (-0.064, +0.073)  p=0.871
+      [no_prev_season ] ΔR² -0.015 (-0.036, +0.004)  ΔMAE +0.032 (-0.002, +0.068)  p=0.156
+
+2. camera-predicted caliper (aux head, OOF) vs manual caliper: Pearson / Spearman
+   cal_aux        all cal +0.839/+0.799 bf +0.393 | DAN cal +0.748/+0.741 bf +0.328 | NAM cal +0.830/+0.845 bf +0.616 | Aug cal +0.774/+0.751 bf +0.460 | OctNov cal +0.733/+0.706 bf +0.280
+   caldims_aux    all cal +0.794/+0.747 bf +0.421 | DAN cal +0.697/+0.677 bf +0.374 | NAM cal +0.776/+0.786 bf +0.626 | Aug cal +0.719/+0.690 bf +0.487 | OctNov cal +0.625/+0.603 bf +0.340
+   virtual_angle  all cal +0.686/+0.702 bf +0.311 | DAN cal +0.673/+0.665 bf +0.245 | NAM cal +0.630/+0.668 bf +0.492 | Aug cal +0.617/+0.596 bf +0.405 | OctNov cal +0.776/+0.737 bf +0.171
+   manual caliper all bf +0.479 | DAN bf +0.402 | NAM bf +0.680 | Aug bf +0.617 | OctNov bf +0.308
+
+3. variance head (nll): can predicted variance flag inaccurate pigs?
+   Spearman(logvar, |e|) +0.007; AUROC(|e|>3) 0.517
+   retest 10% by variance: ΔMAE(non-retested) vs random -0.002 (-0.058, +0.049)
+   retest 20% by variance: ΔMAE(non-retested) vs random -0.019 (-0.103, +0.060)
+   retest 30% by variance: ΔMAE(non-retested) vs random +0.000 (-0.099, +0.098)
+done in 43s -> F:\Postgraduate\Lab\饲喂站\背膘算法\twoview\runs\v5_multitask\compare
