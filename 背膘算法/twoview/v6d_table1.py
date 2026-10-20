@@ -19,9 +19,10 @@ import numpy as np
 
 sys.stdout.reconfigure(encoding='utf-8')
 HERE = os.path.dirname(os.path.abspath(__file__))
-V1 = os.path.join(HERE, 'runs', 'v1_tabular', 'preds.csv')
-CAL = os.path.join(HERE, 'runs', 'v1b_caliper', 'preds.csv')
-OUT = os.path.join(HERE, 'runs', 'v6_table1')
+from v6o_paths import INDEX_PATH, RUNS_ROOT  # noqa: E402  2026-10-20：runs 根目录 / 标签索引可切换（见 v6o_paths.py）
+V1 = os.path.join(RUNS_ROOT, 'v1_tabular', 'preds.csv')
+CAL = os.path.join(RUNS_ROOT, 'v1b_caliper', 'preds.csv')
+OUT = os.path.join(RUNS_ROOT, 'v6_table1')
 
 
 def fnum(s):

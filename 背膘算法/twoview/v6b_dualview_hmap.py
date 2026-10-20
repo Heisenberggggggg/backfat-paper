@@ -40,16 +40,17 @@ from sklearn.model_selection import StratifiedGroupKFold
 
 sys.stdout.reconfigure(encoding='utf-8')
 HERE = os.path.dirname(os.path.abspath(__file__))
+from v6o_paths import INDEX_PATH, RUNS_ROOT  # noqa: E402  2026-10-20：runs 根目录 / 标签索引可切换（见 v6o_paths.py）
 sys.path.insert(0, HERE)
 from cv_depthmap_labelfix import metrics  # noqa: E402
 from v1_tabular_baseline import group_bootstrap  # noqa: E402
 from v3b_view_models import DM_SUB, DualNet, batches_dual, load_frames, predict, train_fold  # noqa: E402
 from v4b_hmap_models import DM_HMAP, FOLDS_SRC, INDEX, load_hmaps  # noqa: E402
 
-OUT = os.path.join(HERE, 'runs', 'v6_dualview_hmap')
-HMAP_PREDS = os.path.join(HERE, 'runs', 'v4_hmap', 'hmap', 'test_preds.csv')
-SUB_PREDS = os.path.join(HERE, 'runs', 'v3_views', 'sub_s128', 'test_preds.csv')
-V1 = os.path.join(HERE, 'runs', 'v1_tabular', 'preds.csv')
+OUT = os.path.join(RUNS_ROOT, 'v6_dualview_hmap')
+HMAP_PREDS = os.path.join(RUNS_ROOT, 'v4_hmap', 'hmap', 'test_preds.csv')
+SUB_PREDS = os.path.join(RUNS_ROOT, 'v3_views', 'sub_s128', 'test_preds.csv')
+V1 = os.path.join(RUNS_ROOT, 'v1_tabular', 'preds.csv')
 
 
 def read_pred_mean(path, uids):

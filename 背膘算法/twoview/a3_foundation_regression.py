@@ -45,12 +45,13 @@ from sklearn.preprocessing import StandardScaler
 sys.stdout.reconfigure(encoding='utf-8')
 warnings.filterwarnings('ignore')
 HERE = os.path.dirname(os.path.abspath(__file__))
+from v6o_paths import INDEX_PATH, RUNS_ROOT  # noqa: E402  2026-10-20：runs 根目录 / 标签索引可切换（见 v6o_paths.py）
 sys.path.insert(0, HERE)
 from v1_tabular_baseline import metrics, group_bootstrap  # noqa: E402
 
-V1 = os.path.join(HERE, 'runs', 'v1_tabular', 'preds.csv')
-CAL = os.path.join(HERE, 'runs', 'v1b_caliper', 'preds.csv')
-FEAT_DIR = os.path.join(HERE, 'runs', 'a3_foundation')
+V1 = os.path.join(RUNS_ROOT, 'v1_tabular', 'preds.csv')
+CAL = os.path.join(RUNS_ROOT, 'v1b_caliper', 'preds.csv')
+FEAT_DIR = os.path.join(RUNS_ROOT, 'a3_foundation')
 
 
 def fnum(s):

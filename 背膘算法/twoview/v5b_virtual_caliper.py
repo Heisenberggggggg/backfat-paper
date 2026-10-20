@@ -40,10 +40,11 @@ from scipy.stats import pearsonr, spearmanr
 
 sys.stdout.reconfigure(encoding='utf-8')
 HERE = os.path.dirname(os.path.abspath(__file__))
+from v6o_paths import INDEX_PATH, RUNS_ROOT  # noqa: E402  2026-10-20：runs 根目录 / 标签索引可切换（见 v6o_paths.py）
 DM = os.path.join(HERE, '..', 'yolo+FastSAM', 'hmap_dataset')
-CAL = os.path.join(HERE, 'runs', 'v1b_caliper', 'preds.csv')
-INDEX = os.path.join(HERE, 'index_v2.csv')
-OUT = os.path.join(HERE, 'runs', 'v5_caliper')
+CAL = os.path.join(RUNS_ROOT, 'v1b_caliper', 'preds.csv')
+INDEX = INDEX_PATH
+OUT = os.path.join(RUNS_ROOT, 'v5_caliper')
 
 CELL = 7.8125
 POS = (0.50, 0.55, 0.60, 0.65, 0.70, 0.75)
@@ -227,7 +228,7 @@ def main():
 
     # A 场相关只在 663 头分析集上算（index_v2 另有 4 条已排除记录：匹配冲突 2、背膘超出 7–32 mm 2；
     # 2026-10-13 前两次运行误含这 4 条，极端背膘把全体 Pearson 拉低到 0.13，见 log 前两段）
-    with open(os.path.join(HERE, 'runs', 'v1_tabular', 'preds.csv'), encoding='utf-8-sig') as f:
+    with open(os.path.join(RUNS_ROOT, 'v1_tabular', 'preds.csv'), encoding='utf-8-sig') as f:
         analysis = {r['uid'] for r in csv.DictReader(f)}
     fmh = lambda r: r['farm'] == 'FMH' and r['uid'] in analysis
     log(f'   Farm A analysis set: {sum(fmh(r) for r in rows)} pigs')

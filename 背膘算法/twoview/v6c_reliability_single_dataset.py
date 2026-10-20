@@ -33,12 +33,13 @@ from statsmodels.stats.anova import anova_lm
 
 sys.stdout.reconfigure(encoding='utf-8')
 HERE = os.path.dirname(os.path.abspath(__file__))
+from v6o_paths import INDEX_PATH, RUNS_ROOT  # noqa: E402  2026-10-20：runs 根目录 / 标签索引可切换（见 v6o_paths.py）
 sys.path.insert(0, HERE)
 from v6_conformal_triage import ALPHAS, ERR_THR, FRACS, N_BOOT, auroc, conf_q, fit_sigma, triage, wilson  # noqa: E402
 
-PIG = os.path.join(HERE, 'runs', 'v1_tabular', 'preds.csv')
-HM = os.path.join(HERE, 'runs', 'v4_hmap', 'hmap')
-OUT = os.path.join(HERE, 'runs', 'v6_reliability')
+PIG = os.path.join(RUNS_ROOT, 'v1_tabular', 'preds.csv')
+HM = os.path.join(RUNS_ROOT, 'v4_hmap', 'hmap')
+OUT = os.path.join(RUNS_ROOT, 'v6_reliability')
 
 
 def error_structure(df, log):

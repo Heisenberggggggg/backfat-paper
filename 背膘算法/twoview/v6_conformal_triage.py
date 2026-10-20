@@ -45,7 +45,8 @@ from scipy.stats import rankdata, spearmanr
 
 sys.stdout.reconfigure(encoding='utf-8')
 HERE = os.path.dirname(os.path.abspath(__file__))
-RUNS = os.path.join(HERE, 'runs')
+from v6o_paths import INDEX_PATH, RUNS_ROOT  # noqa: E402  2026-10-20：runs 根目录 / 标签索引可切换（见 v6o_paths.py）
+RUNS = RUNS_ROOT
 SRC_STACK = os.path.join(RUNS, 'a3_foundation', 'dinov3-vitb16_relh_stack', 'preds.csv')
 SRC_TAB = os.path.join(RUNS, 'v1_tabular', 'preds.csv')
 SRC_FRAME = os.path.join(RUNS, 'framepreds_new_s128', 'frame_preds.csv')

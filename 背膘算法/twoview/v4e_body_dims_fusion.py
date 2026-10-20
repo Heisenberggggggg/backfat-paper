@@ -30,15 +30,16 @@ from scipy.stats import pearsonr, wilcoxon
 
 sys.stdout.reconfigure(encoding='utf-8')
 HERE = os.path.dirname(os.path.abspath(__file__))
+from v6o_paths import INDEX_PATH, RUNS_ROOT  # noqa: E402  2026-10-20：runs 根目录 / 标签索引可切换（见 v6o_paths.py）
 sys.path.insert(0, HERE)
 import a3_foundation_regression as A3  # noqa: E402
 from cv_depthmap_labelfix import metrics  # noqa: E402
 from v1_tabular_baseline import group_bootstrap  # noqa: E402
 
-V1 = os.path.join(HERE, 'runs', 'v1_tabular', 'preds.csv')
-CAL = os.path.join(HERE, 'runs', 'v1b_caliper', 'preds.csv')
+V1 = os.path.join(RUNS_ROOT, 'v1_tabular', 'preds.csv')
+CAL = os.path.join(RUNS_ROOT, 'v1b_caliper', 'preds.csv')
 HMETA = os.path.join(HERE, '..', 'yolo+FastSAM', 'hmap_dataset', 'metadata.csv')
-OUT = os.path.join(HERE, 'runs', 'v4_hmap', 'body_dims')
+OUT = os.path.join(RUNS_ROOT, 'v4_hmap', 'body_dims')
 DIMS = ('back_h_mm', 'length_mm', 'width_mm', 'area_cm2', 'volume_l', 'hw_ratio')
 
 

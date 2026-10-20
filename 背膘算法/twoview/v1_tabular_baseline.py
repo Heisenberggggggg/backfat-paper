@@ -40,9 +40,10 @@ from sklearn.model_selection import StratifiedGroupKFold
 sys.stdout.reconfigure(encoding='utf-8')
 warnings.filterwarnings('ignore')
 HERE = os.path.dirname(os.path.abspath(__file__))
-INDEX = os.path.join(HERE, 'index_v2.csv')
-VISION = os.path.join(HERE, 'runs', 'labelfix_new_s128', 'test_preds.csv')
-OUT = os.path.join(HERE, 'runs', 'v1_tabular')
+from v6o_paths import INDEX_PATH, RUNS_ROOT  # noqa: E402  2026-10-20：runs 根目录 / 标签索引可切换（见 v6o_paths.py）
+INDEX = INDEX_PATH
+VISION = os.path.join(RUNS_ROOT, 'labelfix_new_s128', 'test_preds.csv')
+OUT = os.path.join(RUNS_ROOT, 'v1_tabular')
 BF_MIN, BF_MAX = 7.0, 32.0
 LINE = {'A': 'DAN', 'T': 'DAN', 'LY': 'NAM'}   # 场方确认：A/T 丹系，LY 新美系
 

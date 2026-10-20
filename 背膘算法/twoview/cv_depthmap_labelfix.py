@@ -36,8 +36,9 @@ from torchvision import models
 
 sys.stdout.reconfigure(encoding='utf-8')
 HERE = os.path.dirname(os.path.abspath(__file__))
+from v6o_paths import INDEX_PATH, RUNS_ROOT  # noqa: E402  2026-10-20：runs 根目录 / 标签索引可切换（见 v6o_paths.py）
 DM_DIR = os.path.join(HERE, '..', 'yolo+FastSAM', 'depthmap_dataset')
-INDEX = os.path.join(HERE, 'index_v2.csv')
+INDEX = INDEX_PATH
 NORM_MIN, NORM_MAX = 300.0, 2500.0
 BF_MIN, BF_MAX = 7.0, 32.0
 
@@ -159,7 +160,7 @@ def main():
     np.random.seed(a.seed)
     torch.manual_seed(a.seed)
     dev = 'cuda'
-    out_dir = os.path.join(HERE, 'runs', f'labelfix_{a.labels}_s{a.size}')
+    out_dir = os.path.join(RUNS_ROOT, f'labelfix_{a.labels}_s{a.size}')
     os.makedirs(out_dir, exist_ok=True)
     logf = open(os.path.join(out_dir, 'log.txt'), 'a', encoding='utf-8')
 

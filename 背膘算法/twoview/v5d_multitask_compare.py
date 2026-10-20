@@ -26,12 +26,13 @@ from scipy.stats import pearsonr, spearmanr, wilcoxon
 
 sys.stdout.reconfigure(encoding='utf-8')
 HERE = os.path.dirname(os.path.abspath(__file__))
+from v6o_paths import INDEX_PATH, RUNS_ROOT  # noqa: E402  2026-10-20：runs 根目录 / 标签索引可切换（见 v6o_paths.py）
 sys.path.insert(0, HERE)
 from cv_depthmap_labelfix import metrics  # noqa: E402
 from v1_tabular_baseline import group_bootstrap  # noqa: E402
 from v6_conformal_triage import auroc, triage  # noqa: E402
 
-RUNS = os.path.join(HERE, 'runs')
+RUNS = RUNS_ROOT
 BASE = os.path.join(RUNS, 'v4_hmap', 'hmap', 'test_preds.csv')
 MODES = ('cal', 'caldims', 'lds', 'nll')
 OUT = os.path.join(RUNS, 'v5_multitask', 'compare')

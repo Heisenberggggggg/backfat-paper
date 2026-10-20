@@ -30,13 +30,14 @@ from scipy.stats import spearmanr
 
 sys.stdout.reconfigure(encoding='utf-8')
 HERE = os.path.dirname(os.path.abspath(__file__))
+from v6o_paths import INDEX_PATH, RUNS_ROOT  # noqa: E402  2026-10-20：runs 根目录 / 标签索引可切换（见 v6o_paths.py）
 sys.path.insert(0, HERE)
 import analysis_a1_a2_a6 as AA  # noqa: E402
 from v6_conformal_triage import auroc, conf_q, wilson  # noqa: E402
 
-HM = os.path.join(HERE, 'runs', 'v4_hmap', 'hmap')
-DKP = os.path.join(HERE, 'runs', 'v4_hmap', 'dk_external', 'preds.csv')
-OUT = os.path.join(HERE, 'runs', 'v4_hmap', 'reliability')
+HM = os.path.join(RUNS_ROOT, 'v4_hmap', 'hmap')
+DKP = os.path.join(RUNS_ROOT, 'v4_hmap', 'dk_external', 'preds.csv')
+OUT = os.path.join(RUNS_ROOT, 'v4_hmap', 'reliability')
 ALPHAS = (0.10, 0.20)
 
 

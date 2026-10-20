@@ -26,13 +26,14 @@ from scipy.stats import wilcoxon
 
 sys.stdout.reconfigure(encoding='utf-8')
 HERE = os.path.dirname(os.path.abspath(__file__))
+from v6o_paths import INDEX_PATH, RUNS_ROOT  # noqa: E402  2026-10-20：runs 根目录 / 标签索引可切换（见 v6o_paths.py）
 sys.path.insert(0, HERE)
 import a3_foundation_regression as A3  # noqa: E402
 from cv_depthmap_labelfix import metrics  # noqa: E402
 from v1_tabular_baseline import group_bootstrap  # noqa: E402
 from v5c_virtual_caliper_fusion import CAL, FEAT, G_COLS, NEST, V1, fnum  # noqa: E402
 
-OUT = os.path.join(HERE, 'runs', 'v5_robust')
+OUT = os.path.join(RUNS_ROOT, 'v5_robust')
 SEED_OFFSETS = (42, 142, 242)
 
 
@@ -97,7 +98,7 @@ def main():
     log('\nR² per model: ' + ' | '.join(str(s) for s in preds))
     for name in sets:
         log(f'   {name:16s} ' + '  '.join(f'{metrics(y, preds[s][name])["R2"]:.3f}' for s in preds))
-    log('\npaired comparisons (Δ = a − b, all 663): ΔR² (group bootstrap 95% CI), Wilcoxon p')
+    log(f'\npaired comparisons (Δ = a − b, all {len(y)}): ΔR² (group bootstrap 95% CI), Wilcoxon p')
     for a_, b_, lab in pairs:
         res[lab] = {}
         parts = []

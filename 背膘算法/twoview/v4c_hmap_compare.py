@@ -24,13 +24,14 @@ from scipy.stats import pearsonr, wilcoxon
 
 sys.stdout.reconfigure(encoding='utf-8')
 HERE = os.path.dirname(os.path.abspath(__file__))
+from v6o_paths import INDEX_PATH, RUNS_ROOT  # noqa: E402  2026-10-20：runs 根目录 / 标签索引可切换（见 v6o_paths.py）
 sys.path.insert(0, HERE)
 from cv_depthmap_labelfix import metrics  # noqa: E402
 from v1_tabular_baseline import group_bootstrap  # noqa: E402
 
-SRC = {'master': os.path.join(HERE, 'runs', 'v3_views', 'master_s128', 'test_preds.csv'),
-       'hmap': os.path.join(HERE, 'runs', 'v4_hmap', 'hmap', 'test_preds.csv')}
-OUT = os.path.join(HERE, 'runs', 'v4_hmap', 'compare')
+SRC = {'master': os.path.join(RUNS_ROOT, 'v3_views', 'master_s128', 'test_preds.csv'),
+       'hmap': os.path.join(RUNS_ROOT, 'v4_hmap', 'hmap', 'test_preds.csv')}
+OUT = os.path.join(RUNS_ROOT, 'v4_hmap', 'compare')
 
 
 def read(p):
@@ -67,7 +68,7 @@ def main():
         seeds = [c for c in rows[k][0] if c.startswith('pred_s')]
         log(f'   {k}: per-seed R² ' + ', '.join(
             f'{c[5:]} {metrics(y, np.array([fnum(r[c]) for r in rows[k]]))["R2"]:.3f}' for c in seeds))
-    tab = {r['uid']: r for r in read(os.path.join(HERE, 'runs', 'v1_tabular', 'preds.csv'))}
+    tab = {r['uid']: r for r in read(os.path.join(RUNS_ROOT, 'v1_tabular', 'preds.csv'))}
     line = np.array([tab[u]['line'] for u in uid])
     parity = np.array([fnum(tab[u]['parity']) for u in uid])
     prev = np.array([fnum(tab[u]['prev_bf']) for u in uid])

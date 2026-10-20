@@ -27,11 +27,12 @@ from scipy.stats import pearsonr, wilcoxon
 
 sys.stdout.reconfigure(encoding='utf-8')
 HERE = os.path.dirname(os.path.abspath(__file__))
+from v6o_paths import INDEX_PATH, RUNS_ROOT  # noqa: E402  2026-10-20：runs 根目录 / 标签索引可切换（见 v6o_paths.py）
 sys.path.insert(0, HERE)
 from cv_depthmap_labelfix import metrics  # noqa: E402
 from v1_tabular_baseline import group_bootstrap  # noqa: E402
 
-VDIR = os.path.join(HERE, 'runs', 'v3_views')
+VDIR = os.path.join(RUNS_ROOT, 'v3_views')
 OUT = os.path.join(VDIR, 'compare')
 VIEWS = ('master', 'sub', 'dual')
 
@@ -58,7 +59,7 @@ def main():
         logf.flush()
 
     log(f'[{time.strftime("%F %T")}] V3 view comparison')
-    tab = {r['uid']: r for r in read(os.path.join(HERE, 'runs', 'v1_tabular', 'preds.csv'))}
+    tab = {r['uid']: r for r in read(os.path.join(RUNS_ROOT, 'v1_tabular', 'preds.csv'))}
     base, uid = None, None
     P = {}
     for v in VIEWS:

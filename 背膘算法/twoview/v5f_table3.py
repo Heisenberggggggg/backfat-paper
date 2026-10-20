@@ -32,12 +32,13 @@ from scipy.stats import wilcoxon
 
 sys.stdout.reconfigure(encoding='utf-8')
 HERE = os.path.dirname(os.path.abspath(__file__))
+from v6o_paths import INDEX_PATH, RUNS_ROOT  # noqa: E402  2026-10-20：runs 根目录 / 标签索引可切换（见 v6o_paths.py）
 sys.path.insert(0, HERE)
 import a3_foundation_regression as A3  # noqa: E402
 from cv_depthmap_labelfix import metrics  # noqa: E402
 from v1_tabular_baseline import group_bootstrap  # noqa: E402
 
-RUNS = os.path.join(HERE, 'runs')
+RUNS = RUNS_ROOT
 OUT = os.path.join(RUNS, 'v5_table3')
 
 

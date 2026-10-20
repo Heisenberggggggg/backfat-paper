@@ -37,6 +37,7 @@ from sklearn.model_selection import StratifiedGroupKFold
 
 sys.stdout.reconfigure(encoding='utf-8')
 HERE = os.path.dirname(os.path.abspath(__file__))
+from v6o_paths import INDEX_PATH, RUNS_ROOT  # noqa: E402  2026-10-20：runs 根目录 / 标签索引可切换（见 v6o_paths.py）
 sys.path.insert(0, HERE)
 import a3_foundation_regression as A3  # noqa: E402
 from cv_depthmap_labelfix import metrics  # noqa: E402
@@ -44,10 +45,10 @@ from v1_tabular_baseline import group_bootstrap  # noqa: E402
 from v4b_hmap_models import DM_HMAP, load_hmaps, predict, train_fold  # noqa: E402
 from v4e_body_dims_fusion import pig_dims  # noqa: E402
 
-V1 = os.path.join(HERE, 'runs', 'v1_tabular', 'preds.csv')
-CAL = os.path.join(HERE, 'runs', 'v1b_caliper', 'preds.csv')
-OUTER = os.path.join(HERE, 'runs', 'v4_hmap', 'hmap', 'test_preds.csv')
-OUT = os.path.join(HERE, 'runs', 'v4_hmap', 'nested_fusion')
+V1 = os.path.join(RUNS_ROOT, 'v1_tabular', 'preds.csv')
+CAL = os.path.join(RUNS_ROOT, 'v1b_caliper', 'preds.csv')
+OUTER = os.path.join(RUNS_ROOT, 'v4_hmap', 'hmap', 'test_preds.csv')
+OUT = os.path.join(RUNS_ROOT, 'v4_hmap', 'nested_fusion')
 
 
 def fnum(s):

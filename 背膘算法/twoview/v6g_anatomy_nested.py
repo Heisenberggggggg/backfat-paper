@@ -32,12 +32,13 @@ from sklearn.model_selection import StratifiedGroupKFold
 
 sys.stdout.reconfigure(encoding='utf-8')
 HERE = os.path.dirname(os.path.abspath(__file__))
+from v6o_paths import INDEX_PATH, RUNS_ROOT  # noqa: E402  2026-10-20：runs 根目录 / 标签索引可切换（见 v6o_paths.py）
 sys.path.insert(0, HERE)
 from cv_depthmap_labelfix import metrics  # noqa: E402
 from v4b_hmap_models import DM_HMAP  # noqa: E402
 from v6f_anatomy_net import get_profiles, load_hmaps_paths, predict_frames, read_setup, train_eval  # noqa: E402
 
-OUT = os.path.join(HERE, 'runs', 'v6_anatomy_nested')
+OUT = os.path.join(RUNS_ROOT, 'v6_anatomy_nested')
 VARIANT = 'prof'
 
 

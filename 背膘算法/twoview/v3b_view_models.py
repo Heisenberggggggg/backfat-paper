@@ -44,12 +44,13 @@ from sklearn.model_selection import StratifiedGroupKFold
 
 sys.stdout.reconfigure(encoding='utf-8')
 HERE = os.path.dirname(os.path.abspath(__file__))
+from v6o_paths import INDEX_PATH, RUNS_ROOT  # noqa: E402  2026-10-20：runs 根目录 / 标签索引可切换（见 v6o_paths.py）
 sys.path.insert(0, HERE)
 from cv_depthmap_labelfix import DM_DIR, NORM_MAX, NORM_MIN, Net, metrics  # noqa: E402
 
 DM_SUB = os.path.join(HERE, '..', 'yolo+FastSAM', 'depthmap_dataset_sub')
-FOLDS_SRC = os.path.join(HERE, 'runs', 'framepreds_new_s128', 'test_preds.csv')
-INDEX = os.path.join(HERE, 'index_v2.csv')
+FOLDS_SRC = os.path.join(RUNS_ROOT, 'framepreds_new_s128', 'test_preds.csv')
+INDEX = INDEX_PATH
 
 
 def load_frames(dm_dir, uid_col, uids, size, qc=None):
@@ -180,7 +181,7 @@ def main():
                     help='斜后视帧质控：掩膜面积占整幅画面比例的保留区间（2026-10-12 目视抽查确定）')
     a = ap.parse_args()
     dev = 'cuda'
-    out_dir = os.path.join(HERE, 'runs', 'v3_views', f'{a.view}_s{a.size}')
+    out_dir = os.path.join(RUNS_ROOT, 'v3_views', f'{a.view}_s{a.size}')
     os.makedirs(out_dir, exist_ok=True)
     logf = open(os.path.join(out_dir, 'log.txt'), 'a', encoding='utf-8')
 

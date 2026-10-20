@@ -42,12 +42,13 @@ from sklearn.linear_model import LinearRegression
 sys.stdout.reconfigure(encoding='utf-8')
 warnings.filterwarnings('ignore')
 HERE = os.path.dirname(os.path.abspath(__file__))
+from v6o_paths import INDEX_PATH, RUNS_ROOT  # noqa: E402  2026-10-20：runs 根目录 / 标签索引可切换（见 v6o_paths.py）
 sys.path.insert(0, HERE)
 from v1_tabular_baseline import metrics, group_bootstrap  # noqa: E402
 
-INDEX = os.path.join(HERE, 'index_v2.csv')
-PREDS = os.path.join(HERE, 'runs', 'v1_tabular', 'preds.csv')
-OUT = os.path.join(HERE, 'runs', 'v1b_caliper')
+INDEX = INDEX_PATH
+PREDS = os.path.join(RUNS_ROOT, 'v1_tabular', 'preds.csv')
+OUT = os.path.join(RUNS_ROOT, 'v1b_caliper')
 
 
 def parse_caliper(s):

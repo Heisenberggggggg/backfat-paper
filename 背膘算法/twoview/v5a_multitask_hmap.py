@@ -38,12 +38,13 @@ from sklearn.model_selection import StratifiedGroupKFold
 
 sys.stdout.reconfigure(encoding='utf-8')
 HERE = os.path.dirname(os.path.abspath(__file__))
+from v6o_paths import INDEX_PATH, RUNS_ROOT  # noqa: E402  2026-10-20：runs 根目录 / 标签索引可切换（见 v6o_paths.py）
 sys.path.insert(0, HERE)
 from cv_depthmap_labelfix import Net, metrics  # noqa: E402
 from v4b_hmap_models import DM_HMAP, FOLDS_SRC, INDEX, load_hmaps  # noqa: E402
 
-CAL = os.path.join(HERE, 'runs', 'v1b_caliper', 'preds.csv')
-DIMS_CSV = os.path.join(HERE, 'runs', 'v4_hmap', 'body_dims', 'body_dims.csv')
+CAL = os.path.join(RUNS_ROOT, 'v1b_caliper', 'preds.csv')
+DIMS_CSV = os.path.join(RUNS_ROOT, 'v4_hmap', 'body_dims', 'body_dims.csv')
 DIMS = ('back_h_mm', 'length_mm', 'width_mm', 'area_cm2', 'volume_l', 'hw_ratio')
 
 
@@ -155,7 +156,7 @@ def main():
     ap.add_argument('--tag', default='')
     a = ap.parse_args()
     dev = 'cuda'
-    out_dir = os.path.join(HERE, 'runs', 'v5_multitask', a.tag or a.mode)
+    out_dir = os.path.join(RUNS_ROOT, 'v5_multitask', a.tag or a.mode)
     os.makedirs(out_dir, exist_ok=True)
     logf = open(os.path.join(out_dir, 'log.txt'), 'a', encoding='utf-8')
 

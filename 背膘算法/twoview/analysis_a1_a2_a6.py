@@ -37,9 +37,10 @@ from statsmodels.stats.anova import anova_lm
 
 sys.stdout.reconfigure(encoding='utf-8')
 HERE = os.path.dirname(os.path.abspath(__file__))
-PIG = os.path.join(HERE, 'runs', 'v1_tabular', 'preds.csv')
-FRAME = os.path.join(HERE, 'runs', 'framepreds_new_s128', 'frame_preds.csv')
-OUT = os.path.join(HERE, 'runs', 'analysis_a1a2a6')
+from v6o_paths import INDEX_PATH, RUNS_ROOT  # noqa: E402  2026-10-20：runs 根目录 / 标签索引可切换（见 v6o_paths.py）
+PIG = os.path.join(RUNS_ROOT, 'v1_tabular', 'preds.csv')
+FRAME = os.path.join(RUNS_ROOT, 'framepreds_new_s128', 'frame_preds.csv')
+OUT = os.path.join(RUNS_ROOT, 'analysis_a1a2a6')
 RNG = np.random.default_rng(0)
 
 

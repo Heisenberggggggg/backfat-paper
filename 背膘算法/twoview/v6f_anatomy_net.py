@@ -47,16 +47,17 @@ from sklearn.model_selection import StratifiedGroupKFold
 
 sys.stdout.reconfigure(encoding='utf-8')
 HERE = os.path.dirname(os.path.abspath(__file__))
+from v6o_paths import INDEX_PATH, RUNS_ROOT  # noqa: E402  2026-10-20：runs 根目录 / 标签索引可切换（见 v6o_paths.py）
 sys.path.insert(0, HERE)
 from cv_depthmap_labelfix import Net, metrics  # noqa: E402
 from v1_tabular_baseline import group_bootstrap  # noqa: E402
 from v4b_hmap_models import DM_HMAP, FOLDS_SRC, H_MAX, INDEX  # noqa: E402
 from v5b_virtual_caliper import CELL, col_top  # noqa: E402
 
-OUT = os.path.join(HERE, 'runs', 'v6_anatomy')
+OUT = os.path.join(RUNS_ROOT, 'v6_anatomy')
 CACHE = os.path.join(OUT, '_cache', 'profiles_v2.npz')   # v2：头尾判定加退路（见 frame_profiles）
-V4B = os.path.join(HERE, 'runs', 'v4_hmap', 'hmap', 'test_preds.csv')
-V1 = os.path.join(HERE, 'runs', 'v1_tabular', 'preds.csv')
+V4B = os.path.join(RUNS_ROOT, 'v4_hmap', 'hmap', 'test_preds.csv')
+V1 = os.path.join(RUNS_ROOT, 'v1_tabular', 'preds.csv')
 F_POS = np.linspace(0.10, 0.95, 16)
 HALF = 48                      # 横截面以脊线为中心 ±48 行（±375 mm）
 L_PROF = 2 * HALF + 1

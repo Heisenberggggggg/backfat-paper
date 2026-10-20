@@ -30,12 +30,13 @@ from sklearn.model_selection import StratifiedGroupKFold
 
 sys.stdout.reconfigure(encoding='utf-8')
 HERE = os.path.dirname(os.path.abspath(__file__))
+from v6o_paths import INDEX_PATH, RUNS_ROOT  # noqa: E402  2026-10-20：runs 根目录 / 标签索引可切换（见 v6o_paths.py）
 sys.path.insert(0, HERE)
 from cv_depthmap_labelfix import Net, metrics  # noqa: E402
 
 DM_HMAP = os.path.join(HERE, '..', 'yolo+FastSAM', 'hmap_dataset')
-FOLDS_SRC = os.path.join(HERE, 'runs', 'framepreds_new_s128', 'test_preds.csv')
-INDEX = os.path.join(HERE, 'index_v2.csv')
+FOLDS_SRC = os.path.join(RUNS_ROOT, 'framepreds_new_s128', 'test_preds.csv')
+INDEX = INDEX_PATH
 H_MAX = 1200.0
 
 
@@ -116,7 +117,7 @@ def main():
     ap.add_argument('--tag', default='hmap')
     a = ap.parse_args()
     dev = 'cuda'
-    out_dir = os.path.join(HERE, 'runs', 'v4_hmap', a.tag)
+    out_dir = os.path.join(RUNS_ROOT, 'v4_hmap', a.tag)
     os.makedirs(out_dir, exist_ok=True)
     logf = open(os.path.join(out_dir, 'log.txt'), 'a', encoding='utf-8')
 

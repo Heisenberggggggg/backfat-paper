@@ -29,7 +29,8 @@ from sklearn.preprocessing import StandardScaler
 
 sys.stdout.reconfigure(encoding='utf-8')
 HERE = os.path.dirname(os.path.abspath(__file__))
-RUNS = os.path.join(HERE, 'runs')
+from v6o_paths import INDEX_PATH, RUNS_ROOT  # noqa: E402  2026-10-20：runs 根目录 / 标签索引可切换（见 v6o_paths.py）
+RUNS = RUNS_ROOT
 OUT = os.path.join(RUNS, 'v5_line_shape')
 B_COLS = ('back_h_mm', 'length_mm', 'width_mm', 'area_cm2', 'volume_l', 'hw_ratio')
 G_COLS = ('angle_f0.60_D150', 'curv_f0.60_D150', 'shoulder_w', 'rib_w', 'hip_w', 'hip_h')
