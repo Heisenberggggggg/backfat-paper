@@ -30,6 +30,8 @@ v6f_anatomy_net.py — 解剖引导高度图网络（新模型）：全局 CNN +
 输出：runs/v6_anatomy/{_cache/profiles.npz, <variant>/{log.txt, result.json, test_preds.csv, _seed_ckpt/}}
 用法：D:\\Anaconda\\envs\\pytorch\\python.exe v6f_anatomy_net.py --variant prof_mil
       --smoke（1 种子、1 折、2 epoch，检查能否跑通）；--compare（汇总四个变体）
+      2026-10-21：--backbone efficientnet_b0 | resnet50 --weights-dir <.pth 目录> 换全局分支（输出 <variant>_<backbone>/；
+      默认 resnet18 时行为与原来完全相同）；--compare 会额外比较换骨干的变体（若目录存在）
 """
 import argparse
 import csv
@@ -197,14 +199,29 @@ class ProfileBranch(nn.Module):
         return (w.unsqueeze(-1) * t.float()).sum(1), w
 
 
-class AnatomyNet(nn.Module):
-    def __init__(self, init_bias, use_prof, use_mil, K=len(F_POS)):
-        super().__init__()
+BACKBONES = ('resnet18', 'efficientnet_b0', 'resnet50')   # 2026-10-21：全局分支可换骨干（DECISIONS 2026-10-21（二），方案 A）
+
+
+def global_branch(init_bias, backbone='resnet18', weights_dir=None):
+    """全局分支：返回 (去掉输出层的网络, 特征维数)。resnet18 与原来完全相同；其余结构的单通道改造同 v6s_backbones。"""
+    if backbone == 'resnet18':
         r = Net(init_bias).r
         r.fc = nn.Identity()
-        self.cnn = r
+        return r, 512
+    from v6s_backbones import ARCH, _get, _set, make_net_class
+    r = make_net_class(backbone, weights_dir)(init_bias).r
+    last = ARCH[backbone][3]
+    dim = _get(r, last).in_features
+    _set(r, last, nn.Identity())
+    return r, dim
+
+
+class AnatomyNet(nn.Module):
+    def __init__(self, init_bias, use_prof, use_mil, K=len(F_POS), backbone='resnet18', weights_dir=None):
+        super().__init__()
+        self.cnn, gdim = global_branch(init_bias, backbone, weights_dir)
         self.prof = ProfileBranch(K) if use_prof else None
-        dim = 512 + (64 if use_prof else 0)
+        dim = gdim + (64 if use_prof else 0)
         self.use_mil = use_mil
         if use_mil:
             self.att_v, self.att_u, self.att_w = nn.Linear(dim, 128), nn.Linear(dim, 128), nn.Linear(128, 1)
@@ -299,7 +316,8 @@ def train_eval(variant, X, P, V, owner, frames_of, y, tr, va, te, a, dev, log, r
     """训练 15 epoch；每个 epoch 记录验证集 MAE 与测试猪预测、位置注意力。
     return_best=True 时另返回内层验证集 MAE 最小 epoch 的模型（v6g 用），否则只返回 hist。"""
     use_prof, use_mil = 'prof' in variant, 'mil' in variant
-    model = AnatomyNet(float(y[tr].mean()), use_prof, use_mil).to(dev)
+    model = AnatomyNet(float(y[tr].mean()), use_prof, use_mil, backbone=getattr(a, 'backbone', 'resnet18'),
+                       weights_dir=getattr(a, 'weights_dir', None)).to(dev)
     opt = torch.optim.AdamW(model.parameters(), lr=a.lr, weight_decay=1e-4)
     sched = torch.optim.lr_scheduler.CosineAnnealingLR(opt, T_max=a.epochs)
     scaler = torch.amp.GradScaler('cuda')
@@ -387,6 +405,14 @@ def compare(log):
     with open(V4B, encoding='utf-8-sig') as f:
         d = {r['uid']: float(r['pred_mean']) for r in csv.DictReader(f)}
     P[('v4b', 'inner')] = np.array([d[u] for u in uids])
+    for b in BACKBONES[1:]:                     # 2026-10-21：换骨干的变体（<variant>_<backbone>），目录存在才纳入
+        for v in VARIANTS:
+            fp = os.path.join(OUT, f'{v}_{b}', 'test_preds.csv')
+            if os.path.isfile(fp):
+                with open(fp, encoding='utf-8-sig') as f:
+                    d = {r['uid']: r for r in csv.DictReader(f)}
+                P[(f'{v}_{b}', 'inner')] = np.array([float(d[u]['pred_inner']) for u in uids])
+                P[(f'{v}_{b}', 'testsel')] = np.array([float(d[u]['pred_testsel']) for u in uids])
     log(f'\n[{time.strftime("%F %T")}] == compare (seed-mean predictions)')
     log('variant   protocol  | pooled R2   MAE  | fold-avg R2   MAE  | R2 DAN p1  NAM multi')
     res = {}
@@ -410,6 +436,20 @@ def compare(log):
                 res['comparisons'][f'{v} vs {ref} [{s}]'] = dict(**bs, wilcoxon_p=pw)
                 log(f'   {v:9s} vs {ref:5s} [{s:15s}] ΔR² {bs["dR2"][1]:+.3f} ({bs["dR2"][0]:+.3f}, {bs["dR2"][2]:+.3f})  '
                     f'ΔMAE {bs["dMAE"][1]:+.3f} ({bs["dMAE"][0]:+.3f}, {bs["dMAE"][2]:+.3f})  p={pw:.3g}')
+    pairs = []
+    for b in BACKBONES[1:]:
+        pairs += [(f'prof_{b}', 'prof'), (f'prof_{b}', f'base_{b}'), (f'base_{b}', 'base')]
+    pairs = [(v, r) for v, r in pairs if (v, 'inner') in P and (r, 'inner') in P]
+    if pairs:
+        log('\nbackbone comparisons, inner protocol (Δ = a − b): group bootstrap 95% CI; Wilcoxon on |error|')
+    for v, r in pairs:
+        for s, m in subsets.items():
+            pa, pb = P[(v, 'inner')][m], P[(r, 'inner')][m]
+            bs = group_bootstrap(groups[m], y[m], pa, pb)
+            pw = float(wilcoxon(np.abs(pa - y[m]), np.abs(pb - y[m])).pvalue)
+            res['comparisons'][f'{v} vs {r} [{s}]'] = dict(**bs, wilcoxon_p=pw)
+            log(f'   {v:24s} vs {r:20s} [{s:15s}] ΔR² {bs["dR2"][1]:+.3f} ({bs["dR2"][0]:+.3f}, {bs["dR2"][2]:+.3f})  '
+                f'ΔMAE {bs["dMAE"][1]:+.3f} ({bs["dMAE"][0]:+.3f}, {bs["dMAE"][2]:+.3f})  p={pw:.3g}')
     with open(os.path.join(OUT, 'compare.json'), 'w', encoding='utf-8') as f:
         json.dump(res, f, ensure_ascii=False, indent=1, default=float)
 
@@ -425,6 +465,9 @@ def main():
     ap.add_argument('--len-rel', type=float, default=0.85)
     ap.add_argument('--smoke', action='store_true')
     ap.add_argument('--compare', action='store_true')
+    ap.add_argument('--backbone', choices=BACKBONES, default='resnet18',
+                    help='全局分支骨干（2026-10-21）；非 resnet18 时输出到 <variant>_<backbone>/')
+    ap.add_argument('--weights-dir', default=None, help='预训练权重 .pth 所在目录（实验室无法直连 download.pytorch.org）')
     a = ap.parse_args()
     os.makedirs(OUT, exist_ok=True)
     if a.compare:
@@ -437,7 +480,7 @@ def main():
         compare(clog)
         return
     assert a.variant, '--variant 必填'
-    tag = a.variant + ('_smoke' if a.smoke else '')
+    tag = a.variant + ('' if a.backbone == 'resnet18' else f'_{a.backbone}') + ('_smoke' if a.smoke else '')
     od = os.path.join(OUT, tag)
     os.makedirs(os.path.join(od, '_seed_ckpt'), exist_ok=True)
     logf = open(os.path.join(od, 'log.txt'), 'a', encoding='utf-8')
