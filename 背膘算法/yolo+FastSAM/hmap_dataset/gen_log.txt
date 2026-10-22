@@ -1,0 +1,28 @@
+[2026-10-13 09:38:19] height maps: 826 pigs, done 0, out F:\Postgraduate\Lab\饲喂站\背膘算法\yolo+FastSAM\hmap_dataset; window 2000x1000 mm, grid 256x128, 7.8125 mm/px
+  [1/826] dk_nkyfirst_2-1 ok 20/20  0.2 min, ETA 203.1 min
+  [2/826] dk_nkyfirst_2-18 ok 20/20  0.3 min, ETA 114.7 min
+  [3/826] dk_nkyfirst_2-2 ok 20/20  0.3 min, ETA 85.8 min
+  [50/826] dk_nkysecond_6-26 ok 20/20  2.0 min, ETA 31.2 min
+  [100/826] dk_nkythird_11-32512L ok 20/20  3.5 min, ETA 25.6 min
+  [150/826] dk_nkythird_13-731 ok 20/20  4.8 min, ETA 21.8 min
+  [200/826] fmh_10.29_47LY0303 ok 20/20  6.2 min, ETA 19.6 min
+[2026-10-13 09:57:17] height maps: 826 pigs, done 233, out F:\Postgraduate\Lab\饲喂站\背膘算法\yolo+FastSAM\hmap_dataset; window 2000x1000 mm, grid 256x128, 7.8125 mm/px
+[2026-10-13 10:20:24] height maps: 826 pigs, done 233, out F:\Postgraduate\Lab\饲喂站\背膘算法\yolo+FastSAM\hmap_dataset; window 2000x1000 mm, grid 256x128, 7.8125 mm/px
+  [250/826] fmh_10.30_73A401 ok 20/20  1.0 min, ETA 2.3 min
+  [300/826] fmh_11.1_35A0819 ok 20/20  2.4 min, ETA 4.2 min
+  [350/826] fmh_11.2_73A0865 ok 20/20  3.7 min, ETA 5.1 min
+  [400/826] fmh_11.3_132A0781 ok 20/20  5.1 min, ETA 5.5 min
+  [450/826] fmh_11.4_184A0469 ok 20/20  6.6 min, ETA 5.5 min
+  [500/826] fmh_11.5_234A0502 ok 20/20  8.1 min, ETA 5.3 min
+  [550/826] fmh_11.5_285T1166 ok 20/20  9.6 min, ETA 4.8 min
+  [600/826] fmh_8.24_547LY0964 ok 20/20  11.0 min, ETA 4.1 min
+  [650/826] fmh_8.25_598LY0881 ok 20/20  12.4 min, ETA 3.4 min
+  [700/826] fmh_8.26_649A290 ok 20/20  13.8 min, ETA 2.5 min
+  [750/826] fmh_8.26_699A331 ok 20/20  15.2 min, ETA 1.5 min
+  [800/826] fmh_8.27_749LY0836 ok 20/20  16.6 min, ETA 0.5 min
+done | 17.3 min -> F:\Postgraduate\Lab\饲喂站\背膘算法\yolo+FastSAM\hmap_dataset
+[2026-10-13 10:38:34] height maps: 3 pigs, done 0, out F:\Postgraduate\Lab\饲喂站\背膘算法\yolo+FastSAM\hmap_dataset; window 2000x1000 mm, grid 256x128, 7.8125 mm/px
+  [1/3] dk_nkysecond_7-22 ok 20/20  0.4 min, ETA 0.7 min
+  [2/3] fmh_11.5_269T712 ok 20/20  0.4 min, ETA 0.2 min
+  [3/3] fmh_11.5_280T1212 ok 20/20  0.4 min, ETA 0.0 min
+done | 0.4 min -> F:\Postgraduate\Lab\饲喂站\背膘算法\yolo+FastSAM\hmap_dataset

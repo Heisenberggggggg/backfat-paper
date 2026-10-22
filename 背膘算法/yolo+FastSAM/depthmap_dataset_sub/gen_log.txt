@@ -1,0 +1,27 @@
+[2026-10-12 09:52:43] sub depthmaps: 4 pigs (farm=DK), already done 0
+  [1/4] dk_nkyfirst_2-1 frames 20/20  elapsed 0.3 min, ETA 0.9 min
+  [2/4] dk_nkyfirst_2-18 frames 19/20  elapsed 0.3 min, ETA 0.3 min
+done: ok 4, failed 0 [] | 0.4 min -> F:\Postgraduate\Lab\饲喂站\背膘算法\yolo+FastSAM\depthmap_dataset_sub
+[2026-10-12 09:53:07] sub depthmaps: 4 pigs (farm=FMH), already done 4
+  [1/4] fmh_10.29_10LY1198 frames 19/20  elapsed 0.1 min, ETA 0.3 min
+  [2/4] fmh_10.29_11LY0816 frames 20/20  elapsed 0.1 min, ETA 0.1 min
+done: ok 4, failed 0 [] | 0.2 min -> F:\Postgraduate\Lab\饲喂站\背膘算法\yolo+FastSAM\depthmap_dataset_sub
+[2026-10-12 09:53:33] sub depthmaps: 825 pigs (farm=all), already done 8
+  [50/825] dk_nkysecond_6-26 frames 20/20  elapsed 1.2 min, ETA 18.7 min
+  [100/825] dk_nkythird_11-32512L frames 20/20  elapsed 2.4 min, ETA 17.1 min
+  [150/825] dk_nkythird_13-734 frames 20/20  elapsed 4.1 min, ETA 18.4 min
+  [200/825] fmh_10.29_48LY0857 frames 20/20  elapsed 5.7 min, ETA 17.7 min
+  [250/825] fmh_10.30_74A269 frames 20/20  elapsed 7.4 min, ETA 17.0 min
+  [300/825] fmh_11.1_36A0750 frames 20/20  elapsed 9.2 min, ETA 16.1 min
+  [350/825] fmh_11.2_74A0749 frames 19/20  elapsed 11.0 min, ETA 14.9 min
+  [400/825] fmh_11.3_133A0810 frames 19/20  elapsed 12.7 min, ETA 13.5 min
+[2026-10-12 10:08:37] sub depthmaps: 825 pigs (farm=all), already done 438
+  [450/825] fmh_11.4_185A0470 frames 20/20  elapsed 1.0 min, ETA 0.8 min
+  [500/825] fmh_11.5_235A0416 frames 20/20  elapsed 2.2 min, ETA 1.4 min
+  [550/825] fmh_11.5_286T1214 frames 20/20  elapsed 3.4 min, ETA 1.7 min
+  [600/825] fmh_8.24_548LY1030 frames 19/20  elapsed 4.6 min, ETA 1.7 min
+  [650/825] fmh_8.25_599LY0856 frames 20/20  elapsed 5.8 min, ETA 1.6 min
+  [700/825] fmh_8.26_650LY0487 frames 19/20  elapsed 6.9 min, ETA 1.2 min
+  [750/825] fmh_8.27_700A263 frames 20/20  elapsed 8.1 min, ETA 0.8 min
+  [800/825] fmh_8.27_750LY0843 frames 19/20  elapsed 9.2 min, ETA 0.3 min
+done: ok 387, failed 0 [] | 9.8 min -> F:\Postgraduate\Lab\饲喂站\背膘算法\yolo+FastSAM\depthmap_dataset_sub
