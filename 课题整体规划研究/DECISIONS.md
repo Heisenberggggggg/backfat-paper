@@ -5,6 +5,29 @@
 
 ---
 
+## 2026-10-21（二）｜ 骨干网络对照结果：EfficientNet-B0、ResNet-50 显著优于 ResNet-18；ConvNeXt-T、Swin-T 在固定配方下训练塌缩——是否换主模型待本人定
+
+**来源**：实验室会话截图（本人 10-21 转来；结果已拷到 `H:\backfat_v6o\runs_v6s_结果\`，笔记本尚未拷回）〔待核：拷回后对照 `runs_v6o/v6s_backbones/log.txt` 逐项核对〕。两路并行，18:45–19:44，约 59 min；代码与训练设置未改；4 个日志开头均为 `pigs 622/622`、各折 426 / 71 / 125；无 Traceback；`--compare` 断言通过；runs_v6o 未进 git（实验室按建议 `git reset --mixed` 撤销了误提交并快进到 fe4e7c0）。
+
+| 结构（3 种子平均，同 v4b 协议、固定配方） | R² | ΔR² vs ResNet-18（95% CI） | Wilcoxon p |
+|---|---|---|---|
+| ResNet-18（参照，runs_v6o/v4_hmap/hmap） | 0.336 | — | — |
+| ResNet-50 | 0.387 | +0.052（+0.026, +0.078） | 0.010 |
+| EfficientNet-B0 | 0.406 | +0.070（+0.040, +0.100） | 0.001 |
+| ConvNeXt-T | 0.158 | −0.178 | 训练塌缩（7/15 折预测成均值） |
+| Swin-T | 0.000 | −0.336 | 训练塌缩（15/15 折） |
+
+**解读（AI）**
+- 这推翻了 AI 10-21 上午对本人说的「瓶颈不在网络结构」：同协议下两种 CNN 骨干把 R² 提高了 0.05–0.07，区间都不含 0；ResNet-18 3 个种子 0.30–0.33，实验室报告的 3 个种子在 0.37–0.39，超过种子间波动（约 0.02）。EfficientNet-B0（3 种子 0.406）已高于现在的主模型（解剖引导网络，5 种子 0.358）。
+- ConvNeXt-T、Swin-T 的结果不代表结构本身：固定配方（AdamW 3e-4、无预热、15 epoch）对它们不适用，网络塌缩成输出均值〔原因为推测：学习率偏大、没有预热〕。不能写成「更差」，只能写「在共同配方下未能收敛」，或换常用微调配方重跑。
+- 对稿件的影响：主模型的全局分支是 ResNet-18；如果更好的骨干能把主模型推到 0.40 左右，主结果、表 2–3、图 2–4、重复性与区间、Jetson 测速都要重跑重写。
+
+**待本人定**：A 先在实验室做确认实验（EfficientNet-B0 / ResNet-50 补到 5 种子；解剖引导网络换 EfficientNet-B0 全局分支，5 种子），再决定是否换主模型〔AI 推荐〕；B 直接换主模型并重跑全部下游；C 不换，骨干对照放补充材料并在讨论中如实写。
+
+**本人决定（10-21 晚）：选 A。** 实施：`v6f_anatomy_net.py` 加 `--backbone {resnet18, efficientnet_b0, resnet50}` 与 `--weights-dir`（默认 resnet18 时与原来完全相同；新骨干输出到 `v6_anatomy/<variant>_<backbone>/`；`--compare` 增加骨干比较段）；`v6s_backbones.py` 加 `--recipe finetune`（AdamW 1e-4、权重衰减 0.05、1 个 epoch 线性预热、按步余弦、梯度裁剪 1.0）、`--reuse-hmap-ckpt`（ResNet-18 补到 5 种子而不改动 v4_hmap/hmap）、`--compare --ref/--tags`。交接 `18_交接说明_实验室骨干确认实验_2026-10-21.md`；推送前把文件清单给本人看。
+
+---
+
 ## 2026-10-21 ｜ 按 gComm 投稿须知整改图表（图 2 ↔ 图 3、移图、8–10 pt、行号）；免配准写成有意的工程选择；骨干网络对照交实验室补跑
 
 **本人决定（10-21，逐条回复上一轮的 10 个问题）**
@@ -28,7 +51,7 @@
 - 核对：接受修订后正文 6 161 词、摘要 249 词；图表首次引用顺序 1→2→3→4；拒绝全部修订后与改前备份一致；修订 ID 无重复。
 - 修订工具 `v6n_tracked_edit.py` 新增：删除含图片段落、`INSERT_BEFORE`、`INSERT_FIG_AFTER`（移图）、`LINE_PAGE_NUMBERS`。
 
-**骨干网络对照（待实验室跑）**：`twoview/v6s_backbones.py`（ResNet-50、EfficientNet-B0、ConvNeXt-Tiny、Swin-T，与 v4b ResNet-18 同协议、固定配方、3 种子；`--compare` 输出 ΔR² / ΔMAE 与 Wilcoxon）；交接 `17_交接说明_实验室补跑骨干网络对照_2026-10-21.md`。预训练权重（约 335 MB，download.pytorch.org）须先在笔记本下载到 H 盘〔待本人同意〕；代码需推送 GitHub〔推送前告诉本人文件清单〕。视觉 Mamba 需要 Linux 的 CUDA 扩展，未纳入；吕年珅在同一批数据上用 PointMamba，独立测试集 R² 0.31–0.43（未发表，正文不引用）。
+**骨干网络对照（待实验室跑）**：`twoview/v6s_backbones.py`（ResNet-50、EfficientNet-B0、ConvNeXt-Tiny、Swin-T，与 v4b ResNet-18 同协议、固定配方、3 种子；`--compare` 输出 ΔR² / ΔMAE 与 Wilcoxon）；交接 `17_交接说明_实验室补跑骨干网络对照_2026-10-21.md`。本人 10-21 同意后：4 个预训练权重已从 download.pytorch.org 下载到 `H:\backfat_v6o\torch_weights\`（按哈希校验，完整 SHA256 见 17 号；笔记本上用真实权重加载 4 种网络成功）；代码与交接说明已推送 GitHub（提交 `fe4e7c0`：v6s_backbones.py、v6p_figures.py、16 / 17 号交接、DECISIONS、README；不含 runs_v6o）；17 号副本放在 `H:\backfat_v6o\`。视觉 Mamba 需要 Linux 的 CUDA 扩展，未纳入；吕年珅在同一批数据上用 PointMamba，独立测试集 R² 0.31–0.43（未发表，正文不引用）。
 
 ---
 
